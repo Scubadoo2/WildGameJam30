@@ -32,13 +32,70 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Place" type="ColorRect" parent="Meter"]
+[node name="Center" type="ColorRect" parent="Meter"]
+anchor_left = 0.5
 anchor_top = 0.5
-anchor_right = 1.0
+anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = 65.0
+margin_left = -5.0
 margin_top = -20.0
-margin_right = -65.0
+margin_right = 5.0
+margin_bottom = 20.0
+color = Color( 0.0156863, 0.0156863, 0.0156863, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PlaceRO" type="ColorRect" parent="Meter"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -5.0
+margin_top = -20.0
+margin_right = 5.0
+margin_bottom = 20.0
+color = Color( 0.639216, 0.117647, 0.117647, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PlaceRI" type="ColorRect" parent="Meter"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -5.0
+margin_top = -20.0
+margin_right = 5.0
+margin_bottom = 20.0
+color = Color( 0.639216, 0.117647, 0.117647, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PlaceLO" type="ColorRect" parent="Meter"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -5.0
+margin_top = -20.0
+margin_right = 5.0
+margin_bottom = 20.0
+color = Color( 0.639216, 0.117647, 0.117647, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PlaceLI" type="ColorRect" parent="Meter"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -5.0
+margin_top = -20.0
+margin_right = 5.0
 margin_bottom = 20.0
 color = Color( 0.639216, 0.117647, 0.117647, 1 )
 __meta__ = {
