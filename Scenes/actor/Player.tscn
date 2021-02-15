@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Scenes/actor/Actor.tscn" type="PackedScene" id=1]
 [ext_resource path="res://icon.png" type="Texture" id=2]
 [ext_resource path="res://Scripts/actor/player.gd" type="Script" id=3]
+[ext_resource path="res://Scripts/actor/data_holder.gd" type="Script" id=4]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -17,6 +18,9 @@ animations = [ {
 "speed": 5.0
 } ]
 
+[sub_resource type="CircleShape2D" id=2]
+radius = 59.6326
+
 [node name="Player" instance=ExtResource( 1 )]
 script = ExtResource( 3 )
 
@@ -29,3 +33,13 @@ margin_left = -21.3816
 margin_top = -64.1447
 margin_right = 18.6184
 margin_bottom = -50.1447
+
+[node name="Area2D" type="Area2D" parent="." index="4"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" index="0"]
+shape = SubResource( 2 )
+
+[node name="DataHolder" type="Node" parent="." index="5"]
+script = ExtResource( 4 )
+[connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_Area2D_body_exited"]

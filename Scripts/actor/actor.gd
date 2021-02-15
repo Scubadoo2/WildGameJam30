@@ -5,7 +5,7 @@ export (float) var speed
 
 """
 Base class for all moving actors in game.
-DO NOT use this node alone. Best to inherit it.
+DO NOT use this Scene alone. Best to use it as a base for inheritance
 """
 
 
@@ -20,7 +20,7 @@ func _ready():
 	state_machine.change_state("Idle")
 
 func _input(event):
-	state_machine.handle_input(event)
+	pass
 
 func _physics_process(delta):
 	state_machine.tick(delta)
