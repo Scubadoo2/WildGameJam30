@@ -4,10 +4,11 @@ extends Control
 var forgive = .2 # amount off a person can be from the beat
 
 #Quick reference to objects
-onready var timer = $Timer
+onready var timer = $Rhythm
 onready var meter = $Meter
 onready var heart = $Heart
 onready var meterCenter  = $Meter/Center
+onready var beat = $Heartbeat
 
 #References to the bars
 onready var meterRO  = $Meter/PlaceRO
@@ -60,6 +61,14 @@ func Beat():
 	# Fire off our own signal
 	emit_signal("heartbeat")
 	
-	heart.frame = (heart.frame + 1)%2
+	heart.frame = 1
+	beat.start()
+	
+func OffBeat():
+	heart.frame = 0
+	
+func ChangeBeat(newTime):
+	timer.wait_time = newTime
+	beat.wait_time = newTime / 4
 	
 	

@@ -20,7 +20,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Timer" type="Timer" parent="."]
+[node name="Rhythm" type="Timer" parent="."]
 
 [node name="Meter" type="ColorRect" parent="."]
 anchor_top = 1.0
@@ -107,4 +107,9 @@ position = Vector2( 70.5567, 85.6606 )
 scale = Vector2( 0.0813588, 0.0860325 )
 texture = ExtResource( 2 )
 vframes = 2
-[connection signal="timeout" from="Timer" to="." method="Beat"]
+
+[node name="Heartbeat" type="Timer" parent="."]
+wait_time = 0.25
+one_shot = true
+[connection signal="timeout" from="Rhythm" to="." method="Beat"]
+[connection signal="timeout" from="Heartbeat" to="." method="OffBeat"]
