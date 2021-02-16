@@ -1,0 +1,113 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Scenes/StressTracker.gd" type="Script" id=1]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0.760784, 0, 0, 1 )
+
+[node name="Stress" type="Control"]
+margin_right = 141.0
+margin_bottom = 111.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VisualStress" type="Panel" parent="."]
+margin_left = 43.0416
+margin_top = 31.5668
+margin_right = 80.0416
+margin_bottom = 104.567
+
+[node name="StressPercent" type="Panel" parent="VisualStress"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 73.0
+grow_horizontal = 2
+grow_vertical = 0
+custom_styles/panel = SubResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Overflow" type="Control" parent="VisualStress"]
+visible = false
+anchor_right = 1.0
+margin_left = -2.0
+margin_top = -28.0
+margin_right = 3.0
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Polygon2D" type="Polygon2D" parent="VisualStress/Overflow"]
+position = Vector2( 3.2759, 21.4429 )
+rotation = -0.380482
+scale = Vector2( 0.9375, 1 )
+color = Color( 0.929412, 0.152941, 0.152941, 1 )
+polygon = PoolVector2Array( 1.96065, 2.4724, 1.11975, -3.41388, -2.24384, -4.67522, -3.29495, -4.04454, -4.5563, -2.99343, -4.76653, -1.94231, -4.13585, -0.680962 )
+
+[node name="Polygon2D2" type="Polygon2D" parent="VisualStress/Overflow"]
+position = Vector2( 12.5258, 21.2326 )
+scale = Vector2( 0.9375, 1 )
+color = Color( 0.929412, 0.152941, 0.152941, 1 )
+polygon = PoolVector2Array( 1.96065, 2.4724, 1.11975, -3.41388, -2.24384, -4.67522, -3.29495, -4.04454, -4.5563, -2.99343, -4.76653, -1.94231, -4.13585, -0.680962 )
+
+[node name="Polygon2D3" type="Polygon2D" parent="VisualStress/Overflow"]
+position = Vector2( 42.3776, 22.2838 )
+rotation = 1.64934
+scale = Vector2( 0.9375, 1 )
+color = Color( 0.929412, 0.152941, 0.152941, 1 )
+polygon = PoolVector2Array( 1.96065, 2.4724, 1.11975, -3.41388, -2.24384, -4.67522, -3.29495, -4.04454, -4.5563, -2.99343, -4.76653, -1.94231, -4.13585, -0.680962 )
+
+[node name="Polygon2D4" type="Polygon2D" parent="VisualStress/Overflow"]
+position = Vector2( 21.145, 20.3917 )
+rotation = 0.507891
+scale = Vector2( 0.9375, 1 )
+color = Color( 0.929412, 0.152941, 0.152941, 1 )
+polygon = PoolVector2Array( 1.96065, 2.4724, 1.11975, -3.41388, -2.24384, -4.67522, -3.29495, -4.04454, -4.5563, -2.99343, -4.76653, -1.94231, -4.13585, -0.680962 )
+
+[node name="Polygon2D5" type="Polygon2D" parent="VisualStress/Overflow"]
+position = Vector2( 32.0766, 19.9713 )
+rotation = 1.64934
+scale = Vector2( 0.9375, 1 )
+color = Color( 0.929412, 0.152941, 0.152941, 1 )
+polygon = PoolVector2Array( 1.96065, 2.4724, 1.11975, -3.41388, -2.24384, -4.67522, -3.29495, -4.04454, -4.5563, -2.99343, -4.76653, -1.94231, -4.13585, -0.680962 )
+
+[node name="StressCounter" type="Control" parent="."]
+margin_left = 93.3001
+margin_top = 44.3568
+margin_right = 106.3
+margin_bottom = 84.3568
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Current" type="Label" parent="StressCounter"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -18.0
+margin_right = 18.0
+margin_bottom = 14.0
+text = "0"
+align = 1
+
+[node name="Max" type="Label" parent="StressCounter"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -4.12543
+margin_top = -14.0
+margin_right = 4.87457
+text = "0"
+align = 1
+
+[node name="ColorRect" type="ColorRect" parent="StressCounter"]
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_top = -1.0
+margin_bottom = 1.0

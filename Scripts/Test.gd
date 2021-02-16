@@ -9,6 +9,8 @@ var defaultColor
 onready var beat = $Control/BeatHolder
 onready var timer = $Timer
 
+onready var stressDisplay = $Control/Stress
+
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
@@ -19,7 +21,6 @@ func _ready():
 	defaultColor = polygon.color
 	
 
-
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	if(Input.is_action_just_pressed("attack")):
@@ -29,6 +30,9 @@ func _process(delta):
 			polygon.set_color(wrongColor)
 			
 		timer.start()
-	
+
 func resetColor():
 	polygon.set_color(defaultColor)
+	
+func ChangeStress(amount):
+	stressDisplay.ChangeStress(amount)
