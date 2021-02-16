@@ -2,6 +2,12 @@ extends Actor
 class_name Player
 
 onready var data_holder = $DataHolder
+var in_light: bool
+
+func _ready():
+	._ready()
+	in_light = false
+	add_to_group("player")
 
 func _input(event):
 	if Input.is_action_just_pressed("interact"):
@@ -23,10 +29,10 @@ func get_direction() -> Vector2:
 
 
 func _on_Area2D_body_entered(body):
-	if body is Candle:
+	if body.is_in_group("candle"):
 		data_holder.near_candle = body
 
 
 func _on_Area2D_body_exited(body):
-	if body is Candle:
+	if body.is_in_group("candle"):
 		data_holder.near_candle = null

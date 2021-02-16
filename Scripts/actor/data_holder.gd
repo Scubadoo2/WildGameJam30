@@ -1,5 +1,5 @@
 extends Node
 
-var near_candle: Candle = null
+var near_candle: Node2D = null
 
 

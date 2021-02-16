@@ -16,7 +16,11 @@ func handle_input(event: InputEvent):
 	
 func tick(delta):
 	if data_holder.current_target != null:
-		return "Aggro"
+		if data_holder.avoid_entity == null:
+			return "Aggro"
+		elif actor.target_in_light() == false:
+			print_debug("Target not in light")
+			return "Aggro"
 
 	actor.direction = actor.get_direction()
 	if actor.direction == Vector2.ZERO:
