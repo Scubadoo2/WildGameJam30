@@ -24,6 +24,11 @@ _global_script_classes=[ {
 "language": "NativeScript",
 "path": "res://git_api.gdns"
 }, {
+"base": "Actor",
+"class": "Player",
+"language": "GDScript",
+"path": "res://Scripts/actor/player.gd"
+}, {
 "base": "Node",
 "class": "State",
 "language": "GDScript",
@@ -38,6 +43,7 @@ _global_script_class_icons={
 "Actor": "",
 "Candle": "",
 "GitAPI": "",
+"Player": "",
 "State": "",
 "StateMachine": ""
 }

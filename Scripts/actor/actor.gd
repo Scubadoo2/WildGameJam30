@@ -24,7 +24,7 @@ func _input(event):
 
 func _physics_process(delta):
 	state_machine.tick(delta)
-	direction = get_direction()
+	#direction = get_direction()
 
 """
 Each actor will fill the method to decied which direction to go towards.
