@@ -1,8 +1,7 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://Scenes/Heartbeat.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scenes/UI/UIHolder.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scripts/Test.gd" type="Script" id=2]
-[ext_resource path="res://Scenes/Stresslevel.tscn" type="PackedScene" id=3]
 
 [node name="Node" type="Node"]
 script = ExtResource( 2 )
@@ -14,6 +13,12 @@ position = Vector2( 490.893, 295.514 )
 color = Color( 0.152941, 0.152941, 0.152941, 1 )
 polygon = PoolVector2Array( -47.5067, -42.2855, 44.5626, -48.6351, 36.6255, 48.1963, -45.9193, 54.5459 )
 
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.3
+one_shot = true
+
+[node name="UI" parent="." instance=ExtResource( 1 )]
+
 [node name="Control" type="Control" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -22,33 +27,47 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Stress" parent="Control" instance=ExtResource( 3 )]
-
-[node name="BeatHolder" parent="Control" instance=ExtResource( 1 )]
-
 [node name="StressButton" type="Button" parent="Control"]
-margin_left = 354.055
-margin_top = 130.179
-margin_right = 405.055
-margin_bottom = 150.179
+margin_left = 521.733
+margin_top = 128.99
+margin_right = 572.733
+margin_bottom = 148.99
 text = "Stress"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="DestressButton" type="Button" parent="Control"]
-margin_left = 513.956
-margin_top = 136.92
-margin_right = 575.956
-margin_bottom = 156.92
-text = "Detress"
+[node name="HurtButton" type="Button" parent="Control"]
+margin_left = 358.812
+margin_top = 128.99
+margin_right = 409.812
+margin_bottom = 148.99
+text = "Hurt"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Timer" type="Timer" parent="."]
-wait_time = 0.3
-one_shot = true
-[connection signal="pressed" from="Control/StressButton" to="." method="ChangeStress" binds= [ 1 ]]
-[connection signal="pressed" from="Control/DestressButton" to="." method="ChangeStress" binds= [ -1 ]]
+[node name="HealButton" type="Button" parent="Control"]
+margin_left = 354.055
+margin_top = 178.936
+margin_right = 405.055
+margin_bottom = 198.936
+text = "Heal"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="DestressButton" type="Button" parent="Control"]
+margin_left = 521.299
+margin_top = 175.54
+margin_right = 583.299
+margin_bottom = 195.54
+text = "Calm"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 [connection signal="timeout" from="Timer" to="." method="resetColor"]
+[connection signal="pressed" from="Control/StressButton" to="." method="StressTest" binds= [ 1 ]]
+[connection signal="pressed" from="Control/HurtButton" to="." method="HurtTest" binds= [ 1 ]]
+[connection signal="pressed" from="Control/HealButton" to="." method="HealTest" binds= [ 1 ]]
+[connection signal="pressed" from="Control/DestressButton" to="." method="CalmTest" binds= [ 1 ]]

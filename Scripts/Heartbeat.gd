@@ -68,7 +68,13 @@ func OffBeat():
 	heart.frame = 0
 	
 func ChangeBeat(newTime):
+	var remaining = timer.time_left
 	timer.wait_time = newTime
+	
+	#Restart the timer
+	timer.start(0)
+		
+	
 	beat.wait_time = newTime / 4
 	
 	
