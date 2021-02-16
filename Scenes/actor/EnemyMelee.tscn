@@ -1,0 +1,58 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://Scenes/actor/Actor.tscn" type="PackedScene" id=1]
+[ext_resource path="res://icon.png" type="Texture" id=2]
+[ext_resource path="res://Scripts/actor/enemy/enemy_melee.gd" type="Script" id=3]
+[ext_resource path="res://Scripts/actor/enemy/Melee/enemy_movement_state.gd" type="Script" id=4]
+[ext_resource path="res://Scripts/actor/enemy/enemy_data_holder.gd" type="Script" id=5]
+[ext_resource path="res://Scripts/actor/enemy/Melee/enemy_aggro_state.gd" type="Script" id=6]
+[ext_resource path="res://Scripts/actor/enemy/Melee/enemy_attack_state.gd" type="Script" id=7]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 2 ) ],
+"loop": true,
+"name": "idle",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 2 ) ],
+"loop": true,
+"name": "movement",
+"speed": 5.0
+} ]
+
+[sub_resource type="CircleShape2D" id=2]
+radius = 146.659
+
+[node name="EnemyMelee" instance=ExtResource( 1 )]
+script = ExtResource( 3 )
+MIN_DISTANCE = 4.0
+
+[node name="AnimatedSprite" parent="." index="1"]
+frames = SubResource( 1 )
+animation = "movement"
+
+[node name="DebugState" parent="." index="2"]
+margin_left = -35.0
+margin_top = -64.0
+margin_right = 30.0
+margin_bottom = -39.0
+
+[node name="DataHolder" type="Node" parent="." index="3"]
+script = ExtResource( 5 )
+
+[node name="AggroZone" type="Area2D" parent="." index="4"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AggroZone" index="0"]
+shape = SubResource( 2 )
+
+[node name="Movement" parent="StateMachine" index="1"]
+script = ExtResource( 4 )
+
+[node name="Aggro" type="Node" parent="StateMachine" index="2"]
+script = ExtResource( 6 )
+
+[node name="Attack" type="Node" parent="StateMachine" index="3"]
+script = ExtResource( 7 )
+[connection signal="body_entered" from="AggroZone" to="." method="_on_AggroZone_body_entered"]
+[connection signal="body_exited" from="AggroZone" to="." method="_on_AggroZone_body_exited"]

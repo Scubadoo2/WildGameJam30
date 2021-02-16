@@ -1,4 +1,5 @@
 extends Actor
+class_name Player
 
 onready var data_holder = $DataHolder
 

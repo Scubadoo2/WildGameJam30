@@ -15,6 +15,7 @@ func handle_input(event: InputEvent):
 	pass
 	
 func tick(delta):
+	actor.direction = actor.get_direction()
 	if actor.direction != Vector2.ZERO:
 		return "Movement"
 
