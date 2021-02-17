@@ -14,10 +14,12 @@ ui_path = NodePath("CanvasLayer/UI")
 [node name="House" parent="." instance=ExtResource( 1 )]
 
 [node name="Player" parent="." instance=ExtResource( 3 )]
+position = Vector2( 128.579, 253.984 )
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="UI" parent="CanvasLayer" instance=ExtResource( 2 )]
 
 [node name="EnemyMelee" parent="." instance=ExtResource( 5 )]
-position = Vector2( 431.773, 228.586 )
+position = Vector2( 392.088, 374.627 )
+speed = 70.0

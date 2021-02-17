@@ -32,7 +32,7 @@ func get_direction() -> Vector2:
 	return direction
 
 func in_light() -> bool:
-	return in_light()
+	return in_light
 
 #########################
 ##  World Interaction  ##
