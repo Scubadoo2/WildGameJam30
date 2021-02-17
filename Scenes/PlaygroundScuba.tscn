@@ -66,46 +66,8 @@ text = "Calm"
 __meta__ = {
 "_edit_use_anchors_": false
 }
-
-[node name="GetWood" type="Button" parent="Control"]
-margin_left = 740.876
-margin_top = 352.005
-margin_right = 816.876
-margin_bottom = 372.005
-text = "Get Wood"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="UseWood" type="Button" parent="Control"]
-margin_left = 744.444
-margin_top = 393.628
-margin_right = 822.444
-margin_bottom = 413.628
-text = "Use Wood"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="GetToy" type="Button" parent="Control"]
-margin_left = 859.797
-margin_top = 348.438
-margin_right = 935.797
-margin_bottom = 368.438
-text = "Get Toy"
-
-[node name="UseToy" type="Button" parent="Control"]
-margin_left = 865.743
-margin_top = 391.249
-margin_right = 941.743
-margin_bottom = 411.249
-text = "Use Toy"
 [connection signal="timeout" from="Timer" to="." method="resetColor"]
 [connection signal="pressed" from="Control/StressButton" to="." method="StressTest" binds= [ 1 ]]
 [connection signal="pressed" from="Control/HurtButton" to="." method="HurtTest" binds= [ 1 ]]
 [connection signal="pressed" from="Control/HealButton" to="." method="HealTest" binds= [ 1 ]]
 [connection signal="pressed" from="Control/DestressButton" to="." method="CalmTest" binds= [ 1 ]]
-[connection signal="pressed" from="Control/GetWood" to="UI" method="GetItem" binds= [ "wood", 1 ]]
-[connection signal="pressed" from="Control/UseWood" to="UI" method="UseItem" binds= [ "wood", 1 ]]
-[connection signal="pressed" from="Control/GetToy" to="UI" method="GetItem" binds= [ "toy", 1 ]]
-[connection signal="pressed" from="Control/UseToy" to="UI" method="UseItem" binds= [ "toy", 1 ]]
