@@ -1,7 +1,8 @@
 [gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://Scripts/Heartbeat.gd" type="Script" id=1]
+[ext_resource path="res://Scripts/UI/Heartbeat.gd" type="Script" id=1]
 [ext_resource path="res://Art/Heartbeat.png" type="Texture" id=2]
+
 
 [node name="BeatHolder" type="Control"]
 anchor_top = 1.0
@@ -111,5 +112,7 @@ vframes = 2
 [node name="Heartbeat" type="Timer" parent="."]
 wait_time = 0.25
 one_shot = true
+
+[node name="MusicHolder" type="AudioStreamPlayer" parent="."]
 [connection signal="timeout" from="Rhythm" to="." method="Beat"]
 [connection signal="timeout" from="Heartbeat" to="." method="OffBeat"]
