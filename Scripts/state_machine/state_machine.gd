@@ -8,7 +8,7 @@ func _ready():
 	for x in get_children():
 		states[x.name] = x
 
-"""
+""" 
 Have states get their data.
 """
 func setup_states():

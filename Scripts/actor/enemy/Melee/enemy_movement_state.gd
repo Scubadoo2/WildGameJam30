@@ -15,11 +15,11 @@ func handle_input(event: InputEvent):
 	pass
 	
 func tick(delta):
+	# Check for target
 	if data_holder.current_target != null:
-		if data_holder.avoid_entity == null:
+		if data_holder.avoid_entity == null:	# Not in light
 			return "Aggro"
 		elif actor.target_in_light() == false:
-			print_debug("Target not in light")
 			return "Aggro"
 			
 	# Begin movement behaviour
@@ -29,24 +29,17 @@ func tick(delta):
 	actor.collision_ray = actor.forward_direction.normalized() 
 	actor.collision_ray *= 100
 	
+	# Collision Avoidance
 	var collision_avoidance_direction = front_collision(space_state, actor.collision_ray, actor)
 	if collision_avoidance_direction != Vector2.ZERO:
 		actor.forward_direction = collision_avoidance_direction
-	
-	var result = space_state.intersect_ray(actor.get_global_position(), 
-		actor.get_global_position() + actor.collision_ray,
-		[actor], actor.collision_mask)
-	if result:
-		print_debug(result)
-		if result.collider:
-			actor.forward_direction = -actor.forward_direction
-	
-	## Move around
-	actor.direction = actor.get_direction()
-	if actor.direction == Vector2.ZERO:
-		return "Idle"
-	actor.forward_direction = actor.direction
-	move(delta)
+	else:
+	## wander
+		actor.direction = actor.get_direction()
+		if actor.direction == Vector2.ZERO:
+			return "Idle"
+		actor.forward_direction = actor.direction
+	move(delta, actor.forward_direction.normalized(), actor.speed)
 
 func front_collision(space_state: Physics2DDirectSpaceState, collision_ray: Vector2, p_actor: KinematicBody2D) -> Vector2:
 	var result = space_state.intersect_ray(p_actor.get_global_position(), 
@@ -57,7 +50,7 @@ func front_collision(space_state: Physics2DDirectSpaceState, collision_ray: Vect
 			var reflected_ray = collision_ray.bounce(result.normal)
 			# Point towards bounce direction
 			var new_direction = collision_ray + reflected_ray
-			actor.forward_direction = -new_direction.normalized()
+			return new_direction.normalized()
 	
 	return Vector2.ZERO
 
@@ -67,5 +60,5 @@ func setup_state():
 	debug_info = get_owner().get_node("DebugState")
 	data_holder = get_owner().get_node("DataHolder")
 
-func move(delta):
-	actor.move_and_slide(actor.forward_direction.normalized() * actor.speed)
+func move(delta: float, p_direction: Vector2, p_speed: float):
+	actor.move_and_slide(p_direction * p_speed)
