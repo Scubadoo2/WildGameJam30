@@ -5,8 +5,8 @@
 [ext_resource path="res://Scripts/actor/player.gd" type="Script" id=3]
 [ext_resource path="res://Scripts/actor/data_holder.gd" type="Script" id=4]
 
-[sub_resource type="CircleShape2D" id=1]
-radius = 47.6697
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 30.8437, 30.686 )
 
 [sub_resource type="SpriteFrames" id=2]
 animations = [ {
@@ -29,7 +29,7 @@ script = ExtResource( 3 )
 speed = 150.0
 
 [node name="CollisionShape2D" parent="." index="0"]
-shape = SubResource( 1 )
+shape = SubResource( 4 )
 
 [node name="AnimatedSprite" parent="." index="1"]
 frames = SubResource( 2 )
@@ -48,5 +48,8 @@ shape = SubResource( 3 )
 
 [node name="DataHolder" type="Node" parent="." index="5"]
 script = ExtResource( 4 )
+
+[node name="Camera2D" type="Camera2D" parent="." index="6"]
+current = true
 [connection signal="body_entered" from="InteractiveArea" to="." method="_on_Area2D_body_entered"]
 [connection signal="body_exited" from="InteractiveArea" to="." method="_on_Area2D_body_exited"]

@@ -17,7 +17,7 @@ var wander_distance = 40	# distance away from entity
 var wander_jitter = 10		# How random the position becomes
 
 # Constants
-export (float) var MIN_DISTANCE = 2
+export (float) var MIN_DISTANCE = 70
 export (float) var MIN_AWAY_FROM_AVOID_DISTANCE = 2
 
 onready var data_holder = $DataHolder

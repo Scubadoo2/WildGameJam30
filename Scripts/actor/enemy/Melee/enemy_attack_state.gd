@@ -19,7 +19,7 @@ func tick(delta):
 	var vector_target = data_holder.current_target.global_position - actor.global_position
 	if vector_target.length() > actor.MIN_DISTANCE:
 		return "Aggro"
-	attack()
+	attack(data_holder.current_target)
 	
 func setup_state():
 	actor = get_owner()
@@ -27,6 +27,7 @@ func setup_state():
 	debug_info = get_owner().get_node("DebugState")
 	data_holder = get_owner().get_node("DataHolder")
 
-func attack():
-	print_debug("Attacking")
-	pass
+func attack(target):
+	if target.has_method("attacked") && $CoolDown.is_stopped():
+		target.attacked(1)
+		$CoolDown.start()

@@ -31,7 +31,6 @@ radius = 146.659
 [node name="EnemyMelee" instance=ExtResource( 1 )]
 position = Vector2( 307.956, 192.076 )
 script = ExtResource( 3 )
-MIN_DISTANCE = 4.0
 
 [node name="CollisionShape2D" parent="." index="0"]
 light_mask = 5
@@ -63,6 +62,9 @@ script = ExtResource( 6 )
 
 [node name="Attack" type="Node" parent="StateMachine" index="3"]
 script = ExtResource( 7 )
+
+[node name="CoolDown" type="Timer" parent="StateMachine/Attack" index="0"]
+one_shot = true
 
 [node name="Avoid" type="Node" parent="StateMachine" index="4"]
 script = ExtResource( 8 )

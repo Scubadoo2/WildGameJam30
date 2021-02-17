@@ -4,6 +4,10 @@ class_name Player
 onready var data_holder = $DataHolder
 var in_light: bool
 
+# signals
+signal player_attacked(amount)
+signal player_heal(amount)
+
 func _ready():
 	._ready()
 	in_light = false
@@ -30,6 +34,14 @@ func get_direction() -> Vector2:
 func in_light() -> bool:
 	return in_light()
 
+#########################
+##  World Interaction  ##
+#########################
+
+
+##########
+# Candles
+##########
 func _on_Area2D_body_entered(body):
 	if body.is_in_group("candle"):
 		data_holder.near_candle = body
@@ -38,3 +50,14 @@ func _on_Area2D_body_entered(body):
 func _on_Area2D_body_exited(body):
 	if body.is_in_group("candle"):
 		data_holder.near_candle = null
+
+#########
+# Combat 
+#########
+
+func attacked(dmg_amount):
+	print_debug("Attacked")
+	emit_signal("player_attacked", dmg_amount)
+
+func heal(hl_amount):
+	emit_signal("player_heal", hl_amount)
