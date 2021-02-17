@@ -27,6 +27,8 @@ func get_direction() -> Vector2:
 
 	return direction
 
+func in_light() -> bool:
+	return in_light()
 
 func _on_Area2D_body_entered(body):
 	if body.is_in_group("candle"):

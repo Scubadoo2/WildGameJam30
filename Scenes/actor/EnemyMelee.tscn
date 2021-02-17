@@ -9,8 +9,8 @@
 [ext_resource path="res://Scripts/actor/enemy/Melee/enemy_attack_state.gd" type="Script" id=7]
 [ext_resource path="res://Scripts/actor/enemy/Melee/enemy_avoid_state.gd" type="Script" id=8]
 
-[sub_resource type="CircleShape2D" id=1]
-radius = 49.163
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 32.5, 31 )
 
 [sub_resource type="SpriteFrames" id=2]
 animations = [ {
@@ -29,6 +29,7 @@ animations = [ {
 radius = 146.659
 
 [node name="EnemyMelee" instance=ExtResource( 1 )]
+position = Vector2( 307.956, 192.076 )
 script = ExtResource( 3 )
 MIN_DISTANCE = 4.0
 
