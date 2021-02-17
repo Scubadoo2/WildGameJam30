@@ -6,6 +6,7 @@ var hp
 var stress
 onready var gameOverText = $GameOver
 onready var musicHolder = $MusicHolder
+onready var itemTracker = $ItemTracker
 
 #Custom variables
 var maxHP = 3
@@ -51,6 +52,13 @@ func CalmDown(amount):
 	
 func IsInBeat() -> bool:
 	return heartBeat.IsInBeat()
+	
+func GetItem(item, amount) -> bool:
+	return itemTracker.GetItem(item, amount)
+	
+func UseItem(item, amount) -> bool:
+	return itemTracker.UseItem(item, amount)
+	
 	
 ###################################################
 
