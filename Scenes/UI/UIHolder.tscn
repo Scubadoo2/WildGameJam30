@@ -12,7 +12,6 @@ script = ExtResource( 4 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-musicSpeed = PoolRealArray( 0.1, 0.5, 0.75, 1 )
 
 [node name="BeatHolder" parent="." instance=ExtResource( 1 )]
 
@@ -55,5 +54,7 @@ align = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="MusicHolder" type="AudioStreamPlayer" parent="."]
 [connection signal="GameOver" from="HP" to="." method="GetGameOver"]
 [connection signal="GameOver" from="Stress" to="." method="GetGameOver"]

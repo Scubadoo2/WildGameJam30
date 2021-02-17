@@ -21,6 +21,18 @@ var yPlacement
 var halfway
 var halfWidth
 
+#Variables for when the beat changes
+var changedBeat = false
+var newBeat
+
+# Music
+onready var musicPlayer = $MusicHolder
+var music = [null, preload("res://Sound/Music/Spooky Nightmares (70 BPM).wav"),
+	preload("res://Sound/Music/Spooky Nightmares (65 BPM).wav"),
+	preload("res://Sound/Music/Spooky Nightmares (60 BPM).wav")]
+	
+var musicBeat = [null, 6.0/7.0, 12.0/13.0, 1]
+
 #Signals
 signal heartbeat()
 
@@ -35,31 +47,58 @@ func _ready():
 	# Make it acutal timing for both-sided check
 	forgive = forgive/2
 	
-	timer.start()
+	#Set music and timer
+	musicPlayer.set_stream(music.back())
+	musicPlayer.play()
+	timer.start(musicBeat.back())
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(_delta):
 	var timeLeft = 1-(timer.time_left / timer.wait_time)
 	var distance = (meter.rect_size.x * timeLeft)/4
 	
-	#meterPlace.set_position(Vector2((meter.rect_size.x * timeLeft),yPlacement))
 	meterRO.set_position(Vector2(halfway*2 - distance - halfWidth,yPlacement))
 	meterRI.set_position(Vector2(halfway*1.5 - distance - halfWidth,yPlacement))
 	
 	meterLO.set_position(Vector2(distance - halfWidth,yPlacement))
 	meterLI.set_position(Vector2(halfway/2 + distance - halfWidth,yPlacement))
 	
+
+func GetTrackAmount():
+	return musicBeat.size() - 1
+	
 func IsInBeat():
-	if(timer.time_left < forgive || (timer.wait_time - timer.time_left) < forgive):
-		return true
-	else:
-		return false
+	return (timer.time_left < forgive
+	|| (timer.wait_time - timer.time_left) < forgive)
 		
 		
 func Beat():
 	# Fire off our own signal
 	emit_signal("heartbeat")
+	
+	#Change the beat if it's been changed
+	if(changedBeat):
+		if(newBeat == 0):
+			return
+		#Get the time left
+		var timeLeft = musicPlayer.get_playback_position()
+		var percentLeft = timeLeft / musicPlayer.stream.get_length()
+		
+		#Change the song
+		var newSong = music[newBeat]
+		musicPlayer.stop()
+		musicPlayer.set_stream(newSong)
+		
+		#Find where it would be in the new song
+		var newTime = newSong.get_length() * percentLeft
+		
+		#Reset time and music
+		musicPlayer.play(newTime)
+		timer.start(musicBeat[newBeat])
+		
+		beat.wait_time = musicBeat[newBeat] / 4
+		changedBeat = false
 	
 	heart.frame = 1
 	beat.start()
@@ -67,14 +106,8 @@ func Beat():
 func OffBeat():
 	heart.frame = 0
 	
-func ChangeBeat(newTime):
-	var remaining = timer.time_left
-	timer.wait_time = newTime
-	
-	#Restart the timer
-	timer.start(0)
-		
-	
-	beat.wait_time = newTime / 4
+func ChangeBeat(newHP):
+	changedBeat = true
+	newBeat = newHP
 	
 	

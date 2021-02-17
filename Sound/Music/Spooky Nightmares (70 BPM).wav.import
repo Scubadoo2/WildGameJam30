@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Spooky Nightmares (70 BPM).wav-0be3585daa9a6693e3013701c3b0c969.sample"
+
+[deps]
+
+source_file="res://Sound/Music/Spooky Nightmares (70 BPM).wav"
+dest_files=[ "res://.import/Spooky Nightmares (70 BPM).wav-0be3585daa9a6693e3013701c3b0c969.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=true
+compress/mode=0

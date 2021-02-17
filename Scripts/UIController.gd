@@ -5,12 +5,12 @@ var heartBeat
 var hp
 var stress
 onready var gameOverText = $GameOver
+onready var musicHolder = $MusicHolder
 
 #Custom variables
-export (int) var maxHP = 3
+var maxHP = 3
 export (int) var maxStress = 3
-
-export (PoolRealArray) var musicSpeed = [.01, .05, .75, 1.0]
+export var beatForgivness = .2
 
 signal GameOver(how)
 
@@ -21,9 +21,11 @@ func _ready():
 	stress = $Stress
 	heartBeat = $BeatHolder
 	
+	maxHP = heartBeat.GetTrackAmount()
+	heartBeat.forgive = beatForgivness
+	
 	hp.ChangeMaxHP(maxHP)
 	stress.ChangeMaxStress(maxStress)
-	heartBeat.ChangeBeat(musicSpeed[hp.hp])
 
 ###################################################
 
@@ -31,13 +33,15 @@ func _ready():
 
 ###################################################
 
+
+
 func TakeDamage(amount):
 	hp.ChangeHP(amount * -1)
-	heartBeat.ChangeBeat(musicSpeed[hp.hp])
+	heartBeat.ChangeBeat(hp.hp)
 	
 func Heal(amount):
 	hp.ChangeHP(amount)
-	heartBeat.ChangeBeat(musicSpeed[hp.hp])
+	heartBeat.ChangeBeat(hp.hp)
 
 func GiveStress(amount):
 	stress.ChangeStress(amount)
