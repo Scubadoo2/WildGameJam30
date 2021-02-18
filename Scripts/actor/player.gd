@@ -10,6 +10,7 @@ var logic
 # signals
 signal player_attacked(amount)
 signal player_heal(amount)
+signal player_dead(how)
 
 func _ready():
 	._ready()
@@ -75,6 +76,8 @@ func _on_Area2D_body_exited(body):
 func attacked(dmg_amount):
 	print_debug("Attacked")
 	emit_signal("player_attacked", dmg_amount)
+	if logic.IsGameOver():
+		die()
 
 func heal(hl_amount):
 	emit_signal("player_heal", hl_amount)
@@ -88,3 +91,11 @@ func can_attack() -> bool:
 	else:
 		print_debug("No logic for attacking")
 		return false
+
+############
+# Game Over
+############
+
+func die():
+	emit_signal("player_dead", "hp")
+	$StateMachine.change_state("Dead")
