@@ -20,6 +20,10 @@ func _input(event):
 	if Input.is_action_just_pressed("interact"):
 		if data_holder.near_candle:
 			data_holder.near_candle.turn_on()
+		elif data_holder.near_healing_station:
+			if data_holder.near_healing_station.can_heal():
+				data_holder.near_healing_station.use_heal()
+				emit_signal("player_heal", 1)
 	if Input.is_action_just_pressed("attack"):
 		if $StateMachine.current_state != $StateMachine/Attack:
 			if can_attack():
@@ -49,16 +53,20 @@ func in_light() -> bool:
 
 
 ##########
-# Candles
+# Candles & Healing Stations
 ##########
 func _on_Area2D_body_entered(body):
 	if body.is_in_group("candle"):
 		data_holder.near_candle = body
+	elif body.is_in_group("healing_station"):
+		data_holder.near_healing_station = body
 
 
 func _on_Area2D_body_exited(body):
 	if body.is_in_group("candle"):
 		data_holder.near_candle = null
+	elif body.is_in_group("healing_station"):
+		data_holder.near_healing_station = null
 
 #########
 # Combat 
