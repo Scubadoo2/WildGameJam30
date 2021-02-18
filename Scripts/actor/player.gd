@@ -4,6 +4,9 @@ class_name Player
 onready var data_holder = $DataHolder
 var in_light: bool
 
+# 
+var logic
+
 # signals
 signal player_attacked(amount)
 signal player_heal(amount)
@@ -17,6 +20,12 @@ func _input(event):
 	if Input.is_action_just_pressed("interact"):
 		if data_holder.near_candle:
 			data_holder.near_candle.turn_on()
+	if Input.is_action_just_pressed("attack"):
+		if $StateMachine.current_state != $StateMachine/Attack:
+			if can_attack():
+				$StateMachine.change_state("Attack")
+		else:
+			$StateMachine.current_state.handle_input(event)
 
 func get_direction() -> Vector2:
 	var direction = Vector2.ZERO
@@ -61,3 +70,13 @@ func attacked(dmg_amount):
 
 func heal(hl_amount):
 	emit_signal("player_heal", hl_amount)
+
+func can_attack() -> bool:
+	if logic != null:
+		if logic.IsInBeat():
+			return true
+		else:
+			return false
+	else:
+		print_debug("No logic for attacking")
+		return false

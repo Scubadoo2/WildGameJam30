@@ -13,5 +13,6 @@ func _ready():
 	
 		player.connect("player_attacked", ui, "TakeDamage")
 		player.connect("player_heal", ui, "Heal")
+		player.logic = ui
 	else:
 		printerr("Paths not give")
