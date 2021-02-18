@@ -7,6 +7,10 @@ var in_light: bool
 # 
 var logic
 
+# animation
+onready var animation_tree = $AnimationTree
+onready var animation_mode = animation_tree.get("parameters/playback")
+
 # signals
 signal player_attacked(amount)
 signal player_heal(amount)
