@@ -13,6 +13,8 @@ var maxHP = 3
 export (int) var maxStress = 3
 export var beatForgivness = .2
 
+var gameOver = false
+
 signal GameOver(how)
 
 
@@ -37,27 +39,37 @@ func _ready():
 
 
 func TakeDamage(amount):
+	if gameOver: return
 	hp.ChangeHP(amount * -1)
 	heartBeat.ChangeBeat(hp.hp)
 	
 func Heal(amount):
+	if gameOver: return
 	hp.ChangeHP(amount)
 	heartBeat.ChangeBeat(hp.hp)
 
 func GiveStress(amount):
+	if gameOver: return
 	stress.ChangeStress(amount)
 	
 func CalmDown(amount):
+	if gameOver: return
 	stress.ChangeStress(amount * -1)
 	
 func IsInBeat() -> bool:
+	if gameOver: return false
 	return heartBeat.IsInBeat()
 	
 func GetItem(item, amount) -> bool:
+	if gameOver: return false
 	return itemTracker.GetItem(item, amount)
 	
 func UseItem(item, amount) -> bool:
+	if gameOver: return false
 	return itemTracker.UseItem(item, amount)
+	
+func IsGameOver() -> bool:
+	return gameOver
 	
 	
 ###################################################
@@ -68,6 +80,7 @@ func UseItem(item, amount) -> bool:
 
 func GetGameOver(how):
 	emit_signal("GameOver", how)
+	gameOver = true
 	
 	var descHolder
 	match how:
