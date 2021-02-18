@@ -66,8 +66,53 @@ text = "Calm"
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="GiveWood" type="Button" parent="Control"]
+margin_left = 737.735
+margin_top = 321.813
+margin_right = 819.735
+margin_bottom = 341.813
+text = "Give Wood"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="UseWood" type="Button" parent="Control"]
+margin_left = 735.356
+margin_top = 363.435
+margin_right = 817.356
+margin_bottom = 383.435
+text = "Use Wood"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="GiveToy" type="Button" parent="Control"]
+margin_left = 845.953
+margin_top = 318.245
+margin_right = 927.953
+margin_bottom = 338.245
+text = "Give Toy"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="UseToy" type="Button" parent="Control"]
+margin_left = 848.331
+margin_top = 362.246
+margin_right = 930.331
+margin_bottom = 382.246
+text = "Use Toy"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 [connection signal="timeout" from="Timer" to="." method="resetColor"]
+[connection signal="GameOver" from="UI" to="UI/BeatHolder" method="GameOver"]
 [connection signal="pressed" from="Control/StressButton" to="." method="StressTest" binds= [ 1 ]]
 [connection signal="pressed" from="Control/HurtButton" to="." method="HurtTest" binds= [ 1 ]]
 [connection signal="pressed" from="Control/HealButton" to="." method="HealTest" binds= [ 1 ]]
 [connection signal="pressed" from="Control/DestressButton" to="." method="CalmTest" binds= [ 1 ]]
+[connection signal="pressed" from="Control/GiveWood" to="UI" method="GetItem" binds= [ "wood", 1 ]]
+[connection signal="pressed" from="Control/UseWood" to="UI" method="UseItem" binds= [ "wood", 1 ]]
+[connection signal="pressed" from="Control/GiveToy" to="UI" method="GetItem" binds= [ "toy", 1 ]]
+[connection signal="pressed" from="Control/UseToy" to="UI" method="UseItem" binds= [ "toy", 1 ]]

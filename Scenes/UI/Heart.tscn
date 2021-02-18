@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Art/Flick Heart.png" type="Texture" id=1]
+
+[node name="Heart" type="Sprite"]
+position = Vector2( 31.75, 25 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 1 )
+hframes = 2

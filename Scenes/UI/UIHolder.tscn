@@ -19,10 +19,10 @@ __meta__ = {
 [node name="HP" parent="." instance=ExtResource( 2 )]
 anchor_top = 1.0
 anchor_bottom = 1.0
-margin_left = 154.841
-margin_top = -76.0316
-margin_right = 180.841
-margin_bottom = -28.0316
+margin_left = 155.0
+margin_top = -96.0
+margin_right = 241.0
+margin_bottom = -20.0
 
 [node name="Stress" parent="." instance=ExtResource( 3 )]
 
@@ -61,5 +61,6 @@ margin_left = -291.605
 margin_top = -166.444
 margin_right = -13.6046
 margin_bottom = -12.4437
+[connection signal="GameOver" from="." to="BeatHolder" method="GameOver"]
 [connection signal="GameOver" from="HP" to="." method="GetGameOver"]
 [connection signal="GameOver" from="Stress" to="." method="GetGameOver"]

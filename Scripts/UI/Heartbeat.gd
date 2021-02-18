@@ -110,4 +110,6 @@ func ChangeBeat(newHP):
 	changedBeat = true
 	newBeat = newHP
 	
-	
+func GameOver(_how):
+	timer.set_paused(true)
+	musicPlayer.stop()
