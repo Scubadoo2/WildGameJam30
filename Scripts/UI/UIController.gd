@@ -5,7 +5,6 @@ var heartBeat
 var hp
 var stress
 onready var gameOverText = $GameOver
-onready var musicHolder = $MusicHolder
 onready var itemTracker = $ItemTracker
 
 #Custom variables

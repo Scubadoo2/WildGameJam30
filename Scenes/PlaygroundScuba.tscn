@@ -107,7 +107,6 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 [connection signal="timeout" from="Timer" to="." method="resetColor"]
-[connection signal="GameOver" from="UI" to="UI/BeatHolder" method="GameOver"]
 [connection signal="pressed" from="Control/StressButton" to="." method="StressTest" binds= [ 1 ]]
 [connection signal="pressed" from="Control/HurtButton" to="." method="HurtTest" binds= [ 1 ]]
 [connection signal="pressed" from="Control/HealButton" to="." method="HealTest" binds= [ 1 ]]

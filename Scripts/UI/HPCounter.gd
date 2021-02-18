@@ -9,8 +9,6 @@ var heartWidth
 var heartHolder = []
 var currentHP = hp
 
-var temp
-
 #Signals
 signal GameOver()
 
