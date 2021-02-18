@@ -16,7 +16,7 @@ func _physics_process(delta):
 	if spawn_timer.is_stopped():
 		print_debug("TImer stopped")
 		spawn_entity(entities)
-		var new_time = get_next_time(max_time, min_time, spawner_data.candles_on, spawner_data.max_candles)
+		var new_time = get_next_time(max_time, min_time, spawner_data.num_candles_off(), spawner_data.max_candles)
 		spawn_timer.start(new_time)
 		
 func spawn_entity(p_entities: Array) -> void:
@@ -32,5 +32,7 @@ func get_next_time(t_max: float, t_min: float, candles_on: int, candles_max: int
 	var t_range = t_max - t_min
 	
 	var t_time = t_range * perc_candles
+	# Away from max_value
+	t_time = t_max - t_time
 	
 	return t_time
