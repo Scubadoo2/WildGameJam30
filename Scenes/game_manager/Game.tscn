@@ -4,7 +4,7 @@
 [ext_resource path="res://Scenes/UI/UIHolder.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scenes/actor/Player.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Scenes/game_manager/game_manager.gd" type="Script" id=4]
-[ext_resource path="res://Scenes/actor/EnemyMelee.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scripts/spawner/spawn_manager.gd" type="Script" id=5]
 [ext_resource path="res://Scenes/healing_station/HealingStation.tscn" type="PackedScene" id=6]
 
 [node name="Game" type="Node2D"]
@@ -21,9 +21,8 @@ position = Vector2( 128.579, 253.984 )
 
 [node name="UI" parent="CanvasLayer" instance=ExtResource( 2 )]
 
-[node name="EnemyMelee" parent="." instance=ExtResource( 5 )]
-position = Vector2( 392.088, 374.627 )
-speed = 70.0
-
 [node name="StaticBody2D" parent="." instance=ExtResource( 6 )]
 position = Vector2( 254.49, 59.4604 )
+
+[node name="SpawnManager" type="Node" parent="."]
+script = ExtResource( 5 )

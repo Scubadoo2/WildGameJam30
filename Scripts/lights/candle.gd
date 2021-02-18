@@ -1,11 +1,16 @@
 extends StaticBody2D
 class_name Candle
 
+signal candle_turned_on
+signal candle_turned_off
+
 onready var light = $Light2D
 onready var light_barrier = $LightBarrier
 
 var barrier_scale = 20
 var radius_barrier
+
+var candle_on: bool = false
 
 func _ready():
 	add_to_group("candle")
@@ -21,12 +26,22 @@ func turn_on():
 	light_barrier.visible = true
 	light_barrier.get_node("CollisionShape2D").disabled = false
 	light.energy = 1.0
+	candle_on = true
+	emit_signal("candle_turned_on")
 	
 func turn_off():
 	light_barrier.visible = false
 	light_barrier.get_node("CollisionShape2D").disabled = true
 	light.energy = 0
+	candle_on = false
+	emit_signal("candle_turned_off")
 
+
+#################
+##  Conditions
+#################
+func is_candle_on() -> bool:
+	return candle_on
 
 func _on_Area2D_body_entered(body):
 	pass # Replace with function body.
