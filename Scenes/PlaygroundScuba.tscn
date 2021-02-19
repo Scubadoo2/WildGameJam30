@@ -19,6 +19,10 @@ wait_time = 0.3
 one_shot = true
 
 [node name="UI" parent="." instance=ExtResource( 1 )]
+startHour = 2
+startMinute = 55
+endHour = 5
+endMinute = 12
 
 [node name="Control" type="Control" parent="."]
 anchor_right = 1.0
@@ -134,7 +138,7 @@ __meta__ = {
 [connection signal="pressed" from="Control/HealButton" to="." method="HealTest" binds= [ 1 ]]
 [connection signal="pressed" from="Control/RemoveNMButton" to="." method="RemoveNM" binds= [ 1 ]]
 [connection signal="pressed" from="Control/RemoveCandle" to="." method="RemoveCandle" binds= [ 1 ]]
-[connection signal="pressed" from="Control/GiveWood" to="UI" method="GetItem" binds= [ "wood", 1 ]]
-[connection signal="pressed" from="Control/UseWood" to="UI" method="UseItem" binds= [ "wood", 1 ]]
-[connection signal="pressed" from="Control/GiveToy" to="UI" method="GetItem" binds= [ "toy", 1 ]]
-[connection signal="pressed" from="Control/UseToy" to="UI" method="UseItem" binds= [ "toy", 1 ]]
+[connection signal="pressed" from="Control/GiveWood" to="." method="GetItem" binds= [ "wood", 1 ]]
+[connection signal="pressed" from="Control/UseWood" to="." method="UseItem" binds= [ "wood", 1 ]]
+[connection signal="pressed" from="Control/GiveToy" to="." method="GetItem" binds= [ "toy", 1 ]]
+[connection signal="pressed" from="Control/UseToy" to="." method="UseItem" binds= [ "toy", 1 ]]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Scenes/UI/Heartbeat.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/UI/Hitpoint.tscn" type="PackedScene" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://Scenes/UI/ItemTracker.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Fonts/Averia Libre/AveriaLibre-Regular.ttf" type="DynamicFontData" id=6]
 [ext_resource path="res://Scenes/UI/NMTracker.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Scenes/UI/Clock.tscn" type="PackedScene" id=8]
 
 [sub_resource type="DynamicFont" id=1]
 size = 60
@@ -64,6 +65,36 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="Win" type="Label" parent="."]
+visible = false
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -156.635
+margin_top = -209.896
+margin_right = 136.365
+margin_bottom = -136.896
+custom_fonts/font = SubResource( 1 )
+text = "You Won!"
+
+[node name="Description" type="Label" parent="Win"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -206.5
+margin_top = 23.5
+margin_right = 206.5
+margin_bottom = 52.5
+custom_fonts/font = SubResource( 2 )
+text = "You kept the nightmares at bay!"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="ItemTracker" parent="." instance=ExtResource( 5 )]
 margin_left = -291.605
 margin_top = -166.444
@@ -75,6 +106,10 @@ margin_right = 173.0
 margin_bottom = 51.0
 
 [node name="CandleCount" parent="." instance=ExtResource( 3 )]
+
+[node name="Clock" parent="." instance=ExtResource( 8 )]
+[connection signal="GameOver" from="." to="Clock" method="StopTimer"]
 [connection signal="GameOver" from="." to="BeatHolder" method="StopEverything"]
 [connection signal="GameOver" from="HP" to="." method="GetGameOver"]
 [connection signal="GameOver" from="NMTracker" to="." method="GetGameOver"]
+[connection signal="Win" from="Clock" to="." method="GetWin"]

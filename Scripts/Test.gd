@@ -57,3 +57,9 @@ func AddCandle(amount):
 func RemoveCandle(amount):
 	candles -= amount
 	ui.SetCandleCount(candles)
+
+func GetItem(item, amount):
+	return ui.GetItem(item, amount)
+	
+func UseItem(item, amount):
+	return ui.UseItem(item, amount)

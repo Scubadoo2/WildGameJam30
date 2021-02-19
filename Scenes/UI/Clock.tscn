@@ -1,0 +1,79 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Scripts/UI/Clock.gd" type="Script" id=1]
+[ext_resource path="res://Fonts/Averia Libre/AveriaLibre-Regular.ttf" type="DynamicFontData" id=2]
+
+[sub_resource type="DynamicFont" id=1]
+size = 36
+font_data = ExtResource( 2 )
+
+[node name="Clock" type="Control"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -72.5
+margin_right = 72.5
+margin_bottom = 46.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Hour" type="Label" parent="."]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -67.0
+margin_top = 1.0
+margin_right = -27.0
+margin_bottom = 45.0
+custom_fonts/font = SubResource( 1 )
+text = "12"
+align = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Minute" type="Label" parent="."]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -19.0
+margin_top = 0.5
+margin_right = 21.0
+margin_bottom = 44.5
+custom_fonts/font = SubResource( 1 )
+text = "36"
+align = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="M" type="Label" parent="."]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = 22.0
+margin_top = 0.5
+margin_right = 70.0
+margin_bottom = 44.5
+custom_fonts/font = SubResource( 1 )
+text = "am"
+align = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Dots" type="Label" parent="."]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -43.5
+margin_top = 0.5
+margin_right = -3.5
+margin_bottom = 44.5
+custom_fonts/font = SubResource( 1 )
+text = ":"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Ticking" type="Timer" parent="."]
+[connection signal="timeout" from="Ticking" to="." method="MinuteHit"]
