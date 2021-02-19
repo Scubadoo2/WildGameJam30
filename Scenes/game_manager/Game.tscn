@@ -16,6 +16,7 @@ ui_path = NodePath("CanvasLayer/UI")
 
 [node name="Player" parent="." instance=ExtResource( 3 )]
 position = Vector2( 128.579, 253.984 )
+z_index = 1
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 

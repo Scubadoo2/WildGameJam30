@@ -19,7 +19,7 @@
 [ext_resource path="res://Art/flick_sprites/walking/west/0009.png" type="Texture" id=17]
 [ext_resource path="res://Art/flick_sprites/walking/west/0010.png" type="Texture" id=18]
 
-[sub_resource type="SpriteFrames" id=2]
+[sub_resource type="SpriteFrames" id=1]
 animations = [ {
 "frames": [ ExtResource( 2 ) ],
 "loop": true,
@@ -32,12 +32,12 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[sub_resource type="CapsuleShape2D" id=17]
-radius = 57.8024
-height = 24.4897
+[sub_resource type="CapsuleShape2D" id=2]
+radius = 41.4599
+height = 19.2618
 
 [sub_resource type="CircleShape2D" id=3]
-radius = 115.605
+radius = 84.4874
 
 [sub_resource type="Animation" id=4]
 resource_name = "walk_east"
@@ -169,15 +169,15 @@ script = ExtResource( 3 )
 speed = 150.0
 
 [node name="AnimatedSprite" parent="." index="0"]
-scale = Vector2( 0.3, 0.3 )
-frames = SubResource( 2 )
+scale = Vector2( 0.2, 0.2 )
+frames = SubResource( 1 )
 animation = "walk_horizontal"
 flip_h = true
 
 [node name="CollisionShape2D" parent="." index="1"]
-position = Vector2( 0, 37.449 )
+position = Vector2( 0, 22.54 )
 rotation = 1.5708
-shape = SubResource( 17 )
+shape = SubResource( 2 )
 
 [node name="DebugState" parent="." index="2"]
 margin_left = -21.3816
@@ -194,7 +194,7 @@ script = ExtResource( 6 )
 [node name="InteractiveArea" type="Area2D" parent="." index="4"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractiveArea" index="0"]
-position = Vector2( 0, 18.872 )
+position = Vector2( 0.667419, 13.5326 )
 shape = SubResource( 3 )
 
 [node name="DataHolder" type="Node" parent="." index="5"]

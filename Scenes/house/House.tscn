@@ -1,30 +1,177 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://icon.png" type="Texture" id=1]
 [ext_resource path="res://Scenes/lights/Candle.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scripts/spawner/spawn_manager.gd" type="Script" id=3]
 [ext_resource path="res://Scenes/spawner/Spawner.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Scripts/house/house.gd" type="Script" id=5]
+[ext_resource path="res://Scenes/house/Wall/Wall.tscn" type="PackedScene" id=6]
 
 [node name="House" type="Node2D"]
+z_index = -1
 script = ExtResource( 5 )
-
-[node name="icon" type="Sprite" parent="."]
-modulate = Color( 0.964706, 0.964706, 0.964706, 1 )
-position = Vector2( 514.942, 304.076 )
-scale = Vector2( 16.0973, 9.55848 )
-texture = ExtResource( 1 )
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 color = Color( 0.168627, 0.168627, 0.168627, 1 )
+
+[node name="Entrance" type="Node2D" parent="."]
+z_index = -1
+
+[node name="icon" type="Sprite" parent="Entrance"]
+modulate = Color( 0.964706, 0.964706, 0.964706, 1 )
+position = Vector2( 514.942, 220.637 )
+scale = Vector2( 16.0973, 6.95102 )
+z_index = -1
+texture = ExtResource( 1 )
+
+[node name="NorthWall" parent="Entrance" instance=ExtResource( 6 )]
+position = Vector2( 529.41, 25.8275 )
+scale = Vector2( 1.332, 1 )
+
+[node name="WestWall" parent="Entrance" instance=ExtResource( 6 )]
+position = Vector2( 1025.1, 228.649 )
+rotation = 1.5708
+scale = Vector2( 0.585, 1 )
+
+[node name="SouthEastWall" parent="Entrance" instance=ExtResource( 6 )]
+position = Vector2( 868.327, 442.649 )
+scale = Vector2( 0.443, 1 )
+
+[node name="NorthWall2" parent="Entrance" instance=ExtResource( 6 )]
+position = Vector2( 195.161, 442.649 )
+scale = Vector2( 0.489, 1 )
+
+[node name="Kitchen" type="Node2D" parent="."]
+
+[node name="Sprite" type="Sprite" parent="Kitchen"]
+position = Vector2( -406.37, 117.354 )
+scale = Vector2( 12.533, 9.96681 )
+z_index = -1
+texture = ExtResource( 1 )
+
+[node name="NorthWall" parent="Kitchen" instance=ExtResource( 6 )]
+position = Vector2( -399.395, -171.349 )
+
+[node name="NorthWall2" parent="Kitchen" instance=ExtResource( 6 )]
+position = Vector2( -812.184, 142.792 )
+rotation = 1.5708
+scale = Vector2( 0.804, 1 )
+
+[node name="NorthWall3" parent="Kitchen" instance=ExtResource( 6 )]
+position = Vector2( -387.023, 441.518 )
+
+[node name="NorthWall4" parent="Kitchen" instance=ExtResource( 6 )]
+position = Vector2( -28.7916, 366.602 )
+rotation = 1.5708
+scale = Vector2( 0.21, 1 )
+
+[node name="NorthWall5" parent="Kitchen" instance=ExtResource( 6 )]
+position = Vector2( -29.3331, -56.2857 )
+rotation = 1.5708
+scale = Vector2( 0.366, 1 )
+
+[node name="LivingRoom" type="Node2D" parent="."]
+
+[node name="Sprite" type="Sprite" parent="LivingRoom"]
+position = Vector2( 513.158, 835.663 )
+scale = Vector2( 15.9226, 12.1919 )
+z_index = -1
+texture = ExtResource( 1 )
+
+[node name="NorthWall" parent="LivingRoom" instance=ExtResource( 6 )]
+position = Vector2( 520.588, 1225.38 )
+scale = Vector2( 1.317, 1 )
+
+[node name="NorthWall2" parent="LivingRoom" instance=ExtResource( 6 )]
+position = Vector2( -9.80896, 1083.9 )
+rotation = 1.5708
+scale = Vector2( 0.379, 1 )
+
+[node name="NorthWall4" parent="LivingRoom" instance=ExtResource( 6 )]
+position = Vector2( -24.0633, 465.612 )
+rotation = 1.5708
+scale = Vector2( 0.099, 1 )
+
+[node name="NorthWall3" parent="LivingRoom" instance=ExtResource( 6 )]
+position = Vector2( 1007.6, 611.72 )
+rotation = 1.5708
+scale = Vector2( 0.424, 1 )
+
+[node name="BedroomOne" type="Node2D" parent="."]
+
+[node name="Sprite" type="Sprite" parent="BedroomOne"]
+position = Vector2( -322.077, 727.851 )
+scale = Vector2( 9.93922, 6.72772 )
+z_index = -1
+texture = ExtResource( 1 )
+
+[node name="NorthWall" parent="BedroomOne" instance=ExtResource( 6 )]
+position = Vector2( -313.366, 532.345 )
+scale = Vector2( 0.83, 1 )
+
+[node name="WestWall" parent="BedroomOne" instance=ExtResource( 6 )]
+position = Vector2( -655.899, 728.216 )
+rotation = 1.5708
+scale = Vector2( 0.566, 1 )
+
+[node name="SouthWall" parent="BedroomOne" instance=ExtResource( 6 )]
+position = Vector2( -300.152, 945.762 )
+scale = Vector2( 0.891, 1 )
+
+[node name="EastNorthWall" parent="BedroomOne" instance=ExtResource( 6 )]
+position = Vector2( -20.1666, 594.211 )
+rotation = 1.5708
+scale = Vector2( 0.226, 1 )
+
+[node name="BedroomTwo" type="Node2D" parent="."]
+
+[node name="Sprite" type="Sprite" parent="BedroomTwo"]
+position = Vector2( 1384.72, 987.419 )
+scale = Vector2( 11.1642, 6.42975 )
+z_index = -1
+texture = ExtResource( 1 )
+
+[node name="NorthWall" parent="BedroomTwo" instance=ExtResource( 6 )]
+position = Vector2( 1393.75, 795.579 )
+scale = Vector2( 0.938, 1 )
+
+[node name="NorthWall2" parent="BedroomTwo" instance=ExtResource( 6 )]
+position = Vector2( 1392, 1202 )
+scale = Vector2( 0.968, 1 )
+
+[node name="NorthWall3" parent="BedroomTwo" instance=ExtResource( 6 )]
+position = Vector2( 1745.76, 989.42 )
+rotation = 1.5708
+scale = Vector2( 0.569, 1 )
+
+[node name="NorthWall4" parent="BedroomTwo" instance=ExtResource( 6 )]
+position = Vector2( 1003.69, 1094.07 )
+rotation = 1.5708
+scale = Vector2( 0.29, 1 )
 
 [node name="Candles" type="Node" parent="."]
 
 [node name="Candle" parent="Candles" instance=ExtResource( 2 )]
 position = Vector2( 871.498, 170.277 )
+z_index = 1
+
+[node name="Candle2" parent="Candles" instance=ExtResource( 2 )]
+position = Vector2( 829.545, 631.756 )
+z_index = 1
+
+[node name="Candle3" parent="Candles" instance=ExtResource( 2 )]
+position = Vector2( 631.769, 1033.3 )
+z_index = 1
+
+[node name="Candle4" parent="Candles" instance=ExtResource( 2 )]
+position = Vector2( -273.209, 275.159 )
+z_index = 1
 
 [node name="Spawners" type="Node" parent="."]
 script = ExtResource( 3 )
 
 [node name="Spawner" parent="Spawners" instance=ExtResource( 4 )]
-position = Vector2( 629.722, 304.524 )
+position = Vector2( -652.829, -43.877 )
+
+[node name="Spawner2" parent="Spawners" instance=ExtResource( 4 )]
+position = Vector2( -218.32, 675.31 )
