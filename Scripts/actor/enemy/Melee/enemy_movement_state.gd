@@ -47,6 +47,9 @@ func front_collision(space_state: Physics2DDirectSpaceState, collision_ray: Vect
 	[p_actor], p_actor.collision_mask)
 	if result:
 		if result.collider:
+			if result.normal.length() == 0:
+				print_debug("ZERO NORMAL")
+				return Vector2.ZERO
 			var reflected_ray = collision_ray.bounce(result.normal)
 			# Point towards bounce direction
 			var new_direction = collision_ray + reflected_ray

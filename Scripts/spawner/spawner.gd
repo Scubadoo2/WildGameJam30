@@ -15,7 +15,6 @@ func _ready():
 
 func _physics_process(delta):
 	if spawn_timer.is_stopped() && spawner_data.can_spawn_entity():
-		print_debug("TImer stopped")
 		spawn_entity(entities)
 		var new_time = get_next_time(max_time, min_time, spawner_data.num_candles_off(), spawner_data.max_candles)
 		spawn_timer.start(new_time)
