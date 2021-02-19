@@ -56,10 +56,26 @@ func Heal(amount):
 func SetNMCount(newAmount):
 	if gameOver: return
 	nightmares.SetCount(newAmount)
-	
+
+# Carto addition
+func IsNMLimitReached() -> bool:
+	if gameOver: return true
+	return nightmares.ReachedMax()
+
+func IncrementNMCount(amount):
+	var new_count = nightmares.count + amount
+	SetNMCount(new_count)
+
+## -- ##
 func SetCandleCount(newAmount):
 	if gameOver: return
 	candleCount.ChangeCount(newAmount)
+
+# Carto Addition
+func IncrementCandleCount(amount):
+	var new_count = candleCount.count + amount
+	SetCandleCount(new_count)
+## -- ##
 
 func IsInBeat() -> bool:
 	if gameOver: return false

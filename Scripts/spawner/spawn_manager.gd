@@ -2,9 +2,9 @@ extends Node
 
 # Set by game manager
 var max_candles
-
 var candles_on: int
 
+var ui
 
 func _ready():
 	for spawner in get_children():
@@ -21,3 +21,13 @@ func num_candles_on() -> int:
 	
 func num_candles_off() -> int:
 	return max_candles - candles_on
+
+func can_spawn_entity() -> bool:
+	if ui != null:
+		return !ui.IsNMLimitReached()
+	else:
+		printerr("Logic for Spawn manager not found")
+		return true
+
+func entity_spawned():
+	ui.IncrementNMCount(1)

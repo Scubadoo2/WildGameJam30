@@ -9,13 +9,18 @@ onready var spawn_timer = $Timer
 var spawner_data
 
 func _ready():
-	spawn_entity(entities)
+	#spawn_entity(entities)
 	spawn_timer.start(max_time)
+	print_debug("Starting spawner")
 
 func _physics_process(delta):
-	if spawn_timer.is_stopped():
+	if spawn_timer.is_stopped() && spawner_data.can_spawn_entity():
 		print_debug("TImer stopped")
 		spawn_entity(entities)
+		var new_time = get_next_time(max_time, min_time, spawner_data.num_candles_off(), spawner_data.max_candles)
+		spawn_timer.start(new_time)
+		spawner_data.entity_spawned()
+	elif spawn_timer.is_stopped():
 		var new_time = get_next_time(max_time, min_time, spawner_data.num_candles_off(), spawner_data.max_candles)
 		spawn_timer.start(new_time)
 		

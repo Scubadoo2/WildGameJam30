@@ -25,3 +25,8 @@ func SetCount(newAmount):
 	countHolder.set_text(String(newAmount))
 	if(newAmount > maximum):
 		emit_signal("GameOver", "nightmares")
+
+## Carto Addition
+func ReachedMax() -> bool:
+	return count >= 100
+## -- ##
