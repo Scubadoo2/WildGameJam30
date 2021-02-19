@@ -49,8 +49,8 @@ func _ready():
 	
 	#Set music and timer
 	musicPlayer.set_stream(music.back())
-	musicPlayer.play()
 	timer.start(musicBeat.back())
+	#musicPlayer.play()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -76,6 +76,10 @@ func IsInBeat():
 func Beat():
 	# Fire off our own signal
 	emit_signal("heartbeat")
+	
+	#Play the music
+	if(!musicPlayer.playing):
+		musicPlayer.play()
 	
 	#Change the beat if it's been changed
 	if(changedBeat):
