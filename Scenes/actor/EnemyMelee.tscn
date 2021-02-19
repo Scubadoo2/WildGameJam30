@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Scenes/actor/Actor.tscn" type="PackedScene" id=1]
 [ext_resource path="res://icon.png" type="Texture" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://Scripts/actor/enemy/Melee/enemy_aggro_state.gd" type="Script" id=6]
 [ext_resource path="res://Scripts/actor/enemy/Melee/enemy_attack_state.gd" type="Script" id=7]
 [ext_resource path="res://Scripts/actor/enemy/Melee/enemy_avoid_state.gd" type="Script" id=8]
+[ext_resource path="res://Scripts/actor/enemy/Melee/enemy_dead_state.gd" type="Script" id=9]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -69,5 +70,8 @@ one_shot = true
 
 [node name="Avoid" type="Node" parent="StateMachine" index="4"]
 script = ExtResource( 8 )
+
+[node name="Dead" type="Node" parent="StateMachine" index="5"]
+script = ExtResource( 9 )
 [connection signal="body_entered" from="AggroZone" to="." method="_on_AggroZone_body_entered"]
 [connection signal="body_exited" from="AggroZone" to="." method="_on_AggroZone_body_exited"]

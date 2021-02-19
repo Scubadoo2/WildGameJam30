@@ -126,3 +126,11 @@ func _on_AggroZone_body_entered(body):
 func _on_AggroZone_body_exited(body):
 	if body is Player:
 		$DataHolder.current_target = null
+
+#############
+##  combat
+#############
+func attacked(amount: int):
+	data_holder.current_health -= amount
+	if data_holder.current_health <= 0:
+		$StateMachine.change_state("Dead")
