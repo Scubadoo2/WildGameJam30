@@ -6,6 +6,8 @@ var candles_on: int
 
 var ui
 
+signal increment_nightmares
+
 func _ready():
 	for spawner in get_children():
 		spawner.spawner_data = self
@@ -30,4 +32,4 @@ func can_spawn_entity() -> bool:
 		return true
 
 func entity_spawned():
-	ui.IncrementNMCount(1)
+	emit_signal("increment_nightmares", 1)

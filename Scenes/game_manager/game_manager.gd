@@ -37,6 +37,7 @@ func setup_candles():
 	var candles = candle_manager.get_children()
 	max_candles = maximum_candles(candles)
 	spawner_manager.max_candles = max_candles
+	spawner_manager.connect("increment_nightmares", ui, "IncrementNMCount")
 	for c in candles:
 		c.connect("candle_turned_on", self, "candle_turned_on")
 		c.connect("candle_turned_off", self, "candle_turned_off")
