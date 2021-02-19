@@ -4,3 +4,4 @@
 
 [node name="SFXVolumes" type="Node"]
 script = ExtResource( 1 )
+button_volume = 1.0

@@ -65,6 +65,11 @@ _global_script_class_icons={
 config/name="Godot Wild Jam 30"
 config/icon="res://icon.png"
 
+[autoload]
+
+SFXVolume="*res://Scenes/SFX/SFXVolume.tscn"
+SFXPlayer="*res://Scenes/SFX/SFXPlayer.tscn"
+
 [gdnative]
 
 singletons=[ "res://git_api.gdnlib" ]

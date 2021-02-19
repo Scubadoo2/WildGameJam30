@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/UI_Menu_Select_Move_Small.wav-a0cfc3ff40bb3ef895f702fd0af59409.sample"
+
+[deps]
+
+source_file="res://Sound/SFX/UI/UI_Menu_Select_Move_Small.wav"
+dest_files=[ "res://.import/UI_Menu_Select_Move_Small.wav-a0cfc3ff40bb3ef895f702fd0af59409.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

@@ -20,8 +20,7 @@ __meta__ = {
 }
 game_world_path = "res://Scenes/game_manager/Game.tscn"
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
-visible = false
+[node name="MenuButtons" type="VBoxContainer" parent="."]
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -35,24 +34,25 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Start" type="Button" parent="VBoxContainer"]
+[node name="Start" type="Button" parent="MenuButtons"]
 margin_right = 89.0
 margin_bottom = 20.0
 text = "Start"
 
-[node name="Instructions" type="Button" parent="VBoxContainer"]
+[node name="Instructions" type="Button" parent="MenuButtons"]
 margin_top = 32.0
 margin_right = 89.0
 margin_bottom = 52.0
 text = "Instructions"
 
-[node name="Quit" type="Button" parent="VBoxContainer"]
+[node name="Quit" type="Button" parent="MenuButtons"]
 margin_top = 64.0
 margin_right = 89.0
 margin_bottom = 84.0
 text = "Quit"
 
 [node name="Info" type="Control" parent="."]
+visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 
@@ -270,7 +270,7 @@ text = "Back"
 __meta__ = {
 "_edit_use_anchors_": false
 }
-[connection signal="pressed" from="VBoxContainer/Start" to="." method="_on_Start_pressed"]
-[connection signal="pressed" from="VBoxContainer/Instructions" to="." method="ShowInstructions" binds= [ true ]]
-[connection signal="pressed" from="VBoxContainer/Quit" to="." method="_on_Quit_pressed"]
+[connection signal="pressed" from="MenuButtons/Start" to="." method="_on_Start_pressed"]
+[connection signal="pressed" from="MenuButtons/Instructions" to="." method="ShowInstructions" binds= [ true ]]
+[connection signal="pressed" from="MenuButtons/Quit" to="." method="_on_Quit_pressed"]
 [connection signal="pressed" from="Info/Button" to="." method="ShowInstructions" binds= [ false ]]
