@@ -9,6 +9,9 @@ var defaultColor
 
 onready var ui = $UI
 
+export (int) var nightmares = 30
+export (int) var candles = 4
+
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
@@ -17,7 +20,8 @@ onready var ui = $UI
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	defaultColor = polygon.color
-	
+	ui.SetNMCount(nightmares)
+	ui.SetCandleCount(candles)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
@@ -38,8 +42,18 @@ func HealTest(amount):
 func HurtTest(amount):
 	ui.TakeDamage(amount)
 	
-func StressTest(amount):
-	ui.GiveStress(amount)
+func AddNM(amount):
+	nightmares += amount
+	ui.SetNMCount(nightmares)
 	
-func CalmTest(amount):
-	ui.CalmDown(amount)
+func RemoveNM(amount):
+	nightmares -= amount
+	ui.SetNMCount(nightmares)
+
+func AddCandle(amount):
+	candles += amount
+	ui.SetCandleCount(candles)
+	
+func RemoveCandle(amount):
+	candles -= amount
+	ui.SetCandleCount(candles)

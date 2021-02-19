@@ -1,6 +1,15 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Scripts/TitleScreen/title_screen.gd" type="Script" id=1]
+[ext_resource path="res://Fonts/Averia Libre/AveriaLibre-Regular.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://Art/Heartbeat.png" type="Texture" id=3]
+
+[sub_resource type="DynamicFont" id=1]
+size = 50
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=2]
+font_data = ExtResource( 2 )
 
 [node name="TitleScreen" type="Control"]
 anchor_right = 1.0
@@ -12,6 +21,7 @@ __meta__ = {
 game_world_path = "res://Scenes/game_manager/Game.tscn"
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
+visible = false
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -26,14 +36,241 @@ __meta__ = {
 }
 
 [node name="Start" type="Button" parent="VBoxContainer"]
-margin_right = 41.0
+margin_right = 89.0
 margin_bottom = 20.0
 text = "Start"
 
-[node name="Quit" type="Button" parent="VBoxContainer"]
+[node name="Instructions" type="Button" parent="VBoxContainer"]
 margin_top = 32.0
-margin_right = 41.0
+margin_right = 89.0
 margin_bottom = 52.0
+text = "Instructions"
+
+[node name="Quit" type="Button" parent="VBoxContainer"]
+margin_top = 64.0
+margin_right = 89.0
+margin_bottom = 84.0
 text = "Quit"
+
+[node name="Info" type="Control" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="Background" type="ColorRect" parent="Info"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0.0901961, 0.0901961, 0.0901961, 0.27451 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Title" type="Label" parent="Info"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -134.5
+margin_right = 134.5
+margin_bottom = 61.0
+custom_fonts/font = SubResource( 1 )
+text = "Instructions"
+
+[node name="Flick" type="Control" parent="Info"]
+margin_left = 112.127
+margin_top = 84.0949
+margin_right = 285.127
+margin_bottom = 259.095
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Instruction" type="Label" parent="Info/Flick"]
+margin_right = 168.0
+margin_bottom = 80.0
+custom_fonts/font = SubResource( 2 )
+text = "You are Flick, a flame spirit that resides in a furnace."
+autowrap = true
+
+[node name="Attack" type="Control" parent="Info"]
+margin_left = 85.4297
+margin_top = 284.321
+margin_right = 258.43
+margin_bottom = 459.321
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Instruction" type="Label" parent="Info/Attack"]
+margin_right = 168.0
+margin_bottom = 80.0
+custom_fonts/font = SubResource( 2 )
+text = "Your goal is to take out all the nightmares that are sneaking into the house."
+autowrap = true
+
+[node name="Beat" type="Control" parent="Info"]
+margin_left = 404.861
+margin_top = 134.618
+margin_right = 577.861
+margin_bottom = 309.618
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Instruction" type="Label" parent="Info/Beat"]
+margin_right = 168.0
+margin_bottom = 80.0
+custom_fonts/font = SubResource( 2 )
+text = "As the heart of the house you have, well, a heart. To attack effectively you need to attack to the beat."
+autowrap = true
+
+[node name="BeatHolder" type="Control" parent="Info/Beat"]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_left = 4.2558
+margin_top = -42.1685
+margin_right = 144.256
+margin_bottom = 80.8315
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ReferenceRect" type="ReferenceRect" parent="Info/Beat/BeatHolder"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Meter" type="ColorRect" parent="Info/Beat/BeatHolder"]
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -97.0
+margin_bottom = -89.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Center" type="ColorRect" parent="Info/Beat/BeatHolder/Meter"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -5.0
+margin_top = -20.0
+margin_right = 5.0
+margin_bottom = 20.0
+color = Color( 0.0156863, 0.0156863, 0.0156863, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PlaceRO" type="ColorRect" parent="Info/Beat/BeatHolder/Meter"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = 55.0
+margin_top = -20.0
+margin_right = 65.0
+margin_bottom = 20.0
+color = Color( 0.639216, 0.117647, 0.117647, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PlaceRI" type="ColorRect" parent="Info/Beat/BeatHolder/Meter"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = 20.0
+margin_top = -20.0
+margin_right = 30.0
+margin_bottom = 20.0
+color = Color( 0.639216, 0.117647, 0.117647, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PlaceLO" type="ColorRect" parent="Info/Beat/BeatHolder/Meter"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -65.0
+margin_top = -20.0
+margin_right = -55.0
+margin_bottom = 20.0
+color = Color( 0.639216, 0.117647, 0.117647, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PlaceLI" type="ColorRect" parent="Info/Beat/BeatHolder/Meter"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -30.0
+margin_top = -20.0
+margin_right = -20.0
+margin_bottom = 20.0
+color = Color( 0.639216, 0.117647, 0.117647, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Heart" type="Sprite" parent="Info/Beat/BeatHolder"]
+position = Vector2( 70.5567, 85.6606 )
+scale = Vector2( 0.0813588, 0.0860325 )
+texture = ExtResource( 3 )
+vframes = 2
+
+[node name="Candles" type="Control" parent="Info"]
+margin_left = 631.379
+margin_top = 379.094
+margin_right = 804.379
+margin_bottom = 554.094
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Instruction" type="Label" parent="Info/Candles"]
+margin_right = 168.0
+margin_bottom = 80.0
+custom_fonts/font = SubResource( 2 )
+text = "Nightmares spawn when it is dark, so keep the candles lit so that they don't overwhelm you."
+autowrap = true
+
+[node name="Win" type="Control" parent="Info"]
+margin_left = 760.858
+margin_top = 173.529
+margin_right = 933.858
+margin_bottom = 348.529
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Instruction" type="Label" parent="Info/Win"]
+margin_right = 168.0
+margin_bottom = 80.0
+custom_fonts/font = SubResource( 2 )
+text = "If you can keep the nightmares in check until sunrise, you win!"
+autowrap = true
+
+[node name="Button" type="Button" parent="Info"]
+margin_left = 487.216
+margin_top = 520.587
+margin_right = 529.216
+margin_bottom = 540.587
+text = "Back"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 [connection signal="pressed" from="VBoxContainer/Start" to="." method="_on_Start_pressed"]
+[connection signal="pressed" from="VBoxContainer/Instructions" to="." method="ShowInstructions" binds= [ true ]]
 [connection signal="pressed" from="VBoxContainer/Quit" to="." method="_on_Quit_pressed"]
+[connection signal="pressed" from="Info/Button" to="." method="ShowInstructions" binds= [ false ]]

@@ -5,6 +5,7 @@
 
 [node name="Node" type="Node"]
 script = ExtResource( 2 )
+nightmares = 90
 
 [node name="Node2D" type="Node2D" parent="."]
 
@@ -27,42 +28,62 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="StressButton" type="Button" parent="Control"]
-margin_left = 521.733
-margin_top = 128.99
-margin_right = 572.733
-margin_bottom = 148.99
-text = "Stress"
+[node name="AddNMButton" type="Button" parent="Control"]
+margin_left = 50.8067
+margin_top = 90.9354
+margin_right = 158.807
+margin_bottom = 110.935
+text = "Add Nightmare"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AddCandle" type="Button" parent="Control"]
+margin_left = 852.333
+margin_top = 88.5569
+margin_right = 936.333
+margin_bottom = 108.557
+text = "Add Candle"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="HurtButton" type="Button" parent="Control"]
-margin_left = 358.812
-margin_top = 128.99
-margin_right = 409.812
-margin_bottom = 148.99
+margin_left = 231.567
+margin_top = 391.805
+margin_right = 282.567
+margin_bottom = 411.805
 text = "Hurt"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="HealButton" type="Button" parent="Control"]
-margin_left = 354.055
-margin_top = 178.936
-margin_right = 405.055
-margin_bottom = 198.936
+margin_left = 237.513
+margin_top = 442.94
+margin_right = 288.513
+margin_bottom = 462.94
 text = "Heal"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="DestressButton" type="Button" parent="Control"]
-margin_left = 521.299
-margin_top = 175.54
-margin_right = 583.299
-margin_bottom = 195.54
-text = "Calm"
+[node name="RemoveNMButton" type="Button" parent="Control"]
+margin_left = 45.6159
+margin_top = 150.567
+margin_right = 176.616
+margin_bottom = 170.567
+text = "RemoveNightmare"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RemoveCandle" type="Button" parent="Control"]
+margin_left = 837.628
+margin_top = 158.891
+margin_right = 948.628
+margin_bottom = 178.891
+text = "Remove Candle"
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -107,10 +128,12 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 [connection signal="timeout" from="Timer" to="." method="resetColor"]
-[connection signal="pressed" from="Control/StressButton" to="." method="StressTest" binds= [ 1 ]]
+[connection signal="pressed" from="Control/AddNMButton" to="." method="AddNM" binds= [ 1 ]]
+[connection signal="pressed" from="Control/AddCandle" to="." method="AddCandle" binds= [ 1 ]]
 [connection signal="pressed" from="Control/HurtButton" to="." method="HurtTest" binds= [ 1 ]]
 [connection signal="pressed" from="Control/HealButton" to="." method="HealTest" binds= [ 1 ]]
-[connection signal="pressed" from="Control/DestressButton" to="." method="CalmTest" binds= [ 1 ]]
+[connection signal="pressed" from="Control/RemoveNMButton" to="." method="RemoveNM" binds= [ 1 ]]
+[connection signal="pressed" from="Control/RemoveCandle" to="." method="RemoveCandle" binds= [ 1 ]]
 [connection signal="pressed" from="Control/GiveWood" to="UI" method="GetItem" binds= [ "wood", 1 ]]
 [connection signal="pressed" from="Control/UseWood" to="UI" method="UseItem" binds= [ "wood", 1 ]]
 [connection signal="pressed" from="Control/GiveToy" to="UI" method="GetItem" binds= [ "toy", 1 ]]

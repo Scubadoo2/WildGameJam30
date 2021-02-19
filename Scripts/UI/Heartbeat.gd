@@ -31,7 +31,7 @@ var music = [null, preload("res://Sound/Music/Spooky Nightmares (70 BPM).wav"),
 	preload("res://Sound/Music/Spooky Nightmares (65 BPM).wav"),
 	preload("res://Sound/Music/Spooky Nightmares (60 BPM).wav")]
 	
-var musicBeat = [null, 6.0/7.0, 12.0/13.0, 1]
+var musicBeat = [null, 6.0/7.0, 12.0/13.0, 1.0]
 
 #Signals
 signal heartbeat()
