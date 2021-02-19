@@ -51,7 +51,6 @@ func ChangeMaxHP(newMax):
 		add_child(newHeart)
 	
 	currentHP = newMax
-	print(heartHolder.size())
 	ChangeHP(0)
 
 func UpdateVisual():
