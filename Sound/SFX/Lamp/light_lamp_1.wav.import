@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/light_lamp_1.wav-09dec4b7b94d53d2c6a06dcab6b80730.sample"
+
+[deps]
+
+source_file="res://Sound/SFX/Lamp/light_lamp_1.wav"
+dest_files=[ "res://.import/light_lamp_1.wav-09dec4b7b94d53d2c6a06dcab6b80730.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

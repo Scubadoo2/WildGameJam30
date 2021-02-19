@@ -6,3 +6,5 @@
 script = ExtResource( 1 )
 play_button = 1.0
 button_volume = -8.0
+fireplace_volume = 1.0
+candle_lit_volume = 1.0

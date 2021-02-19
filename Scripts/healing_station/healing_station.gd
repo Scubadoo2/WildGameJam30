@@ -15,6 +15,7 @@ func _ready():
 
 func use_heal() -> void:
 	emit_signal("healed", 1)
+	SFXPlayer.play_sfx("sfx_fire_place_1", SFXVolume.fireplace_volume)
 	increment_uses(1)
 	update_animation(uses)
 	

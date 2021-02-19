@@ -28,6 +28,7 @@ func turn_on():
 	light.energy = 1.0
 	candle_on = true
 	emit_signal("candle_turned_on")
+	SFXPlayer.play_sfx("sfx_light_lamp_4",SFXVolume.candle_lit_volume)
 	
 func turn_off():
 	light_barrier.visible = false

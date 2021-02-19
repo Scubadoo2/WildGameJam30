@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://Scripts/SFX/sfx_player.gd" type="Script" id=1]
 [ext_resource path="res://Sound/SFX/UI/UI_Menu_Play_Basic.wav" type="AudioStream" id=2]
@@ -7,10 +7,24 @@
 [ext_resource path="res://Sound/SFX/UI/UI_Menu_Play_Game_3.wav" type="AudioStream" id=5]
 [ext_resource path="res://Sound/SFX/UI/UI_Menu_Select_Move.wav" type="AudioStream" id=6]
 [ext_resource path="res://Sound/SFX/UI/UI_Menu_Select_Move_Small.wav" type="AudioStream" id=7]
+[ext_resource path="res://Sound/SFX/Fireplace/fireplace_1.wav" type="AudioStream" id=8]
+[ext_resource path="res://Sound/SFX/Fireplace/fireplace_2.wav" type="AudioStream" id=9]
+[ext_resource path="res://Sound/SFX/Lamp/light_lamp_1.wav" type="AudioStream" id=10]
+[ext_resource path="res://Sound/SFX/Lamp/light_lamp_2.wav" type="AudioStream" id=11]
+[ext_resource path="res://Sound/SFX/Lamp/light_lamp_3.wav" type="AudioStream" id=12]
+[ext_resource path="res://Sound/SFX/Lamp/light_lamp_4.wav" type="AudioStream" id=13]
+[ext_resource path="res://Sound/SFX/Lamp/light_lamp_5.wav" type="AudioStream" id=14]
 
 [node name="SFXPlayer" type="Node"]
 script = ExtResource( 1 )
 sfxs = {
+"sfx_fire_place_1": ExtResource( 8 ),
+"sfx_fire_place_2": ExtResource( 9 ),
+"sfx_light_lamp_1": ExtResource( 10 ),
+"sfx_light_lamp_2": ExtResource( 11 ),
+"sfx_light_lamp_3": ExtResource( 12 ),
+"sfx_light_lamp_4": ExtResource( 13 ),
+"sfx_light_lamp_5": ExtResource( 14 ),
 "ui_menu_play_basic": ExtResource( 2 ),
 "ui_menu_play_game_1": ExtResource( 3 ),
 "ui_menu_play_game_2": ExtResource( 4 ),
