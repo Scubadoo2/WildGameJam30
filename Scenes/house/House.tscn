@@ -294,13 +294,13 @@ position = Vector2( 312.353, 1045.18 )
 scale = Vector2( 0.3, 0.3 )
 
 [node name="Floor" type="Sprite" parent="LivingRoom"]
-position = Vector2( 824, 496 )
+position = Vector2( 836.681, 493.33 )
 scale = Vector2( 0.25, 0.25 )
 z_index = -1
 texture = ExtResource( 14 )
 
 [node name="Floor2" type="Sprite" parent="LivingRoom"]
-position = Vector2( 456, 496 )
+position = Vector2( 472.018, 495.333 )
 scale = Vector2( 0.25, 0.25 )
 z_index = -1
 texture = ExtResource( 14 )
@@ -312,13 +312,13 @@ z_index = -1
 texture = ExtResource( 14 )
 
 [node name="Floor4" type="Sprite" parent="LivingRoom"]
-position = Vector2( 824, 640 )
+position = Vector2( 835.346, 638.665 )
 scale = Vector2( 0.25, 0.25 )
 z_index = -1
 texture = ExtResource( 14 )
 
 [node name="Floor5" type="Sprite" parent="LivingRoom"]
-position = Vector2( 456, 640 )
+position = Vector2( 470.683, 637.33 )
 scale = Vector2( 0.25, 0.25 )
 z_index = -1
 texture = ExtResource( 14 )
@@ -330,13 +330,13 @@ z_index = -1
 texture = ExtResource( 14 )
 
 [node name="Floor7" type="Sprite" parent="LivingRoom"]
-position = Vector2( 824, 784 )
+position = Vector2( 856, 784 )
 scale = Vector2( 0.25, 0.25 )
 z_index = -1
 texture = ExtResource( 14 )
 
 [node name="Floor8" type="Sprite" parent="LivingRoom"]
-position = Vector2( 455.683, 785.75 )
+position = Vector2( 488, 776 )
 scale = Vector2( 0.25, 0.25 )
 z_index = -1
 texture = ExtResource( 14 )
@@ -348,13 +348,13 @@ z_index = -1
 texture = ExtResource( 14 )
 
 [node name="Floor19" type="Sprite" parent="LivingRoom"]
-position = Vector2( 160, 784 )
+position = Vector2( 160, 776 )
 scale = Vector2( 0.25, 0.25 )
 z_index = -1
 texture = ExtResource( 14 )
 
 [node name="Floor10" type="Sprite" parent="LivingRoom"]
-position = Vector2( 823.683, 929.75 )
+position = Vector2( 824, 920 )
 scale = Vector2( 0.25, 0.25 )
 z_index = -1
 texture = ExtResource( 14 )
@@ -372,43 +372,43 @@ z_index = -2
 texture = ExtResource( 14 )
 
 [node name="Floor11" type="Sprite" parent="LivingRoom"]
-position = Vector2( 455.683, 929.75 )
+position = Vector2( 456, 920 )
 scale = Vector2( 0.25, 0.25 )
 z_index = -1
 texture = ExtResource( 14 )
 
 [node name="Floor12" type="Sprite" parent="LivingRoom"]
-position = Vector2( 160, 928 )
+position = Vector2( 160, 920 )
 scale = Vector2( 0.25, 0.25 )
 z_index = -1
 texture = ExtResource( 14 )
 
 [node name="Floor13" type="Sprite" parent="LivingRoom"]
-position = Vector2( 830.357, 1072 )
+position = Vector2( 832, 1064 )
 scale = Vector2( 0.25, 0.25 )
 z_index = -1
 texture = ExtResource( 14 )
 
 [node name="Floor18" type="Sprite" parent="LivingRoom"]
-position = Vector2( 830.357, 1152.48 )
+position = Vector2( 831.479, 1165.19 )
 scale = Vector2( 0.25, 0.25 )
 z_index = -1
 texture = ExtResource( 14 )
 
 [node name="Floor14" type="Sprite" parent="LivingRoom"]
-position = Vector2( 456, 1072 )
+position = Vector2( 464, 1064 )
 scale = Vector2( 0.25, 0.25 )
 z_index = -1
 texture = ExtResource( 14 )
 
 [node name="Floor17" type="Sprite" parent="LivingRoom"]
-position = Vector2( 456, 1144 )
+position = Vector2( 462.007, 1141.33 )
 scale = Vector2( 0.25, 0.25 )
 z_index = -1
 texture = ExtResource( 14 )
 
 [node name="Floor15" type="Sprite" parent="LivingRoom"]
-position = Vector2( 168, 1072 )
+position = Vector2( 168, 1064 )
 scale = Vector2( 0.25, 0.25 )
 z_index = -1
 texture = ExtResource( 14 )
