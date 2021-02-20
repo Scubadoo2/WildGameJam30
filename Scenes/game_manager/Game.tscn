@@ -57,3 +57,6 @@ z_index = 1
 [node name="Candle4" parent="Candles" instance=ExtResource( 8 )]
 position = Vector2( -273.209, 275.159 )
 z_index = 1
+
+[node name="Candle5" parent="Candles" instance=ExtResource( 8 )]
+position = Vector2( 1270.45, 1070.35 )
