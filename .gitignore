@@ -3,6 +3,10 @@
 export.cfg
 /build/
 
+# Mono-specific ignores
+data_*/
+.mono/
+
 # Binaries
 bin/
 build/
