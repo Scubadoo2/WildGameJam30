@@ -25,6 +25,7 @@ func handle_input(event):
 func tick(delta):
 	actor.direction = actor.get_direction()
 	actor.animation_tree.set("parameters/Walking/blend_position", actor.direction)
+	actor.animation_tree.set("parameters/Idle/blend_position", actor.forward_vector)
 	if actor.direction == Vector2.ZERO:
 		return "Idle"
 	footsteps()
@@ -38,6 +39,7 @@ func setup_state():
 
 func move(delta):
 	actor.animation_mode.travel("Walking")
+	actor.forward_vector = actor.direction.normalized()
 	actor.move_and_slide(actor.direction.normalized() * actor.speed)
 
 func footsteps():
