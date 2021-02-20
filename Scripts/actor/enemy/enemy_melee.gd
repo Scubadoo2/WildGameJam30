@@ -30,6 +30,8 @@ var red_color = Color(1.0, 0.0, 0.0)
 # Debug values
 var collision_ray: Vector2
 
+
+
 func _ready():
 	._ready()
 	add_to_group("enemy")
@@ -64,6 +66,7 @@ func wander_target(p_wander_target: Vector2) -> Vector2:
 	randomize()
 	var random_x = rand_range(-1.0,1.0)
 	var random_y = rand_range(-1.0,1.0)
+	# Create a vector from previous target towards the position in a unit circle
 	p_wander_target += Vector2(random_x, random_y) * wander_jitter
 	# Place target in unit circle circumference
 	p_wander_target = p_wander_target.normalized()
