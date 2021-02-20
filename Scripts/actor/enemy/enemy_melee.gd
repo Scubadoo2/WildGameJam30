@@ -137,3 +137,5 @@ func attacked(amount: int):
 	data_holder.current_health -= amount
 	if data_holder.current_health <= 0:
 		$StateMachine.change_state("Dead")
+	else:
+		$StateMachine.change_state("Stun")

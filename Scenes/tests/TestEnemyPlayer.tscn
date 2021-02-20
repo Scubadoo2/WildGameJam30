@@ -11,4 +11,3 @@ position = Vector2( 141, 121 )
 [node name="EnemyMelee" parent="." instance=ExtResource( 2 )]
 position = Vector2( 561, 307 )
 speed = 80.0
-MIN_DISTANCE = 70.0

@@ -81,8 +81,11 @@ func _on_Area2D_body_exited(body):
 func attacked(dmg_amount):
 	print_debug("Attacked")
 	emit_signal("player_attacked", dmg_amount)
-	if logic.IsGameOver():
-		die()
+	if logic != null:
+		if logic.IsGameOver():
+			die()
+		else:
+			SFXPlayer.play_sfx("sfx_flick_take_hit_1", SFXVolume.flick_receive_dmg_volume)
 	else:
 		SFXPlayer.play_sfx("sfx_flick_take_hit_1", SFXVolume.flick_receive_dmg_volume)
 
