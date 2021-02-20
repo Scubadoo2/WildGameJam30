@@ -4,11 +4,13 @@ var actor: KinematicBody2D
 var animation: AnimatedSprite
 var debug_info: Label
 var animation_mode
+var debug_mode: bool
 
 func enter():
 	#animation.play("idle")
 	animation_mode.travel("Idle")
-	debug_info.text = "Idle"
+	if debug_mode:
+		debug_info.text = "Idle"
 	
 func exit():
 	pass
@@ -27,3 +29,4 @@ func setup_state():
 	animation = get_owner().get_node("AnimatedSprite")
 	debug_info = get_owner().get_node("DebugState")
 	animation_mode = get_owner().get_node("AnimationTree").get("parameters/playback")
+	debug_mode = get_owner().DEBUG

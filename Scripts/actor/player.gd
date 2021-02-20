@@ -17,6 +17,9 @@ signal player_attacked(amount)
 signal player_heal(amount)
 signal player_dead(how)
 
+#debug
+var DEBUG = 0
+
 func _ready():
 	._ready()
 	in_light = false

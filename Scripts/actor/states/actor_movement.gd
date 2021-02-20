@@ -3,6 +3,7 @@ extends State
 var actor: KinematicBody2D
 var animation: AnimatedSprite
 var debug_info: Label
+var debug_mode: bool
 
 export (bool) var enable_footstep: bool = false
 export (float) var footstep_freq = 0.9
@@ -12,7 +13,8 @@ var right_step: bool
 
 func enter():
 	actor.animation_mode.travel("Walking")
-	debug_info.text = "Movement"
+	if debug_mode:
+		debug_info.text = "Movement"
 	
 func exit():
 	$Timer.stop()
@@ -32,6 +34,7 @@ func setup_state():
 	actor = get_owner()
 	animation = get_owner().get_node("AnimatedSprite")
 	debug_info = get_owner().get_node("DebugState")
+	debug_mode = get_owner().DEBUG
 
 func move(delta):
 	actor.animation_mode.travel("Walking")

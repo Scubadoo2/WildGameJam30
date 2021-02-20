@@ -4,9 +4,11 @@ var actor: KinematicBody2D
 var animation: AnimatedSprite
 var debug_info: Label
 var data_holder
+var debug_mode: bool
 
 func enter():
-	debug_info.text = "Avoid"
+	if debug_mode:
+		debug_info.text = "Avoid"
 	
 func exit():
 	print_debug("Leaving avoid")
@@ -30,3 +32,4 @@ func setup_state():
 	animation = get_owner().get_node("AnimatedSprite")
 	debug_info = get_owner().get_node("DebugState")
 	data_holder = get_owner().get_node("DataHolder")
+	debug_mode = get_owner().DEBUG

@@ -4,13 +4,15 @@ extends State
 var actor: KinematicBody2D
 var animation: AnimatedSprite
 var debug_info: Label
+var debug_mode: bool
 
 var attacking: bool = false
 
 func enter():
 	actor.animation_tree.set("parameters/Attack/blend_position", actor.direction)
 	actor.animation_mode.travel("Attack")
-	debug_info.text = "Attack"
+	if debug_mode:
+		debug_info.text = "Attack"
 	attacking = true
 	# Play attack animation
 	
@@ -31,6 +33,7 @@ func setup_state():
 	actor = get_owner()
 	animation = get_owner().get_node("AnimatedSprite")
 	debug_info = get_owner().get_node("DebugState")
+	debug_mode = get_owner().DEBUG
 
 func attack():
 	print_debug("Attack!!!!")

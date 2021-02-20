@@ -27,7 +27,7 @@ var green_color = Color(0.0, 1.0, 0.0)
 var white_color = Color(1.0, 1.0, 1.0)
 var red_color = Color(1.0, 0.0, 0.0)
 
-
+var DEBUG = 0
 
 # Debug values
 var collision_ray: Vector2
@@ -44,7 +44,8 @@ func _ready():
 
 
 func _process(delta):
-	update()
+	if DEBUG:
+		update()
 
 func _physics_process(delta):
 	if data_holder.in_light:
@@ -70,11 +71,12 @@ func lose_health(amount: int):
 ######################
 
 func _draw() -> void:
-	draw_line(Vector2(0,0), (Vector2(0,0) + forward_direction.normalized()) * 60, green_color)
-	#var position_infront = (wander_distance) * forward_direction.normalized()
-	#draw_circle(forward_direction * wander_distance, wander_radius, white_color)
-	draw_circle(to_local(wander_target(wander_target)), 10, white_color)
-	draw_line(to_local(get_global_position()), to_local(get_global_position()) + collision_ray, red_color)
+	if DEBUG:
+		draw_line(Vector2(0,0), (Vector2(0,0) + forward_direction.normalized()) * 60, green_color)
+		#var position_infront = (wander_distance) * forward_direction.normalized()
+		#draw_circle(forward_direction * wander_distance, wander_radius, white_color)
+		draw_circle(to_local(wander_target(wander_target)), 10, white_color)
+		draw_line(to_local(get_global_position()), to_local(get_global_position()) + collision_ray, red_color)
 
 func get_direction() -> Vector2:
 	# global target to move towards
