@@ -9,7 +9,7 @@ var debug_mode: bool
 var attacking: bool = false
 
 func enter():
-	actor.animation_tree.set("parameters/Attack/blend_position", actor.direction)
+	actor.animation_tree.set("parameters/Attack/blend_position", actor.forward_vector)
 	actor.animation_mode.travel("Attack")
 	if debug_mode:
 		debug_info.text = "Attack"

@@ -17,6 +17,9 @@ signal player_attacked(amount)
 signal player_heal(amount)
 signal player_dead(how)
 
+# help tell direction it is facing
+var forward_vector =  Vector2.ZERO
+
 #debug
 var DEBUG = 0
 
@@ -36,6 +39,7 @@ func _input(event):
 	if Input.is_action_just_pressed("attack"):
 		if $StateMachine.current_state != $StateMachine/Attack:
 			if can_attack():
+				
 				$StateMachine.change_state("Attack")
 		else:
 			$StateMachine.current_state.handle_input(event)
