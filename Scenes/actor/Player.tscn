@@ -83,7 +83,7 @@ radius = 76.5152
 
 [sub_resource type="Animation" id=19]
 resource_name = "attack_east"
-length = 0.6
+length = 0.4
 tracks/0/type = "value"
 tracks/0/path = NodePath("AnimatedSprite:animation")
 tracks/0/interp = 1
@@ -115,7 +115,7 @@ tracks/2/loop_wrap = true
 tracks/2/imported = false
 tracks/2/enabled = true
 tracks/2/keys = {
-"times": PoolRealArray( 0, 0.6 ),
+"times": PoolRealArray( 0, 0.4 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 1,
 "values": [ false, true ]
@@ -175,7 +175,7 @@ tracks/7/loop_wrap = true
 tracks/7/imported = false
 tracks/7/enabled = true
 tracks/7/keys = {
-"times": PoolRealArray( 0.6 ),
+"times": PoolRealArray( 0.4 ),
 "transitions": PoolRealArray( 1 ),
 "values": [ {
 "args": [  ],
@@ -185,7 +185,7 @@ tracks/7/keys = {
 
 [sub_resource type="Animation" id=20]
 resource_name = "attack_north"
-length = 0.6
+length = 0.4
 tracks/0/type = "value"
 tracks/0/path = NodePath("AnimatedSprite:animation")
 tracks/0/interp = 1
@@ -217,7 +217,7 @@ tracks/2/loop_wrap = true
 tracks/2/imported = false
 tracks/2/enabled = true
 tracks/2/keys = {
-"times": PoolRealArray( 0, 0.6 ),
+"times": PoolRealArray( 0, 0.4 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 1,
 "values": [ false, true ]
@@ -265,7 +265,7 @@ tracks/6/loop_wrap = true
 tracks/6/imported = false
 tracks/6/enabled = true
 tracks/6/keys = {
-"times": PoolRealArray( 0.6 ),
+"times": PoolRealArray( 0.4 ),
 "transitions": PoolRealArray( 1 ),
 "values": [ {
 "args": [  ],
@@ -275,7 +275,7 @@ tracks/6/keys = {
 
 [sub_resource type="Animation" id=21]
 resource_name = "attack_south"
-length = 0.6
+length = 0.4
 tracks/0/type = "value"
 tracks/0/path = NodePath("AnimatedSprite:animation")
 tracks/0/interp = 1
@@ -307,7 +307,7 @@ tracks/2/loop_wrap = true
 tracks/2/imported = false
 tracks/2/enabled = true
 tracks/2/keys = {
-"times": PoolRealArray( 0, 0.6 ),
+"times": PoolRealArray( 0, 0.4 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 1,
 "values": [ false, true ]
@@ -355,7 +355,7 @@ tracks/6/loop_wrap = true
 tracks/6/imported = false
 tracks/6/enabled = true
 tracks/6/keys = {
-"times": PoolRealArray( 0.6 ),
+"times": PoolRealArray( 0.4 ),
 "transitions": PoolRealArray( 1 ),
 "values": [ {
 "args": [  ],
@@ -365,7 +365,7 @@ tracks/6/keys = {
 
 [sub_resource type="Animation" id=22]
 resource_name = "attack_west"
-length = 0.6
+length = 0.4
 tracks/0/type = "value"
 tracks/0/path = NodePath("AnimatedSprite:animation")
 tracks/0/interp = 1
@@ -409,7 +409,7 @@ tracks/3/loop_wrap = true
 tracks/3/imported = false
 tracks/3/enabled = true
 tracks/3/keys = {
-"times": PoolRealArray( 0, 0.6 ),
+"times": PoolRealArray( 0, 0.4 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 1,
 "values": [ false, true ]
@@ -457,7 +457,7 @@ tracks/7/loop_wrap = true
 tracks/7/imported = false
 tracks/7/enabled = true
 tracks/7/keys = {
-"times": PoolRealArray( 0.6 ),
+"times": PoolRealArray( 0.4 ),
 "transitions": PoolRealArray( 1 ),
 "values": [ {
 "args": [  ],
@@ -693,7 +693,6 @@ speed = 150.0
 scale = Vector2( 0.15, 0.15 )
 frames = SubResource( 1 )
 animation = "attack_horizontal"
-flip_h = true
 
 [node name="CollisionShape2D" parent="." index="1"]
 position = Vector2( 0, 10.97 )
@@ -748,9 +747,8 @@ parameters/Walking/blend_position = Vector2( -0.00316125, -0.0258621 )
 [node name="AttackZone" type="Area2D" parent="." index="9"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AttackZone" index="0"]
-position = Vector2( -70.005, 11.983 )
+position = Vector2( 70.0046, 11.9828 )
 shape = SubResource( 27 )
-disabled = true
 [connection signal="body_entered" from="InteractiveArea" to="." method="_on_Area2D_body_entered"]
 [connection signal="body_exited" from="InteractiveArea" to="." method="_on_Area2D_body_exited"]
 [connection signal="body_entered" from="AttackZone" to="." method="_on_AttackZone_body_entered"]
