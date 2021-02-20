@@ -1,6 +1,7 @@
 # Import cache
 .import/
 export.cfg
+/build/
 
 # Binaries
 bin/
