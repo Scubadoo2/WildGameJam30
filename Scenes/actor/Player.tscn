@@ -1,4 +1,4 @@
-[gd_scene load_steps=47 format=2]
+[gd_scene load_steps=59 format=2]
 
 [ext_resource path="res://Scenes/actor/Actor.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Art/flick_sprites/walking/south/0006.png" type="Texture" id=2]
@@ -29,9 +29,25 @@
 [ext_resource path="res://Art/flick_sprites/walking/south/0008.png" type="Texture" id=27]
 [ext_resource path="res://Art/flick_sprites/walking/south/0010.png" type="Texture" id=28]
 [ext_resource path="res://Art/flick_sprites/walking/south/0009.png" type="Texture" id=29]
+[ext_resource path="res://Art/flick_sprites/walking/north/0007.png" type="Texture" id=30]
+[ext_resource path="res://Art/flick_sprites/walking/north/0003.png" type="Texture" id=31]
+[ext_resource path="res://Art/flick_sprites/walking/north/0005.png" type="Texture" id=32]
+[ext_resource path="res://Art/flick_sprites/walking/north/0001.png" type="Texture" id=33]
+[ext_resource path="res://Art/flick_sprites/walking/north/0006.png" type="Texture" id=34]
+[ext_resource path="res://Art/flick_sprites/walking/north/0004.png" type="Texture" id=35]
+[ext_resource path="res://Art/flick_sprites/walking/north/0002.png" type="Texture" id=36]
+[ext_resource path="res://Art/flick_sprites/walking/north/0009.png" type="Texture" id=37]
+[ext_resource path="res://Art/flick_sprites/walking/north/0008.png" type="Texture" id=38]
+[ext_resource path="res://Art/flick_sprites/walking/north/0010.png" type="Texture" id=39]
+[ext_resource path="res://Art/flick_sprites/walking/north/0011.png" type="Texture" id=40]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
+"frames": [ ExtResource( 33 ), ExtResource( 36 ), ExtResource( 31 ), ExtResource( 35 ), ExtResource( 32 ), ExtResource( 34 ), ExtResource( 30 ), ExtResource( 38 ), ExtResource( 37 ), ExtResource( 39 ), ExtResource( 40 ) ],
+"loop": true,
+"name": "walk_north",
+"speed": 5.0
+}, {
 "frames": [ ExtResource( 24 ), ExtResource( 26 ), ExtResource( 25 ), ExtResource( 23 ), ExtResource( 22 ), ExtResource( 19 ), ExtResource( 2 ), ExtResource( 21 ), ExtResource( 27 ), ExtResource( 29 ), ExtResource( 28 ), ExtResource( 20 ) ],
 "loop": true,
 "name": "walk_south",
@@ -44,11 +60,11 @@ animations = [ {
 } ]
 
 [sub_resource type="CapsuleShape2D" id=2]
-radius = 41.4599
+radius = 30.8618
 height = 19.2618
 
 [sub_resource type="CircleShape2D" id=3]
-radius = 84.4874
+radius = 76.5152
 
 [sub_resource type="Animation" id=4]
 resource_name = "walk_east"
@@ -92,7 +108,37 @@ tracks/2/keys = {
 "values": [ false ]
 }
 
-[sub_resource type="Animation" id=17]
+[sub_resource type="Animation" id=5]
+resource_name = "walk_north"
+length = 0.6
+loop = true
+step = 0.05
+tracks/0/type = "value"
+tracks/0/path = NodePath("AnimatedSprite:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ "walk_north" ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("AnimatedSprite:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.05, 0.1, 0.15, 0.2, 0.25, 0.3, 0.35, 0.4, 0.45, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 ]
+}
+
+[sub_resource type="Animation" id=6]
 resource_name = "walk_south"
 length = 0.6
 loop = true
@@ -122,8 +168,7 @@ tracks/1/keys = {
 "values": [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 ]
 }
 
-[sub_resource type="Animation" id=5]
-resource_name = "walk_west"
+[sub_resource type="Animation" id=7]
 length = 0.6
 loop = true
 step = 0.05
@@ -164,60 +209,59 @@ tracks/2/keys = {
 "values": [ true ]
 }
 
-[sub_resource type="AnimationNodeStateMachine" id=6]
-
-[sub_resource type="AnimationNodeAnimation" id=7]
-animation = "walk_west"
-
-[sub_resource type="AnimationNodeAnimation" id=8]
-animation = "walk_east"
+[sub_resource type="AnimationNodeStateMachine" id=8]
 
 [sub_resource type="AnimationNodeAnimation" id=9]
 animation = "walk_west"
 
 [sub_resource type="AnimationNodeAnimation" id=10]
+animation = "walk_east"
+
+[sub_resource type="AnimationNodeAnimation" id=11]
+animation = "walk_north"
+
+[sub_resource type="AnimationNodeAnimation" id=12]
 animation = "walk_south"
 
-[sub_resource type="AnimationNodeBlendSpace2D" id=11]
-blend_point_0/node = SubResource( 7 )
+[sub_resource type="AnimationNodeBlendSpace2D" id=13]
+blend_point_0/node = SubResource( 9 )
 blend_point_0/pos = Vector2( -1, 0 )
-blend_point_1/node = SubResource( 8 )
+blend_point_1/node = SubResource( 10 )
 blend_point_1/pos = Vector2( 1, 0 )
-blend_point_2/node = SubResource( 9 )
+blend_point_2/node = SubResource( 11 )
 blend_point_2/pos = Vector2( 0, -1 )
-blend_point_3/node = SubResource( 10 )
+blend_point_3/node = SubResource( 12 )
 blend_point_3/pos = Vector2( 0, 1 )
 blend_mode = 1
 
-[sub_resource type="AnimationNodeStateMachineTransition" id=12]
+[sub_resource type="AnimationNodeStateMachineTransition" id=14]
 
-[sub_resource type="AnimationNodeStateMachineTransition" id=13]
+[sub_resource type="AnimationNodeStateMachineTransition" id=15]
 
-[sub_resource type="AnimationNodeStateMachine" id=14]
-states/Idle/node = SubResource( 6 )
+[sub_resource type="AnimationNodeStateMachine" id=16]
+states/Idle/node = SubResource( 8 )
 states/Idle/position = Vector2( 136, 95 )
-states/Walking/node = SubResource( 11 )
+states/Walking/node = SubResource( 13 )
 states/Walking/position = Vector2( 366, 95 )
-transitions = [ "Idle", "Walking", SubResource( 12 ), "Walking", "Idle", SubResource( 13 ) ]
+transitions = [ "Idle", "Walking", SubResource( 14 ), "Walking", "Idle", SubResource( 15 ) ]
 start_node = "Idle"
 
-[sub_resource type="AnimationNodeStateMachinePlayback" id=15]
+[sub_resource type="AnimationNodeStateMachinePlayback" id=17]
 
-[sub_resource type="AnimationNodeStateMachinePlayback" id=16]
+[sub_resource type="AnimationNodeStateMachinePlayback" id=18]
 
 [node name="Player" instance=ExtResource( 1 )]
 script = ExtResource( 3 )
 speed = 150.0
 
 [node name="AnimatedSprite" parent="." index="0"]
-scale = Vector2( 0.2, 0.2 )
+scale = Vector2( 0.15, 0.15 )
 frames = SubResource( 1 )
-animation = "walk_south"
+animation = "walk_north"
 frame = 10
-flip_h = true
 
 [node name="CollisionShape2D" parent="." index="1"]
-position = Vector2( 0, 22.54 )
+position = Vector2( 0, 10.97 )
 rotation = 1.5708
 shape = SubResource( 2 )
 
@@ -249,15 +293,16 @@ current = true
 
 [node name="AnimationPlayer" parent="." index="7"]
 anims/walk_east = SubResource( 4 )
-anims/walk_south = SubResource( 17 )
-anims/walk_west = SubResource( 5 )
+anims/walk_north = SubResource( 5 )
+anims/walk_south = SubResource( 6 )
+anims/walk_west = SubResource( 7 )
 
 [node name="AnimationTree" parent="." index="8"]
-tree_root = SubResource( 14 )
+tree_root = SubResource( 16 )
 anim_player = NodePath("../AnimationPlayer")
 active = true
-parameters/playback = SubResource( 15 )
-parameters/Idle/playback = SubResource( 16 )
+parameters/playback = SubResource( 17 )
+parameters/Idle/playback = SubResource( 18 )
 parameters/Walking/blend_position = Vector2( -0.00316125, -0.0258621 )
 [connection signal="body_entered" from="InteractiveArea" to="." method="_on_Area2D_body_entered"]
 [connection signal="body_exited" from="InteractiveArea" to="." method="_on_Area2D_body_exited"]
