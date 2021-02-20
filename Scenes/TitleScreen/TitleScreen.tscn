@@ -1,14 +1,21 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Scripts/TitleScreen/title_screen.gd" type="Script" id=1]
 [ext_resource path="res://Fonts/Averia Libre/AveriaLibre-Regular.ttf" type="DynamicFontData" id=2]
 [ext_resource path="res://Art/Heartbeat.png" type="Texture" id=3]
+[ext_resource path="res://Fonts/Averia Libre/AveriaLibre-Italic.ttf" type="DynamicFontData" id=4]
+[ext_resource path="res://Art/Flick in Furnace.jpg" type="Texture" id=5]
+[ext_resource path="res://Art/flick_sprites/walking/south/0003.png" type="Texture" id=6]
 
 [sub_resource type="DynamicFont" id=1]
+size = 120
+font_data = ExtResource( 4 )
+
+[sub_resource type="DynamicFont" id=2]
 size = 50
 font_data = ExtResource( 2 )
 
-[sub_resource type="DynamicFont" id=2]
+[sub_resource type="DynamicFont" id=3]
 font_data = ExtResource( 2 )
 
 [node name="TitleScreen" type="Control"]
@@ -20,17 +27,28 @@ __meta__ = {
 }
 game_world_path = "res://Scenes/game_manager/Game.tscn"
 
+[node name="ColorRect" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -1.05945
+margin_bottom = -1.05945
+color = Color( 0.572549, 0.745098, 0.882353, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="MenuButtons" type="VBoxContainer" parent="."]
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -20.5
-margin_top = -20.0
-margin_right = 20.5
-margin_bottom = 20.0
+margin_left = 177.62
+margin_top = 29.7948
+margin_right = 266.62
+margin_bottom = 113.795
 custom_constants/separation = 12
 __meta__ = {
+"_edit_group_": true,
 "_edit_use_anchors_": false
 }
 
@@ -51,6 +69,32 @@ margin_right = 89.0
 margin_bottom = 84.0
 text = "Quit"
 
+[node name="TextureRect" type="TextureRect" parent="."]
+margin_left = 106.0
+margin_top = 217.0
+margin_right = 581.0
+margin_bottom = 583.0
+texture = ExtResource( 5 )
+expand = true
+stretch_mode = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Title" type="Label" parent="."]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -394.0
+margin_top = 30.0
+margin_right = 394.0
+margin_bottom = 174.0
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0.505882, 0.321569, 0.105882, 1 )
+text = "Flicker of Light"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="Info" type="Control" parent="."]
 visible = false
 anchor_right = 1.0
@@ -59,7 +103,7 @@ anchor_bottom = 1.0
 [node name="Background" type="ColorRect" parent="Info"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-color = Color( 0.0901961, 0.0901961, 0.0901961, 0.27451 )
+color = Color( 0.0901961, 0.0901961, 0.0901961, 0.941176 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -70,14 +114,14 @@ anchor_right = 0.5
 margin_left = -134.5
 margin_right = 134.5
 margin_bottom = 61.0
-custom_fonts/font = SubResource( 1 )
+custom_fonts/font = SubResource( 2 )
 text = "Instructions"
 
 [node name="Flick" type="Control" parent="Info"]
-margin_left = 112.127
-margin_top = 84.0949
-margin_right = 285.127
-margin_bottom = 259.095
+margin_left = 111.339
+margin_top = 98.1107
+margin_right = 284.339
+margin_bottom = 273.111
 __meta__ = {
 "_edit_group_": true,
 "_edit_use_anchors_": false
@@ -86,15 +130,23 @@ __meta__ = {
 [node name="Instruction" type="Label" parent="Info/Flick"]
 margin_right = 168.0
 margin_bottom = 80.0
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = SubResource( 3 )
 text = "You are Flick, a flame spirit that resides in a furnace."
 autowrap = true
 
+[node name="TextureRect" type="TextureRect" parent="Info/Flick"]
+margin_left = 5.33936
+margin_top = 43.3823
+margin_right = 134.339
+margin_bottom = 178.382
+texture = ExtResource( 6 )
+expand = true
+
 [node name="Attack" type="Control" parent="Info"]
-margin_left = 85.4297
-margin_top = 284.321
-margin_right = 258.43
-margin_bottom = 459.321
+margin_left = 106.0
+margin_top = 329.795
+margin_right = 279.0
+margin_bottom = 504.795
 __meta__ = {
 "_edit_group_": true,
 "_edit_use_anchors_": false
@@ -103,34 +155,36 @@ __meta__ = {
 [node name="Instruction" type="Label" parent="Info/Attack"]
 margin_right = 168.0
 margin_bottom = 80.0
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = SubResource( 3 )
 text = "Your goal is to take out all the nightmares that are sneaking into the house."
 autowrap = true
 
 [node name="Beat" type="Control" parent="Info"]
-margin_left = 404.861
-margin_top = 134.618
-margin_right = 577.861
-margin_bottom = 309.618
+margin_left = 716.546
+margin_top = 61.2018
+margin_right = 889.546
+margin_bottom = 236.202
 __meta__ = {
+"_edit_group_": true,
 "_edit_use_anchors_": false
 }
 
 [node name="Instruction" type="Label" parent="Info/Beat"]
 margin_right = 168.0
 margin_bottom = 80.0
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = SubResource( 3 )
 text = "As the heart of the house you have, well, a heart. To attack effectively you need to attack to the beat."
 autowrap = true
 
 [node name="BeatHolder" type="Control" parent="Info/Beat"]
 anchor_top = 1.0
 anchor_bottom = 1.0
-margin_left = 4.2558
-margin_top = -42.1685
-margin_right = 144.256
-margin_bottom = 80.8315
+margin_left = 12.9323
+margin_top = -42.8359
+margin_right = 152.932
+margin_bottom = 80.1641
 __meta__ = {
+"_edit_group_": true,
 "_edit_use_anchors_": false
 }
 
@@ -228,10 +282,10 @@ texture = ExtResource( 3 )
 vframes = 2
 
 [node name="Candles" type="Control" parent="Info"]
-margin_left = 631.379
-margin_top = 379.094
-margin_right = 804.379
-margin_bottom = 554.094
+margin_left = 418.472
+margin_top = 183.54
+margin_right = 591.472
+margin_bottom = 358.54
 __meta__ = {
 "_edit_group_": true,
 "_edit_use_anchors_": false
@@ -240,15 +294,15 @@ __meta__ = {
 [node name="Instruction" type="Label" parent="Info/Candles"]
 margin_right = 168.0
 margin_bottom = 80.0
-custom_fonts/font = SubResource( 2 )
-text = "Nightmares spawn when it is dark, so keep the candles lit so that they don't overwhelm you."
+custom_fonts/font = SubResource( 3 )
+text = "Nightmares spawn when it is dark, so keep the candles lit and attack any that come."
 autowrap = true
 
 [node name="Win" type="Control" parent="Info"]
-margin_left = 760.858
-margin_top = 173.529
-margin_right = 933.858
-margin_bottom = 348.529
+margin_left = 718.143
+margin_top = 354.4
+margin_right = 891.143
+margin_bottom = 529.4
 __meta__ = {
 "_edit_group_": true,
 "_edit_use_anchors_": false
@@ -257,7 +311,7 @@ __meta__ = {
 [node name="Instruction" type="Label" parent="Info/Win"]
 margin_right = 168.0
 margin_bottom = 80.0
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = SubResource( 3 )
 text = "If you can keep the nightmares in check until sunrise, you win!"
 autowrap = true
 
