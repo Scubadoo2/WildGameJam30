@@ -27,6 +27,8 @@ var green_color = Color(0.0, 1.0, 0.0)
 var white_color = Color(1.0, 1.0, 1.0)
 var red_color = Color(1.0, 0.0, 0.0)
 
+
+
 # Debug values
 var collision_ray: Vector2
 
