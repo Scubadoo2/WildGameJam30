@@ -1,8 +1,8 @@
 extends Node2D
 
 export (Array, PackedScene) var entities
-export (float) var max_time: float = 5.0
-export (float) var min_time: float = 1.0
+export (float) var max_time: float = 7.0
+export (float) var min_time: float = 1.5
 
 onready var spawn_timer = $Timer
 
