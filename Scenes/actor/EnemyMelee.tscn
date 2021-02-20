@@ -297,5 +297,8 @@ parameters/playback = SubResource( 5 )
 parameters/Attack/blend_position = Vector2( 0, 0 )
 parameters/Idle/blend_position = Vector2( 0, 0 )
 parameters/Walking/blend_position = Vector2( 0, 0 )
+
+[node name="LoseHealthTimer" type="Timer" parent="." index="8"]
+one_shot = true
 [connection signal="body_entered" from="AggroZone" to="." method="_on_AggroZone_body_entered"]
 [connection signal="body_exited" from="AggroZone" to="." method="_on_AggroZone_body_exited"]

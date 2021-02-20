@@ -32,14 +32,38 @@ var red_color = Color(1.0, 0.0, 0.0)
 # Debug values
 var collision_ray: Vector2
 
-
+# Colors
+var stunned = Vector3(0.8,0.6,0.7)
+var healthy = Vector3(1.0,1.0,1.0)
 
 func _ready():
+	$AnimatedSprite.set_material($AnimatedSprite.get_material().duplicate())
 	._ready()
 	add_to_group("enemy")
+	# Avoid sharing material among all instances
+
 
 func _process(delta):
 	update()
+
+func _physics_process(delta):
+	if data_holder.in_light:
+		lose_health(2)
+	elif data_holder.in_light == false and $StateMachine.current_state != $StateMachine/Stun:
+		healthy_eye()
+
+func healthy_eye():
+	if $AnimatedSprite.material.get_shader_param("aggression_color") != healthy:
+		$AnimatedSprite.material.set_shader_param("aggression_color", healthy)
+
+func lose_health(amount: int):
+	if $LoseHealthTimer.is_stopped():
+		data_holder.current_health -= amount
+		if data_holder.current_health <= 0:
+			self.queue_free()
+		$LoseHealthTimer.start()
+	if $AnimatedSprite.material.get_shader_param("aggression_color") != stunned:
+		$AnimatedSprite.material.set_shader_param("aggression_color", stunned)
 
 ######################
 #     Draw

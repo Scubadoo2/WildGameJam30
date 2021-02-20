@@ -12,6 +12,9 @@ var radius_barrier
 
 var candle_on: bool = false
 
+# Decide to push
+var push_enemies_near: bool = false
+
 func _ready():
 	add_to_group("candle")
 	radius_barrier = light_barrier.get_node("CollisionShape2D").shape.radius
@@ -51,10 +54,14 @@ func _on_Area2D_body_entered(body):
 func _on_LightBarrier_body_entered(body):
 	if body.is_in_group("enemy"):
 		print_debug("enemy near light")
-		var enemy = body
-		var push_towards = enemy.global_position - self.global_position
-		push_towards = push_towards.normalized()
-		enemy.avoid(push_towards, self,radius_barrier)
+		if push_enemies_near:
+			var enemy = body
+			# Push towards opposite direction
+			var push_towards = enemy.global_position - self.global_position
+			push_towards = push_towards.normalized()
+			enemy.avoid(push_towards, self,radius_barrier)
+		else:
+			body.data_holder.in_light = true
 	elif body.is_in_group("player"):
 		body.in_light = true
 
