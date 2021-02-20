@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=2]
+[gd_scene load_steps=30 format=2]
 
 [ext_resource path="res://Scenes/actor/Actor.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Art/enemies/eye_ball.png" type="Texture" id=2]
@@ -10,6 +10,11 @@
 [ext_resource path="res://Scripts/actor/enemy/Melee/enemy_avoid_state.gd" type="Script" id=8]
 [ext_resource path="res://Scripts/actor/enemy/Melee/enemy_dead_state.gd" type="Script" id=9]
 [ext_resource path="res://Scripts/actor/enemy/Melee/enemy_stun_state.gd" type="Script" id=10]
+[ext_resource path="res://Scripts/actor/enemy/Melee/agression_shader.shader" type="Shader" id=11]
+
+[sub_resource type="ShaderMaterial" id=20]
+shader = ExtResource( 11 )
+shader_param/aggression_color = Vector3( 1, 1, 1 )
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -224,6 +229,7 @@ graph_offset = Vector2( -54, -61 )
 [sub_resource type="AnimationNodeStateMachinePlayback" id=5]
 
 [node name="EnemyMelee" instance=ExtResource( 1 )]
+modulate = Color( 0.992157, 0.992157, 0.992157, 1 )
 position = Vector2( 307.956, 192.076 )
 z_index = 1
 script = ExtResource( 3 )
@@ -231,6 +237,7 @@ MIN_DISTANCE = 71.0
 MIN_AWAY_FROM_AVOID_DISTANCE = 2.0
 
 [node name="AnimatedSprite" parent="." index="0"]
+material = SubResource( 20 )
 scale = Vector2( 0.05, 0.05 )
 frames = SubResource( 1 )
 animation = "movement"
