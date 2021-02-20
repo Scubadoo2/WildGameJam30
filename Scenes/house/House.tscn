@@ -50,7 +50,7 @@ scale = Vector2( 0.25, 0.25 )
 texture = ExtResource( 17 )
 
 [node name="Floor7" type="Sprite" parent="Entrance"]
-position = Vector2( -192, 120 )
+position = Vector2( -192, 95.2779 )
 scale = Vector2( 0.25, 0.25 )
 texture = ExtResource( 17 )
 
@@ -150,42 +150,58 @@ texture = ExtResource( 13 )
 position = Vector2( -408, -264 )
 
 [node name="Sprite" parent="Kitchen/NorthWall" index="0"]
-scale = Vector2( 0.5, 0.15 )
+scale = Vector2( 0.5, 0.102 )
 texture = ExtResource( 12 )
+
+[node name="CollisionShape2D" parent="Kitchen/NorthWall" index="1"]
+scale = Vector2( 1.038, 1.075 )
 
 [node name="NorthWall2" parent="Kitchen" instance=ExtResource( 6 )]
-position = Vector2( -808, 88 )
+position = Vector2( -819.092, 86.0162 )
 rotation = 1.5708
-scale = Vector2( 0.961, 1 )
+scale = Vector2( 0.933, 1 )
 
 [node name="Sprite" parent="Kitchen/NorthWall2" index="0"]
-scale = Vector2( 0.5, 0.15 )
+scale = Vector2( 0.5, 0.102 )
 texture = ExtResource( 12 )
+
+[node name="CollisionShape2D" parent="Kitchen/NorthWall2" index="1"]
+scale = Vector2( 1.023, 1.062 )
 
 [node name="NorthWall3" parent="Kitchen" instance=ExtResource( 6 )]
-position = Vector2( -387.023, 441.518 )
+position = Vector2( -412.831, 438.845 )
 
 [node name="Sprite" parent="Kitchen/NorthWall3" index="0"]
-scale = Vector2( 0.5, 0.15 )
+scale = Vector2( 0.5, 0.102 )
 texture = ExtResource( 12 )
+
+[node name="CollisionShape2D" parent="Kitchen/NorthWall3" index="1"]
+scale = Vector2( 1.038, 1.093 )
 
 [node name="NorthWall4" parent="Kitchen" instance=ExtResource( 6 )]
-position = Vector2( -37.0339, 341.477 )
+position = Vector2( -28.9379, 330.44 )
 rotation = 1.5708
-scale = Vector2( 0.297, 1 )
+scale = Vector2( 0.285, 1 )
 
 [node name="Sprite" parent="Kitchen/NorthWall4" index="0"]
-scale = Vector2( 0.5, 0.15 )
+scale = Vector2( 0.516, 0.102 )
 texture = ExtResource( 12 )
+
+[node name="CollisionShape2D" parent="Kitchen/NorthWall4" index="1"]
+scale = Vector2( 1.064, 1.098 )
 
 [node name="NorthWall5" parent="Kitchen" instance=ExtResource( 6 )]
-position = Vector2( -24, -144 )
+position = Vector2( -39.4054, -153.459 )
 rotation = 1.5708
-scale = Vector2( 0.398, 1 )
+scale = Vector2( 0.35, 1 )
 
 [node name="Sprite" parent="Kitchen/NorthWall5" index="0"]
-scale = Vector2( 0.5, 0.15 )
+scale = Vector2( 0.5, 0.102 )
 texture = ExtResource( 12 )
+
+[node name="CollisionShape2D" parent="Kitchen/NorthWall5" index="1"]
+position = Vector2( -15.3278, -13.5316 )
+scale = Vector2( 1.034, 1.043 )
 
 [node name="Furniture" type="Node" parent="Kitchen"]
 
