@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/sfx_flick_take_hit_1.wav-1f5901bbf5c1e37a687199789993b56d.sample"
+
+[deps]
+
+source_file="res://Sound/SFX/TakeHit/sfx_flick_take_hit_1.wav"
+dest_files=[ "res://.import/sfx_flick_take_hit_1.wav-1f5901bbf5c1e37a687199789993b56d.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0
