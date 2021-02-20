@@ -100,8 +100,8 @@ radius = 76.5152
 
 [sub_resource type="Animation" id=33]
 resource_name = "attack_east"
-length = 0.6
-step = 0.02
+length = 0.57
+step = 0.01
 tracks/0/type = "value"
 tracks/0/path = NodePath("AnimatedSprite:animation")
 tracks/0/interp = 1
@@ -121,7 +121,7 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0, 0.02, 0.04, 0.06, 0.08, 0.16, 0.2, 0.24, 0.28, 0.32, 0.36, 0.4, 0.44, 0.48, 0.52, 0.56, 0.6 ),
+"times": PoolRealArray( 0, 0.01, 0.02, 0.03, 0.04, 0.13, 0.17, 0.21, 0.25, 0.29, 0.33, 0.37, 0.41, 0.45, 0.49, 0.53, 0.57 ),
 "transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
 "update": 1,
 "values": [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16 ]
@@ -133,7 +133,7 @@ tracks/2/loop_wrap = true
 tracks/2/imported = false
 tracks/2/enabled = true
 tracks/2/keys = {
-"times": PoolRealArray( 0.16, 0.6 ),
+"times": PoolRealArray( 0.13, 0.57 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 1,
 "values": [ false, true ]
@@ -193,7 +193,7 @@ tracks/7/loop_wrap = true
 tracks/7/imported = false
 tracks/7/enabled = true
 tracks/7/keys = {
-"times": PoolRealArray( 0.6 ),
+"times": PoolRealArray( 0.57 ),
 "transitions": PoolRealArray( 1 ),
 "values": [ {
 "args": [  ],
@@ -207,7 +207,7 @@ tracks/8/loop_wrap = true
 tracks/8/imported = false
 tracks/8/enabled = true
 tracks/8/keys = {
-"times": PoolRealArray( 0, 0.1, 0.26 ),
+"times": PoolRealArray( 0, 0.1, 0.21 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
 "values": [ Vector2( -30.449, 13.908 ), Vector2( -18.203, 13.908 ), Vector2( -23.591, 17.102 ) ]
@@ -409,8 +409,8 @@ tracks/6/keys = {
 
 [sub_resource type="Animation" id=32]
 resource_name = "attack_west"
-length = 0.6
-step = 0.02
+length = 0.57
+step = 0.01
 tracks/0/type = "value"
 tracks/0/path = NodePath("AnimatedSprite:animation")
 tracks/0/interp = 1
@@ -430,10 +430,10 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0, 0.02, 0.04, 0.06, 0.08, 0.16, 0.2, 0.24, 0.28, 0.32, 0.36, 0.4, 0.44, 0.48, 0.52, 0.56 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"times": PoolRealArray( 0, 0.01, 0.02, 0.03, 0.04, 0.13, 0.17, 0.21, 0.25, 0.29, 0.33, 0.37, 0.41, 0.45, 0.49, 0.53, 0.57 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
 "update": 1,
-"values": [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15 ]
+"values": [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16 ]
 }
 tracks/2/type = "value"
 tracks/2/path = NodePath("AttackZone/CollisionShape2D:disabled")
@@ -442,7 +442,7 @@ tracks/2/loop_wrap = true
 tracks/2/imported = false
 tracks/2/enabled = true
 tracks/2/keys = {
-"times": PoolRealArray( 0.24, 0.6 ),
+"times": PoolRealArray( 0.13, 0.58 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 1,
 "values": [ false, true ]
@@ -502,7 +502,7 @@ tracks/7/loop_wrap = true
 tracks/7/imported = false
 tracks/7/enabled = true
 tracks/7/keys = {
-"times": PoolRealArray( 0.6 ),
+"times": PoolRealArray( 0.58 ),
 "transitions": PoolRealArray( 1 ),
 "values": [ {
 "args": [  ],
@@ -516,7 +516,7 @@ tracks/8/loop_wrap = true
 tracks/8/imported = false
 tracks/8/enabled = true
 tracks/8/keys = {
-"times": PoolRealArray( 0, 0.06, 0.24 ),
+"times": PoolRealArray( 0, 0.06, 0.21 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
 "values": [ Vector2( 34.378, 12.992 ), Vector2( 15.947, 12.992 ), Vector2( 23.5, 16.245 ) ]
@@ -958,7 +958,7 @@ speed = 150.0
 scale = Vector2( 0.15, 0.15 )
 frames = SubResource( 1 )
 animation = "attack_horizontal"
-frame = 15
+frame = 16
 flip_h = true
 
 [node name="CollisionShape2D" parent="." index="1"]
@@ -1017,7 +1017,6 @@ parameters/Walking/blend_position = Vector2( -0.00316125, -0.0258621 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AttackZone" index="0"]
 position = Vector2( -33.293, 20.9882 )
 shape = SubResource( 31 )
-disabled = true
 [connection signal="body_entered" from="InteractiveArea" to="." method="_on_Area2D_body_entered"]
 [connection signal="body_exited" from="InteractiveArea" to="." method="_on_Area2D_body_exited"]
 [connection signal="body_entered" from="AttackZone" to="." method="_on_AttackZone_body_entered"]

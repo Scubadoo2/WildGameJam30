@@ -37,10 +37,11 @@ var stunned = Vector3(0.8,0.6,0.7)
 var healthy = Vector3(1.0,1.0,1.0)
 
 func _ready():
+	$AnimatedSprite.set_material($AnimatedSprite.get_material().duplicate())
 	._ready()
 	add_to_group("enemy")
 	# Avoid sharing material among all instances
-	$AnimatedSprite.set_material($AnimatedSprite.get_material().duplicate())
+
 
 func _process(delta):
 	update()
@@ -48,7 +49,7 @@ func _process(delta):
 func _physics_process(delta):
 	if data_holder.in_light:
 		lose_health(2)
-	elif data_holder.in_light == false:
+	elif data_holder.in_light == false and $StateMachine.current_state != $StateMachine/Stun:
 		healthy_eye()
 
 func healthy_eye():
