@@ -8,3 +8,4 @@ play_button = 1.0
 button_volume = -8.0
 fireplace_volume = 1.0
 candle_lit_volume = 1.0
+flick_receive_dmg_volume = -2.0

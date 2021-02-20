@@ -10,6 +10,7 @@ var logic
 # animation
 onready var animation_tree = $AnimationTree
 onready var animation_mode = animation_tree.get("parameters/playback")
+onready var animation_player = $AnimationPlayer
 
 # signals
 signal player_attacked(amount)
@@ -82,6 +83,8 @@ func attacked(dmg_amount):
 	emit_signal("player_attacked", dmg_amount)
 	if logic.IsGameOver():
 		die()
+	else:
+		SFXPlayer.play_sfx("sfx_flick_take_hit_1", SFXVolume.flick_receive_dmg_volume)
 
 func heal(hl_amount):
 	emit_signal("player_heal", hl_amount)
@@ -94,7 +97,7 @@ func can_attack() -> bool:
 			return false
 	else:
 		print_debug("No logic for attacking")
-		return false
+		return true
 
 ############
 # Game Over
@@ -103,3 +106,11 @@ func can_attack() -> bool:
 func die():
 	emit_signal("player_dead", "hp")
 	$StateMachine.change_state("Dead")
+
+######################
+## Attack Damage Zone
+######################
+
+func _on_AttackZone_body_entered(body):
+	if body.is_in_group("enemy"):
+		body.attacked(4)

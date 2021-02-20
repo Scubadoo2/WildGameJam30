@@ -5,21 +5,25 @@ var actor: KinematicBody2D
 var animation: AnimatedSprite
 var debug_info: Label
 
+var attacking: bool = false
+
 func enter():
+	actor.animation_tree.set("parameters/Attack/blend_position", actor.direction)
+	actor.animation_mode.travel("Attack")
 	debug_info.text = "Attack"
-	attack()
+	attacking = true
 	# Play attack animation
 	
 func exit():
-	pass
+	attacking = false
 	
-func handle_input(event: InputEvent):
-	if event.is_action_pressed("attack"):
-		if actor.can_attack() and cool_down_finished():
-			attack()
+#func handle_input(event: InputEvent):
+#	if event.is_action_pressed("attack"):
+#		if actor.can_attack() and cool_down_finished():
+#			attack()
 	
 func tick(delta):
-	if cool_down_finished():
+	if attacking == false:
 		return "Idle"
 
 	
@@ -32,4 +36,8 @@ func attack():
 	print_debug("Attack!!!!")
 	
 func cool_down_finished() -> bool:
-	return true
+	return !attacking
+
+func finished_attack():
+	print_debug("finished attacking")
+	attacking = false
