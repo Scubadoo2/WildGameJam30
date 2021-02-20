@@ -26,6 +26,7 @@ script = ExtResource( 4 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+GamePath = "res://Scenes/game_manager/Game.tscn"
 
 [node name="BeatHolder" parent="." instance=ExtResource( 1 )]
 
@@ -112,6 +113,7 @@ margin_bottom = 51.0
 [node name="Clock" parent="." instance=ExtResource( 8 )]
 
 [node name="ButtonHolder" type="Control" parent="."]
+visible = false
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -148,8 +150,10 @@ __meta__ = {
 }
 
 [node name="Fade" parent="." instance=ExtResource( 9 )]
-[connection signal="GameOver" from="." to="Clock" method="StopTimer"]
 [connection signal="GameOver" from="." to="BeatHolder" method="StopEverything"]
+[connection signal="GameOver" from="." to="Clock" method="StopTimer"]
 [connection signal="GameOver" from="HP" to="." method="GetGameOver"]
 [connection signal="GameOver" from="NMTracker" to="." method="GetGameOver"]
 [connection signal="Win" from="Clock" to="." method="GetWin"]
+[connection signal="pressed" from="ButtonHolder/Play again" to="." method="RestartGame"]
+[connection signal="pressed" from="ButtonHolder/Quit" to="." method="QuitGame"]

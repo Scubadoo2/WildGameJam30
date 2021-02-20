@@ -14,6 +14,8 @@ func _on_Start_pressed():
 
 func _on_Quit_pressed():
 	SFXPlayer.play_sfx("ui_menu_select_move", SFXVolume.button_volume)
+	$Fade.FadeOut(.5)
+	yield($Fade, "FadedOut")
 	get_tree().quit()
 
 func ShowInstructions(show):

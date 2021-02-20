@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Scripts/TitleScreen/title_screen.gd" type="Script" id=1]
 [ext_resource path="res://Fonts/Averia Libre/AveriaLibre-Regular.ttf" type="DynamicFontData" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://Art/Flick in Furnace.jpg" type="Texture" id=5]
 [ext_resource path="res://Art/flick_sprites/walking/south/0003.png" type="Texture" id=6]
 [ext_resource path="res://Scenes/UI/Fade.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Themes/MainTheme.tres" type="Theme" id=8]
 
 [sub_resource type="DynamicFont" id=1]
 size = 120
@@ -43,10 +44,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = 177.62
-margin_top = 29.7948
-margin_right = 266.62
-margin_bottom = 113.795
+margin_left = 160.802
+margin_top = 13.4397
+margin_right = 331.802
+margin_bottom = 166.44
 custom_constants/separation = 12
 __meta__ = {
 "_edit_group_": true,
@@ -54,20 +55,23 @@ __meta__ = {
 }
 
 [node name="Start" type="Button" parent="MenuButtons"]
-margin_right = 89.0
-margin_bottom = 20.0
+margin_right = 171.0
+margin_bottom = 43.0
+theme = ExtResource( 8 )
 text = "Start"
 
 [node name="Instructions" type="Button" parent="MenuButtons"]
-margin_top = 32.0
-margin_right = 89.0
-margin_bottom = 52.0
+margin_top = 55.0
+margin_right = 171.0
+margin_bottom = 98.0
+theme = ExtResource( 8 )
 text = "Instructions"
 
 [node name="Quit" type="Button" parent="MenuButtons"]
-margin_top = 64.0
-margin_right = 89.0
-margin_bottom = 84.0
+margin_top = 110.0
+margin_right = 171.0
+margin_bottom = 153.0
+theme = ExtResource( 8 )
 text = "Quit"
 
 [node name="TextureRect" type="TextureRect" parent="."]
@@ -317,10 +321,11 @@ text = "If you can keep the nightmares in check until sunrise, you win!"
 autowrap = true
 
 [node name="Button" type="Button" parent="Info"]
-margin_left = 487.216
-margin_top = 520.587
-margin_right = 529.216
-margin_bottom = 540.587
+margin_left = 430.035
+margin_top = 504.795
+margin_right = 506.035
+margin_bottom = 547.795
+theme = ExtResource( 8 )
 text = "Back"
 __meta__ = {
 "_edit_use_anchors_": false

@@ -11,6 +11,8 @@ onready var winText = $Win
 onready var itemTracker = $ItemTracker
 onready var candleCount = $CandleCount
 
+export (String, FILE, "*.tscn") var GamePath
+
 #Custom variables
 var maxHP = 3
 #export (int) var maxStress = 3
@@ -156,6 +158,7 @@ func GetWin():
 	isWin = true
 	gameOver = true
 	winText.set_visible(true)
+	$ButtonHolder.visible = true
 
 func GetGameOver(how):
 	emit_signal("GameOver", how)
@@ -170,3 +173,30 @@ func GetGameOver(how):
 			
 	gameOverText.find_node("Description").text = descHolder
 	gameOverText.set_visible(true)
+	$ButtonHolder.visible = true
+
+func QuitGame():
+	SFXPlayer.play_sfx("ui_menu_select_move", SFXVolume.button_volume)
+	$Fade.FadeOut(1)
+	yield($Fade, "FadedOut")
+	get_tree().quit()
+	
+func RestartGame():
+	$Fade.FadeOut(1)
+	yield($Fade, "FadedOut")
+	get_tree().change_scene(GamePath)
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
