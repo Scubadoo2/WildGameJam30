@@ -74,7 +74,7 @@ SFXPlayer="*res://Scenes/SFX/SFXPlayer.tscn"
 [gdnative]
 
 singletons=[ "res://git_api.gdnlib" ]
-singletons_disabled=[ "res://git_api.gdnlib" ]
+singletons_disabled=[  ]
 
 [input]
 
