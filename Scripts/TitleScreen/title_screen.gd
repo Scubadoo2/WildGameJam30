@@ -7,7 +7,8 @@ onready var menu = $MenuButtons
 
 func _on_Start_pressed():
 	SFXPlayer.play_sfx("ui_menu_play_game_1", SFXVolume.play_button)
-	yield(get_tree().create_timer(1.0), "timeout")
+	$Fade.FadeOut(1)
+	yield($Fade, "FadedOut")
 	get_tree().change_scene(game_world_path)
 
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Scripts/TitleScreen/title_screen.gd" type="Script" id=1]
 [ext_resource path="res://Fonts/Averia Libre/AveriaLibre-Regular.ttf" type="DynamicFontData" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://Fonts/Averia Libre/AveriaLibre-Italic.ttf" type="DynamicFontData" id=4]
 [ext_resource path="res://Art/Flick in Furnace.jpg" type="Texture" id=5]
 [ext_resource path="res://Art/flick_sprites/walking/south/0003.png" type="Texture" id=6]
+[ext_resource path="res://Scenes/UI/Fade.tscn" type="PackedScene" id=7]
 
 [sub_resource type="DynamicFont" id=1]
 size = 120
@@ -324,6 +325,8 @@ text = "Back"
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="Fade" parent="." instance=ExtResource( 7 )]
 [connection signal="pressed" from="MenuButtons/Start" to="." method="_on_Start_pressed"]
 [connection signal="pressed" from="MenuButtons/Instructions" to="." method="ShowInstructions" binds= [ true ]]
 [connection signal="pressed" from="MenuButtons/Quit" to="." method="_on_Quit_pressed"]
