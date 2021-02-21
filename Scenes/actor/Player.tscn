@@ -102,11 +102,6 @@
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
-"frames": [ ExtResource( 14 ) ],
-"loop": true,
-"name": "idle_horizontal",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 33 ) ],
 "loop": true,
 "name": "idle_north",
@@ -145,6 +140,11 @@ animations = [ {
 "frames": [ ExtResource( 65 ), ExtResource( 66 ), ExtResource( 92 ), ExtResource( 93 ), ExtResource( 95 ), ExtResource( 94 ), ExtResource( 78 ), ExtResource( 79 ), ExtResource( 80 ), ExtResource( 81 ), ExtResource( 82 ), ExtResource( 83 ), ExtResource( 84 ), ExtResource( 85 ), ExtResource( 86 ), ExtResource( 87 ), ExtResource( 96 ), ExtResource( 97 ), ExtResource( 99 ), ExtResource( 98 ), ExtResource( 69 ) ],
 "loop": true,
 "name": "attack_south",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 14 ) ],
+"loop": true,
+"name": "idle_horizontal",
 "speed": 5.0
 } ]
 

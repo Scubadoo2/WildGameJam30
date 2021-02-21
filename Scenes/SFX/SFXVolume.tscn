@@ -11,3 +11,4 @@ candle_lit_volume = 1.0
 flick_receive_dmg_volume = -2.0
 fire_attack_volume = 1.0
 leech_evaporate_volume = -8.0
+flick_death_volume = -8.0
