@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://Scripts/TitleScreen/title_screen.gd" type="Script" id=1]
 [ext_resource path="res://Fonts/Averia Libre/AveriaLibre-Regular.ttf" type="DynamicFontData" id=2]
@@ -10,6 +10,7 @@
 [ext_resource path="res://Themes/MainTheme.tres" type="Theme" id=8]
 [ext_resource path="res://Art/flick_sprites/walking/west/0003.png" type="Texture" id=9]
 [ext_resource path="res://Art/furniture/lamp_v2.png" type="Texture" id=10]
+[ext_resource path="res://Art/enemies/eye_ball.png" type="Texture" id=11]
 
 [sub_resource type="DynamicFont" id=1]
 size = 120
@@ -159,9 +160,8 @@ expand = true
 margin_left = 106.0
 margin_top = 330.0
 margin_right = 279.0
-margin_bottom = 517.0
+margin_bottom = 583.0
 __meta__ = {
-"_edit_group_": true,
 "_edit_use_anchors_": false
 }
 
@@ -173,10 +173,10 @@ text = "Your goal is to take out all the nightmares that are sneaking into the h
 autowrap = true
 
 [node name="Key Space" type="Label" parent="Info/Attack"]
-margin_left = 12.0
-margin_top = 126.222
-margin_right = 115.0
-margin_bottom = 175.222
+margin_left = 10.339
+margin_top = 211.44
+margin_right = 113.339
+margin_bottom = 260.44
 custom_styles/normal = SubResource( 4 )
 custom_fonts/font = SubResource( 5 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
@@ -185,6 +185,22 @@ align = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="TextureRect" type="TextureRect" parent="Info/Attack"]
+margin_left = -41.0
+margin_top = 81.4397
+margin_right = 89.0
+margin_bottom = 211.44
+texture = ExtResource( 9 )
+expand = true
+
+[node name="TextureRect2" type="TextureRect" parent="Info/Attack"]
+margin_left = 77.1628
+margin_top = 110.493
+margin_right = 166.163
+margin_bottom = 199.493
+texture = ExtResource( 11 )
+expand = true
 
 [node name="Beat" type="Control" parent="Info"]
 margin_left = 716.546
