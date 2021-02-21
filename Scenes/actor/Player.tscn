@@ -1265,7 +1265,7 @@ extents = Vector2( 10, 24.4828 )
 
 [node name="Player" instance=ExtResource( 1 )]
 script = ExtResource( 3 )
-speed = 150.0
+speed = 170.0
 
 [node name="AnimatedSprite" parent="." index="0"]
 scale = Vector2( 0.15, 0.15 )
