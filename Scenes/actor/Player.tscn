@@ -1,4 +1,4 @@
-[gd_scene load_steps=97 format=2]
+[gd_scene load_steps=139 format=2]
 
 [ext_resource path="res://Scenes/actor/Actor.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Art/flick_sprites/walking/south/0006.png" type="Texture" id=2]
@@ -57,6 +57,48 @@
 [ext_resource path="res://Art/flick_sprites/attack/0012.png" type="Texture" id=55]
 [ext_resource path="res://Art/flick_sprites/attack/0011.png" type="Texture" id=56]
 [ext_resource path="res://Art/flick_sprites/attack/0016.png" type="Texture" id=57]
+[ext_resource path="res://Art/flick_sprites/attack/north/0001.png" type="Texture" id=58]
+[ext_resource path="res://Art/flick_sprites/attack/north/0002.png" type="Texture" id=59]
+[ext_resource path="res://Art/flick_sprites/attack/north/0005.png" type="Texture" id=60]
+[ext_resource path="res://Art/flick_sprites/attack/north/0006.png" type="Texture" id=61]
+[ext_resource path="res://Art/flick_sprites/attack/north/0004.png" type="Texture" id=62]
+[ext_resource path="res://Art/flick_sprites/attack/north/0003.png" type="Texture" id=63]
+[ext_resource path="res://Art/flick_sprites/attack/north/0000.png" type="Texture" id=64]
+[ext_resource path="res://Art/flick_sprites/attack/south/0000.png" type="Texture" id=65]
+[ext_resource path="res://Art/flick_sprites/attack/south/0001.png" type="Texture" id=66]
+[ext_resource path="res://Art/flick_sprites/attack/north/0007.png" type="Texture" id=67]
+[ext_resource path="res://Art/flick_sprites/attack/north/0008.png" type="Texture" id=68]
+[ext_resource path="res://Art/flick_sprites/attack/south/0020.png" type="Texture" id=69]
+[ext_resource path="res://Art/flick_sprites/attack/north/0009.png" type="Texture" id=70]
+[ext_resource path="res://Art/flick_sprites/attack/north/0010.png" type="Texture" id=71]
+[ext_resource path="res://Art/flick_sprites/attack/north/0011.png" type="Texture" id=72]
+[ext_resource path="res://Art/flick_sprites/attack/north/0012.png" type="Texture" id=73]
+[ext_resource path="res://Art/flick_sprites/attack/north/0013.png" type="Texture" id=74]
+[ext_resource path="res://Art/flick_sprites/attack/north/0014.png" type="Texture" id=75]
+[ext_resource path="res://Art/flick_sprites/attack/north/0015.png" type="Texture" id=76]
+[ext_resource path="res://Art/flick_sprites/attack/north/0016.png" type="Texture" id=77]
+[ext_resource path="res://Art/flick_sprites/attack/south/0006.png" type="Texture" id=78]
+[ext_resource path="res://Art/flick_sprites/attack/south/0007.png" type="Texture" id=79]
+[ext_resource path="res://Art/flick_sprites/attack/south/0008.png" type="Texture" id=80]
+[ext_resource path="res://Art/flick_sprites/attack/south/0009.png" type="Texture" id=81]
+[ext_resource path="res://Art/flick_sprites/attack/south/0010.png" type="Texture" id=82]
+[ext_resource path="res://Art/flick_sprites/attack/south/0011.png" type="Texture" id=83]
+[ext_resource path="res://Art/flick_sprites/attack/south/0012.png" type="Texture" id=84]
+[ext_resource path="res://Art/flick_sprites/attack/south/0013.png" type="Texture" id=85]
+[ext_resource path="res://Art/flick_sprites/attack/south/0014.png" type="Texture" id=86]
+[ext_resource path="res://Art/flick_sprites/attack/south/0015.png" type="Texture" id=87]
+[ext_resource path="res://Art/flick_sprites/attack/north/0019.png" type="Texture" id=88]
+[ext_resource path="res://Art/flick_sprites/attack/north/0018.png" type="Texture" id=89]
+[ext_resource path="res://Art/flick_sprites/attack/north/0020.png" type="Texture" id=90]
+[ext_resource path="res://Art/flick_sprites/attack/north/0017.png" type="Texture" id=91]
+[ext_resource path="res://Art/flick_sprites/attack/south/0002.png" type="Texture" id=92]
+[ext_resource path="res://Art/flick_sprites/attack/south/0003.png" type="Texture" id=93]
+[ext_resource path="res://Art/flick_sprites/attack/south/0005.png" type="Texture" id=94]
+[ext_resource path="res://Art/flick_sprites/attack/south/0004.png" type="Texture" id=95]
+[ext_resource path="res://Art/flick_sprites/attack/south/0016.png" type="Texture" id=96]
+[ext_resource path="res://Art/flick_sprites/attack/south/0017.png" type="Texture" id=97]
+[ext_resource path="res://Art/flick_sprites/attack/south/0019.png" type="Texture" id=98]
+[ext_resource path="res://Art/flick_sprites/attack/south/0018.png" type="Texture" id=99]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -75,7 +117,7 @@ animations = [ {
 "name": "attack_horizontal",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 33 ) ],
+"frames": [ ExtResource( 64 ), ExtResource( 58 ), ExtResource( 59 ), ExtResource( 63 ), ExtResource( 62 ), ExtResource( 60 ), ExtResource( 61 ), ExtResource( 67 ), ExtResource( 68 ), ExtResource( 70 ), ExtResource( 71 ), ExtResource( 72 ), ExtResource( 73 ), ExtResource( 74 ), ExtResource( 75 ), ExtResource( 76 ), ExtResource( 77 ), ExtResource( 91 ), ExtResource( 89 ), ExtResource( 88 ), ExtResource( 90 ) ],
 "loop": true,
 "name": "attack_north",
 "speed": 5.0
@@ -85,7 +127,7 @@ animations = [ {
 "name": "walk_horizontal",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 24 ) ],
+"frames": [ ExtResource( 65 ), ExtResource( 66 ), ExtResource( 92 ), ExtResource( 93 ), ExtResource( 95 ), ExtResource( 94 ), ExtResource( 78 ), ExtResource( 79 ), ExtResource( 80 ), ExtResource( 81 ), ExtResource( 82 ), ExtResource( 83 ), ExtResource( 84 ), ExtResource( 85 ), ExtResource( 86 ), ExtResource( 87 ), ExtResource( 96 ), ExtResource( 97 ), ExtResource( 99 ), ExtResource( 98 ), ExtResource( 69 ) ],
 "loop": true,
 "name": "attack_south",
 "speed": 5.0
@@ -242,8 +284,8 @@ tracks/9/keys = {
 
 [sub_resource type="Animation" id=5]
 resource_name = "attack_north"
-length = 0.25
-step = 0.05
+length = 0.57
+step = 0.01
 tracks/0/type = "value"
 tracks/0/path = NodePath("AnimatedSprite:animation")
 tracks/0/interp = 1
@@ -263,10 +305,10 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
+"times": PoolRealArray( 0, 0.01, 0.02, 0.03, 0.04, 0.05, 0.13, 0.17, 0.21, 0.25, 0.29, 0.33, 0.37, 0.4, 0.45, 0.47, 0.49, 0.51, 0.53, 0.55, 0.57 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
 "update": 1,
-"values": [ 0 ]
+"values": [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20 ]
 }
 tracks/2/type = "value"
 tracks/2/path = NodePath("AttackZone/CollisionShape2D:disabled")
@@ -275,7 +317,7 @@ tracks/2/loop_wrap = true
 tracks/2/imported = false
 tracks/2/enabled = true
 tracks/2/keys = {
-"times": PoolRealArray( 0, 0.25 ),
+"times": PoolRealArray( 0.13, 0.57 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 1,
 "values": [ false, true ]
@@ -323,18 +365,30 @@ tracks/6/loop_wrap = true
 tracks/6/imported = false
 tracks/6/enabled = true
 tracks/6/keys = {
-"times": PoolRealArray( 0.25 ),
+"times": PoolRealArray( 0.57 ),
 "transitions": PoolRealArray( 1 ),
 "values": [ {
 "args": [  ],
 "method": "finished_attack"
 } ]
 }
+tracks/7/type = "value"
+tracks/7/path = NodePath("CollisionShape2D:position")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 10.97 ) ]
+}
 
-[sub_resource type="Animation" id=6]
+[sub_resource type="Animation" id=40]
 resource_name = "attack_south"
-length = 0.25
-step = 0.05
+length = 0.57
+step = 0.01
 tracks/0/type = "value"
 tracks/0/path = NodePath("AnimatedSprite:animation")
 tracks/0/interp = 1
@@ -354,10 +408,10 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
+"times": PoolRealArray( 0, 0.01, 0.02, 0.03, 0.04, 0.05, 0.09, 0.13, 0.17, 0.21, 0.25, 0.29, 0.33, 0.37, 0.44, 0.47, 0.49, 0.51, 0.53, 0.55, 0.57 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
 "update": 1,
-"values": [ 0 ]
+"values": [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20 ]
 }
 tracks/2/type = "value"
 tracks/2/path = NodePath("AttackZone/CollisionShape2D:disabled")
@@ -366,7 +420,7 @@ tracks/2/loop_wrap = true
 tracks/2/imported = false
 tracks/2/enabled = true
 tracks/2/keys = {
-"times": PoolRealArray( 0, 0.25 ),
+"times": PoolRealArray( 0.13, 0.57 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 1,
 "values": [ false, true ]
@@ -393,7 +447,7 @@ tracks/4/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Vector2( 66.001, 1.78381 ) ]
+"values": [ Vector2( 58.8951, -0.295296 ) ]
 }
 tracks/5/type = "value"
 tracks/5/path = NodePath("AttackZone/CollisionShape2D:rotation_degrees")
@@ -414,12 +468,24 @@ tracks/6/loop_wrap = true
 tracks/6/imported = false
 tracks/6/enabled = true
 tracks/6/keys = {
-"times": PoolRealArray( 0.25 ),
+"times": PoolRealArray( 0.57 ),
 "transitions": PoolRealArray( 1 ),
 "values": [ {
 "args": [  ],
 "method": "finished_attack"
 } ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("CollisionShape2D:position")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 10.97 ) ]
 }
 
 [sub_resource type="Animation" id=7]
@@ -652,7 +718,7 @@ tracks/7/keys = {
 } ]
 }
 
-[sub_resource type="Animation" id=38]
+[sub_resource type="Animation" id=9]
 resource_name = "idle_east"
 length = 0.5
 loop = true
@@ -705,7 +771,7 @@ tracks/3/keys = {
 "values": [ Vector2( 0, 10.97 ) ]
 }
 
-[sub_resource type="Animation" id=40]
+[sub_resource type="Animation" id=10]
 resource_name = "idle_north"
 length = 0.5
 loop = true
@@ -758,7 +824,7 @@ tracks/3/keys = {
 "values": [ Vector2( 0, 10.97 ) ]
 }
 
-[sub_resource type="Animation" id=41]
+[sub_resource type="Animation" id=11]
 resource_name = "idle_south"
 length = 0.5
 loop = true
@@ -811,7 +877,7 @@ tracks/3/keys = {
 "values": [ Vector2( 0, 10.97 ) ]
 }
 
-[sub_resource type="Animation" id=39]
+[sub_resource type="Animation" id=12]
 resource_name = "idle_west"
 length = 0.5
 loop = true
@@ -864,7 +930,7 @@ tracks/3/keys = {
 "values": [ Vector2( 0, 10.97 ) ]
 }
 
-[sub_resource type="Animation" id=9]
+[sub_resource type="Animation" id=13]
 length = 0.6
 loop = true
 step = 0.05
@@ -929,7 +995,7 @@ tracks/4/keys = {
 "values": [ 90.0002 ]
 }
 
-[sub_resource type="Animation" id=10]
+[sub_resource type="Animation" id=14]
 length = 0.6
 loop = true
 step = 0.05
@@ -982,7 +1048,7 @@ tracks/3/keys = {
 "values": [ 90.0002 ]
 }
 
-[sub_resource type="Animation" id=11]
+[sub_resource type="Animation" id=15]
 length = 0.6
 loop = true
 step = 0.05
@@ -1035,7 +1101,7 @@ tracks/3/keys = {
 "values": [ 90.0002 ]
 }
 
-[sub_resource type="Animation" id=12]
+[sub_resource type="Animation" id=16]
 length = 0.6
 loop = true
 step = 0.05
@@ -1100,101 +1166,101 @@ tracks/4/keys = {
 "values": [ 90.0002 ]
 }
 
-[sub_resource type="AnimationNodeAnimation" id=13]
+[sub_resource type="AnimationNodeAnimation" id=17]
 animation = "attack_east"
 
-[sub_resource type="AnimationNodeAnimation" id=14]
+[sub_resource type="AnimationNodeAnimation" id=18]
 animation = "attack_west"
 
-[sub_resource type="AnimationNodeAnimation" id=15]
+[sub_resource type="AnimationNodeAnimation" id=19]
 animation = "attack_south"
 
-[sub_resource type="AnimationNodeAnimation" id=16]
+[sub_resource type="AnimationNodeAnimation" id=20]
 animation = "attack_north"
 
-[sub_resource type="AnimationNodeBlendSpace2D" id=17]
-blend_point_0/node = SubResource( 13 )
+[sub_resource type="AnimationNodeBlendSpace2D" id=21]
+blend_point_0/node = SubResource( 17 )
 blend_point_0/pos = Vector2( 1, 0 )
-blend_point_1/node = SubResource( 14 )
+blend_point_1/node = SubResource( 18 )
 blend_point_1/pos = Vector2( -1, 0 )
-blend_point_2/node = SubResource( 15 )
+blend_point_2/node = SubResource( 19 )
 blend_point_2/pos = Vector2( 0, 1 )
-blend_point_3/node = SubResource( 16 )
+blend_point_3/node = SubResource( 20 )
 blend_point_3/pos = Vector2( 0, -1 )
 blend_mode = 1
 
-[sub_resource type="AnimationNodeAnimation" id=42]
+[sub_resource type="AnimationNodeAnimation" id=22]
 animation = "idle_south"
 
-[sub_resource type="AnimationNodeAnimation" id=43]
+[sub_resource type="AnimationNodeAnimation" id=23]
 animation = "idle_north"
 
-[sub_resource type="AnimationNodeAnimation" id=44]
+[sub_resource type="AnimationNodeAnimation" id=24]
 animation = "idle_east"
 
-[sub_resource type="AnimationNodeAnimation" id=45]
+[sub_resource type="AnimationNodeAnimation" id=25]
 animation = "idle_west"
 
-[sub_resource type="AnimationNodeBlendSpace2D" id=33]
-blend_point_0/node = SubResource( 42 )
+[sub_resource type="AnimationNodeBlendSpace2D" id=26]
+blend_point_0/node = SubResource( 22 )
 blend_point_0/pos = Vector2( 0, 1 )
-blend_point_1/node = SubResource( 43 )
+blend_point_1/node = SubResource( 23 )
 blend_point_1/pos = Vector2( 0, -1 )
-blend_point_2/node = SubResource( 44 )
+blend_point_2/node = SubResource( 24 )
 blend_point_2/pos = Vector2( 1, 0 )
-blend_point_3/node = SubResource( 45 )
+blend_point_3/node = SubResource( 25 )
 blend_point_3/pos = Vector2( -1, 0 )
 blend_mode = 1
 
-[sub_resource type="AnimationNodeAnimation" id=19]
+[sub_resource type="AnimationNodeAnimation" id=27]
 animation = "walk_west"
 
-[sub_resource type="AnimationNodeAnimation" id=20]
+[sub_resource type="AnimationNodeAnimation" id=28]
 animation = "walk_east"
 
-[sub_resource type="AnimationNodeAnimation" id=21]
+[sub_resource type="AnimationNodeAnimation" id=29]
 animation = "walk_north"
 
-[sub_resource type="AnimationNodeAnimation" id=22]
+[sub_resource type="AnimationNodeAnimation" id=30]
 animation = "walk_south"
 
-[sub_resource type="AnimationNodeBlendSpace2D" id=23]
-blend_point_0/node = SubResource( 19 )
+[sub_resource type="AnimationNodeBlendSpace2D" id=31]
+blend_point_0/node = SubResource( 27 )
 blend_point_0/pos = Vector2( -1, 0 )
-blend_point_1/node = SubResource( 20 )
+blend_point_1/node = SubResource( 28 )
 blend_point_1/pos = Vector2( 1, 0 )
-blend_point_2/node = SubResource( 21 )
+blend_point_2/node = SubResource( 29 )
 blend_point_2/pos = Vector2( 0, -1 )
-blend_point_3/node = SubResource( 22 )
+blend_point_3/node = SubResource( 30 )
 blend_point_3/pos = Vector2( 0, 1 )
 blend_mode = 1
 
-[sub_resource type="AnimationNodeStateMachineTransition" id=28]
+[sub_resource type="AnimationNodeStateMachineTransition" id=32]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=33]
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=34]
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=35]
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=36]
-
-[sub_resource type="AnimationNodeStateMachineTransition" id=37]
 switch_mode = 2
 auto_advance = true
 
-[sub_resource type="AnimationNodeStateMachine" id=29]
-states/Attack/node = SubResource( 17 )
+[sub_resource type="AnimationNodeStateMachine" id=37]
+states/Attack/node = SubResource( 21 )
 states/Attack/position = Vector2( 254, 243 )
-states/Idle/node = SubResource( 33 )
+states/Idle/node = SubResource( 26 )
 states/Idle/position = Vector2( 83, 101 )
-states/Walking/node = SubResource( 23 )
+states/Walking/node = SubResource( 31 )
 states/Walking/position = Vector2( 366, 95 )
-transitions = [ "Walking", "Attack", SubResource( 28 ), "Idle", "Walking", SubResource( 34 ), "Walking", "Idle", SubResource( 35 ), "Idle", "Attack", SubResource( 36 ), "Attack", "Idle", SubResource( 37 ) ]
+transitions = [ "Walking", "Attack", SubResource( 32 ), "Idle", "Walking", SubResource( 33 ), "Walking", "Idle", SubResource( 34 ), "Idle", "Attack", SubResource( 35 ), "Attack", "Idle", SubResource( 36 ) ]
 start_node = "Idle"
 graph_offset = Vector2( -150, 43 )
 
-[sub_resource type="AnimationNodeStateMachinePlayback" id=30]
+[sub_resource type="AnimationNodeStateMachinePlayback" id=38]
 
-[sub_resource type="RectangleShape2D" id=32]
+[sub_resource type="RectangleShape2D" id=39]
 extents = Vector2( 10, 24.4828 )
 
 [node name="Player" instance=ExtResource( 1 )]
@@ -1204,7 +1270,7 @@ speed = 150.0
 [node name="AnimatedSprite" parent="." index="0"]
 scale = Vector2( 0.15, 0.15 )
 frames = SubResource( 1 )
-animation = "idle_south"
+animation = "idle_north"
 
 [node name="CollisionShape2D" parent="." index="1"]
 position = Vector2( 0, 10.97 )
@@ -1240,32 +1306,32 @@ current = true
 [node name="AnimationPlayer" parent="." index="7"]
 anims/attack_east = SubResource( 4 )
 anims/attack_north = SubResource( 5 )
-anims/attack_south = SubResource( 6 )
+anims/attack_south = SubResource( 40 )
 anims/attack_west = SubResource( 7 )
 anims/attack_west_old = SubResource( 8 )
-anims/idle_east = SubResource( 38 )
-anims/idle_north = SubResource( 40 )
-anims/idle_south = SubResource( 41 )
-anims/idle_west = SubResource( 39 )
-anims/walk_east = SubResource( 9 )
-anims/walk_north = SubResource( 10 )
-anims/walk_south = SubResource( 11 )
-anims/walk_west = SubResource( 12 )
+anims/idle_east = SubResource( 9 )
+anims/idle_north = SubResource( 10 )
+anims/idle_south = SubResource( 11 )
+anims/idle_west = SubResource( 12 )
+anims/walk_east = SubResource( 13 )
+anims/walk_north = SubResource( 14 )
+anims/walk_south = SubResource( 15 )
+anims/walk_west = SubResource( 16 )
 
 [node name="AnimationTree" parent="." index="8"]
-tree_root = SubResource( 29 )
+tree_root = SubResource( 37 )
 anim_player = NodePath("../AnimationPlayer")
 active = true
-parameters/playback = SubResource( 30 )
+parameters/playback = SubResource( 38 )
 parameters/Attack/blend_position = Vector2( 0, 0 )
-parameters/Idle/blend_position = Vector2( 0.275026, 0.560345 )
+parameters/Idle/blend_position = Vector2( -0.00105375, -0.00237525 )
 parameters/Walking/blend_position = Vector2( -0.00316125, -0.0258621 )
 
 [node name="AttackZone" type="Area2D" parent="." index="9"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AttackZone" index="0"]
 position = Vector2( 70.0046, 11.9828 )
-shape = SubResource( 32 )
+shape = SubResource( 39 )
 disabled = true
 [connection signal="body_entered" from="InteractiveArea" to="." method="_on_Area2D_body_entered"]
 [connection signal="body_exited" from="InteractiveArea" to="." method="_on_Area2D_body_exited"]
