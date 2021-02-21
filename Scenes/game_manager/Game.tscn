@@ -28,11 +28,13 @@ z_index = 1
 
 [node name="UI" parent="CanvasLayer" instance=ExtResource( 2 )]
 
-[node name="StaticBody2D" parent="." instance=ExtResource( 6 )]
-position = Vector2( 60.0878, 1045.51 )
+[node name="Fireplace" parent="." instance=ExtResource( 6 )]
+position = Vector2( 918.515, 472.4 )
+scale = Vector2( 0.2, 0.2 )
 
-[node name="StaticBody2D2" parent="." instance=ExtResource( 6 )]
-position = Vector2( 109.477, 63.0709 )
+[node name="Fireplace2" parent="." instance=ExtResource( 6 )]
+position = Vector2( 107.232, 8.07026 )
+scale = Vector2( 0.2, 0.2 )
 
 [node name="SpawnManager" type="Node" parent="."]
 script = ExtResource( 5 )
@@ -50,15 +52,15 @@ position = Vector2( 826.113, 166.272 )
 z_index = 1
 
 [node name="Candle6" parent="Candles" instance=ExtResource( 8 )]
-position = Vector2( 303.972, 155.496 )
+position = Vector2( 328.026, 285.567 )
 z_index = 1
 
 [node name="Candle2" parent="Candles" instance=ExtResource( 8 )]
-position = Vector2( 829.545, 631.756 )
+position = Vector2( 251.241, 670.849 )
 z_index = 1
 
 [node name="Candle3" parent="Candles" instance=ExtResource( 8 )]
-position = Vector2( 631.769, 1033.3 )
+position = Vector2( 631.769, 1025.36 )
 z_index = 1
 
 [node name="Candle4" parent="Candles" instance=ExtResource( 8 )]

@@ -122,7 +122,8 @@ func random_forward():
 	return rand_forward
 	
 # Called by the entities that should be avoided
-func avoid(direction: Vector2, avoid_entity: Candle, radius: float):
+func avoid(direction: Vector2, avoid_entity, radius: float):
+	print_debug("AVVOIDD")
 	if $StateMachine.current_state == $StateMachine/Avoid:
 		forward_direction += direction
 	else:

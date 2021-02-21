@@ -12,11 +12,11 @@
 [ext_resource path="res://Scripts/actor/enemy/Melee/enemy_stun_state.gd" type="Script" id=10]
 [ext_resource path="res://Scripts/actor/enemy/Melee/agression_shader.shader" type="Shader" id=11]
 
-[sub_resource type="ShaderMaterial" id=20]
+[sub_resource type="ShaderMaterial" id=1]
 shader = ExtResource( 11 )
 shader_param/aggression_color = Vector3( 1, 1, 1 )
 
-[sub_resource type="SpriteFrames" id=1]
+[sub_resource type="SpriteFrames" id=2]
 animations = [ {
 "frames": [ ExtResource( 2 ) ],
 "loop": true,
@@ -34,13 +34,13 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[sub_resource type="CircleShape2D" id=6]
+[sub_resource type="CircleShape2D" id=3]
 radius = 28.5441
 
-[sub_resource type="CircleShape2D" id=3]
+[sub_resource type="CircleShape2D" id=4]
 radius = 146.659
 
-[sub_resource type="Animation" id=15]
+[sub_resource type="Animation" id=5]
 resource_name = "walk_east"
 length = 0.6
 tracks/0/type = "value"
@@ -80,7 +80,7 @@ tracks/2/keys = {
 "values": [ true ]
 }
 
-[sub_resource type="Animation" id=17]
+[sub_resource type="Animation" id=6]
 resource_name = "walk_north"
 length = 0.6
 tracks/0/type = "value"
@@ -120,7 +120,7 @@ tracks/2/keys = {
 "values": [ true ]
 }
 
-[sub_resource type="Animation" id=18]
+[sub_resource type="Animation" id=7]
 resource_name = "walk_south"
 length = 0.6
 tracks/0/type = "value"
@@ -160,7 +160,7 @@ tracks/2/keys = {
 "values": [ false ]
 }
 
-[sub_resource type="Animation" id=16]
+[sub_resource type="Animation" id=8]
 resource_name = "walk_west"
 length = 0.6
 tracks/0/type = "value"
@@ -200,15 +200,11 @@ tracks/2/keys = {
 "values": [ false ]
 }
 
-[sub_resource type="AnimationNodeBlendSpace2D" id=7]
-
-[sub_resource type="AnimationNodeBlendSpace2D" id=8]
-
 [sub_resource type="AnimationNodeBlendSpace2D" id=9]
 
-[sub_resource type="AnimationNodeStateMachineTransition" id=10]
+[sub_resource type="AnimationNodeBlendSpace2D" id=10]
 
-[sub_resource type="AnimationNodeStateMachineTransition" id=11]
+[sub_resource type="AnimationNodeBlendSpace2D" id=11]
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=12]
 
@@ -216,17 +212,21 @@ tracks/2/keys = {
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=14]
 
-[sub_resource type="AnimationNodeStateMachine" id=4]
-states/Attack/node = SubResource( 7 )
+[sub_resource type="AnimationNodeStateMachineTransition" id=15]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=16]
+
+[sub_resource type="AnimationNodeStateMachine" id=17]
+states/Attack/node = SubResource( 9 )
 states/Attack/position = Vector2( 291, 93 )
-states/Idle/node = SubResource( 8 )
+states/Idle/node = SubResource( 10 )
 states/Idle/position = Vector2( 173, -19 )
-states/Walking/node = SubResource( 9 )
+states/Walking/node = SubResource( 11 )
 states/Walking/position = Vector2( 404, -19 )
-transitions = [ "Idle", "Walking", SubResource( 10 ), "Walking", "Idle", SubResource( 11 ), "Walking", "Attack", SubResource( 12 ), "Idle", "Attack", SubResource( 13 ), "Attack", "Idle", SubResource( 14 ) ]
+transitions = [ "Idle", "Walking", SubResource( 12 ), "Walking", "Idle", SubResource( 13 ), "Walking", "Attack", SubResource( 14 ), "Idle", "Attack", SubResource( 15 ), "Attack", "Idle", SubResource( 16 ) ]
 graph_offset = Vector2( -54, -61 )
 
-[sub_resource type="AnimationNodeStateMachinePlayback" id=5]
+[sub_resource type="AnimationNodeStateMachinePlayback" id=18]
 
 [node name="EnemyMelee" instance=ExtResource( 1 )]
 modulate = Color( 0.992157, 0.992157, 0.992157, 1 )
@@ -234,17 +234,16 @@ position = Vector2( 307.956, 192.076 )
 z_index = 1
 script = ExtResource( 3 )
 MIN_DISTANCE = 71.0
-MIN_AWAY_FROM_AVOID_DISTANCE = 2.0
 
 [node name="AnimatedSprite" parent="." index="0"]
-material = SubResource( 20 )
+material = SubResource( 1 )
 scale = Vector2( 0.05, 0.05 )
-frames = SubResource( 1 )
+frames = SubResource( 2 )
 animation = "movement"
 
 [node name="CollisionShape2D" parent="." index="1"]
 light_mask = 5
-shape = SubResource( 6 )
+shape = SubResource( 3 )
 
 [node name="DebugState" parent="." index="2"]
 margin_left = -35.0
@@ -258,7 +257,7 @@ script = ExtResource( 5 )
 [node name="AggroZone" type="Area2D" parent="." index="4"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AggroZone" index="0"]
-shape = SubResource( 3 )
+shape = SubResource( 4 )
 
 [node name="Movement" parent="StateMachine" index="1"]
 script = ExtResource( 4 )
@@ -285,15 +284,15 @@ script = ExtResource( 10 )
 one_shot = true
 
 [node name="AnimationPlayer" parent="." index="6"]
-anims/walk_east = SubResource( 15 )
-anims/walk_north = SubResource( 17 )
-anims/walk_south = SubResource( 18 )
-anims/walk_west = SubResource( 16 )
+anims/walk_east = SubResource( 5 )
+anims/walk_north = SubResource( 6 )
+anims/walk_south = SubResource( 7 )
+anims/walk_west = SubResource( 8 )
 
 [node name="AnimationTree" parent="." index="7"]
-tree_root = SubResource( 4 )
+tree_root = SubResource( 17 )
 anim_player = NodePath("../AnimationPlayer")
-parameters/playback = SubResource( 5 )
+parameters/playback = SubResource( 18 )
 parameters/Attack/blend_position = Vector2( 0, 0 )
 parameters/Idle/blend_position = Vector2( 0, 0 )
 parameters/Walking/blend_position = Vector2( 0, 0 )
