@@ -7,9 +7,12 @@ class_name HealingStation
 
 signal healed(amount)
 
-export (int) var uses = 1
+export (int) var uses = 2
 
 onready var fire_effect_timer = $FireEffectTimer
+
+# Condition
+var fireplace_on = false
 
 var fire_effect: bool = false
 var fire_effect_energy = 1.31
@@ -25,11 +28,12 @@ func _ready():
 ##############
 
 func use_heal() -> void:
-	emit_signal("healed", 1)
-	SFXPlayer.play_sfx("sfx_fire_place_1", SFXVolume.fireplace_volume)
-	if uses > 0:
-		turn_on_effect()
-	decrement_uses(1)
+	if fireplace_on == false:
+		emit_signal("healed", 1)
+		SFXPlayer.play_sfx("sfx_fire_place_1", SFXVolume.fireplace_volume)
+		if uses > 0:
+			turn_on_effect()
+		decrement_uses(1)
 	#update_status(uses)
 		
 	
@@ -73,6 +77,7 @@ func turn_on_effect():
 	$EffectZone/CollisionShape2D.disabled = false
 	$FireEffectLight.energy = fire_effect_energy
 	$FireEffectTimer.start()
+	fireplace_on = true
 
 func turn_off_effect():
 	print_debug("Turnoff")
@@ -81,6 +86,7 @@ func turn_off_effect():
 	if uses <= 0:
 		$AnimatedSprite.play("off")
 		$Light2D.energy = 0
+	fireplace_on = false
 
 
 func _on_EffectZone_body_entered(body):

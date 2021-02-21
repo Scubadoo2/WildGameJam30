@@ -25,13 +25,14 @@ func _process(delta):
 		turn_off()
 
 func turn_on():
-	$Timer.start()
-	light_barrier.visible = true
-	light_barrier.get_node("CollisionShape2D").disabled = false
-	light.energy = 1.0
-	candle_on = true
-	emit_signal("candle_turned_on")
-	SFXPlayer.play_sfx("sfx_light_lamp_4",SFXVolume.candle_lit_volume)
+	if is_candle_on() == false:
+		$Timer.start()
+		light_barrier.visible = true
+		light_barrier.get_node("CollisionShape2D").disabled = false
+		light.energy = 1.0
+		candle_on = true
+		emit_signal("candle_turned_on")
+		SFXPlayer.play_sfx("sfx_light_lamp_4",SFXVolume.candle_lit_volume)
 	
 func turn_off():
 	light_barrier.visible = false
