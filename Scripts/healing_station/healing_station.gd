@@ -1,6 +1,10 @@
 extends StaticBody2D
 class_name HealingStation
 
+#### TODO:
+## Refactor the entering of light's effect zone
+## Candles as well
+
 signal healed(amount)
 
 export (int) var uses = 1
