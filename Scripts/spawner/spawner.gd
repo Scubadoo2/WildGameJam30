@@ -11,7 +11,6 @@ var spawner_data
 func _ready():
 	#spawn_entity(entities)
 	spawn_timer.start(max_time)
-	print_debug("Starting spawner")
 
 func _physics_process(delta):
 	if spawn_timer.is_stopped() && spawner_data.can_spawn_entity():

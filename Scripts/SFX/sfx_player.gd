@@ -29,7 +29,6 @@ func play_sfx(sfx_name: String, volume_db: float):
 	var audio_player = get_sfx_player(sfx_name)
 	if audio_player != null:
 		audio_player.volume_db = volume_db
-		print_debug(audio_player.stream)
 		audio_player.play()
 	else:
 		printerr("Did not find sfx")
@@ -42,7 +41,6 @@ func stop_sfx(sfx_name: String):
 
 func get_sfx_player(sfx_name: String) -> AudioStreamPlayer:
 	if sfx_map.has(sfx_name):
-		print_debug("Has sfx_name")
 		return sfx_map.get(sfx_name)
 	return null
 
