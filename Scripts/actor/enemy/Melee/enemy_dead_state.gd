@@ -9,6 +9,7 @@ var debug_mode: bool
 func enter():
 	if debug_mode:
 		debug_info.text = "Dead"
+	SFXPlayer.play_sfx("sfx_leech_death_evaporate_soft_1", SFXVolume.leech_evaporate_volume)
 	actor.queue_free()
 	
 func exit():

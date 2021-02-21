@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/leech_death_evaporate_soft_1.wav-a381bcfa25f2d7c364d5f011904fbe31.sample"
+
+[deps]
+
+source_file="res://Sound/SFX/Leech/leech_death_evaporate_soft_1.wav"
+dest_files=[ "res://.import/leech_death_evaporate_soft_1.wav-a381bcfa25f2d7c364d5f011904fbe31.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0
