@@ -33,7 +33,7 @@ jobs:
         env:
             BUTLER_CREDENTIALS: ${{ secrets.BUTLER_API_KEY }}
             CHANNEL: windows
-            ITCH_GAME: godot-wild-jam-30-entree
+            ITCH_GAME: flicker-of-light
             ITCH_USER: scubadoo2
             PACKAGE: build/windows
 
@@ -62,7 +62,7 @@ jobs:
         env:
             BUTLER_CREDENTIALS: ${{ secrets.BUTLER_API_KEY }}
             CHANNEL: linux
-            ITCH_GAME: godot-wild-jam-30-entree
+            ITCH_GAME: flicker-of-light
             ITCH_USER: scubadoo2
             PACKAGE: build/linux
         
@@ -91,7 +91,7 @@ jobs:
         env:
             BUTLER_CREDENTIALS: ${{ secrets.BUTLER_API_KEY }}
             CHANNEL: web
-            ITCH_GAME: godot-wild-jam-30-entree
+            ITCH_GAME: flicker-of-light
             ITCH_USER: scubadoo2
             PACKAGE: build/web
       # Installing rsync is needed in order to deploy to GitHub Pages. Without it, the build will fail.
@@ -129,7 +129,7 @@ jobs:
         env:
             BUTLER_CREDENTIALS: ${{ secrets.BUTLER_API_KEY }}
             CHANNEL: mac
-            ITCH_GAME: godot-wild-jam-30-entree
+            ITCH_GAME: flicker-of-light
             ITCH_USER: scubadoo2
             PACKAGE: build/mac
 
