@@ -63,7 +63,7 @@ _global_script_class_icons={
 [application]
 
 config/name="Godot Wild Jam 30"
-run/main_scene="res://Scenes/TitleScreen/TitleScreen.tscn"
+run/main_scene="res://Scenes/Universe/Universe.tscn"
 config/icon="res://icon.png"
 
 [autoload]
