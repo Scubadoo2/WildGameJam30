@@ -7,7 +7,7 @@ var countHolder
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	countHolder = $Count
+	countHolder = $Description/Count
 	ChangeCount(count)
 
 

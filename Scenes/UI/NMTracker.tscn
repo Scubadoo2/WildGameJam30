@@ -1,8 +1,15 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Scripts/UI/NMTracker.gd" type="Script" id=1]
+[ext_resource path="res://Fonts/Averia Libre/AveriaLibre-Regular.ttf" type="DynamicFontData" id=2]
 
-[sub_resource type="StyleBoxFlat" id=1]
+[sub_resource type="DynamicFont" id=1]
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=2]
+font_data = ExtResource( 2 )
+
+[sub_resource type="StyleBoxFlat" id=3]
 bg_color = Color( 1, 1, 1, 1 )
 
 [node name="NMTracker" type="Control"]
@@ -20,10 +27,11 @@ anchor_bottom = 1.0
 [node name="Label" type="Label" parent="."]
 anchor_top = 0.5
 anchor_bottom = 0.5
-margin_left = 20.0
-margin_top = -7.0
-margin_right = 102.0
-margin_bottom = 7.0
+margin_left = 17.7728
+margin_top = -11.0091
+margin_right = 107.773
+margin_bottom = 8.99094
+custom_fonts/font = SubResource( 1 )
 text = "Nightmares: "
 __meta__ = {
 "_edit_use_anchors_": false
@@ -32,10 +40,10 @@ __meta__ = {
 [node name="Holder" type="Control" parent="."]
 anchor_top = 0.5
 anchor_bottom = 0.5
-margin_left = 110.0
-margin_top = -20.0
-margin_right = 150.0
-margin_bottom = 20.0
+margin_left = 108.664
+margin_top = -19.1091
+margin_right = 148.664
+margin_bottom = 20.8909
 __meta__ = {
 "_edit_group_": true,
 "_edit_use_anchors_": false
@@ -47,6 +55,7 @@ anchor_right = 0.5
 margin_left = -20.0
 margin_right = 20.0
 margin_bottom = 14.0
+custom_fonts/font = SubResource( 2 )
 text = "0"
 align = 1
 
@@ -56,8 +65,10 @@ anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
 margin_left = -20.0
-margin_top = -14.0
+margin_top = -17.5636
 margin_right = 20.0
+margin_bottom = 2.43639
+custom_fonts/font = SubResource( 2 )
 text = "100"
 align = 1
 
@@ -67,7 +78,7 @@ anchor_right = 1.0
 anchor_bottom = 0.5
 margin_top = -1.0
 margin_bottom = 1.0
-custom_styles/panel = SubResource( 1 )
+custom_styles/panel = SubResource( 3 )
 __meta__ = {
 "_edit_use_anchors_": false
 }

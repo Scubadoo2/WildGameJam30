@@ -99,6 +99,7 @@ __meta__ = {
 }
 
 [node name="ItemTracker" parent="." instance=ExtResource( 5 )]
+visible = false
 margin_left = -291.605
 margin_top = -166.444
 margin_right = -13.6046
@@ -150,8 +151,8 @@ __meta__ = {
 }
 
 [node name="Fade" parent="." instance=ExtResource( 9 )]
-[connection signal="GameOver" from="." to="BeatHolder" method="StopEverything"]
 [connection signal="GameOver" from="." to="Clock" method="StopTimer"]
+[connection signal="GameOver" from="." to="BeatHolder" method="StopEverything"]
 [connection signal="GameOver" from="HP" to="." method="GetGameOver"]
 [connection signal="GameOver" from="NMTracker" to="." method="GetGameOver"]
 [connection signal="Win" from="Clock" to="." method="GetWin"]
