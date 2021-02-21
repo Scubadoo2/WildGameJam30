@@ -14,6 +14,7 @@ var spawner
 var max_candles = 0
 
 func _ready():
+	print_debug("Starting Game")
 	if player_path != "" and ui_path != "" and spawner_path != "":
 		player = get_node(player_path)
 		ui = get_node(ui_path)
