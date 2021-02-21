@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://Scripts/SFX/sfx_player.gd" type="Script" id=1]
 [ext_resource path="res://Sound/SFX/UI/UI_Menu_Play_Basic.wav" type="AudioStream" id=2]
@@ -16,10 +16,12 @@
 [ext_resource path="res://Sound/SFX/Lamp/light_lamp_5.wav" type="AudioStream" id=14]
 [ext_resource path="res://Sound/SFX/TakeHit/sfx_flick_take_hit_1.wav" type="AudioStream" id=15]
 [ext_resource path="res://Sound/SFX/TakeHit/sfx_flick_take_hit_2.wav" type="AudioStream" id=16]
+[ext_resource path="res://Sound/SFX/attack/Fire_Attack_4.wav" type="AudioStream" id=17]
 
 [node name="SFXPlayer" type="Node"]
 script = ExtResource( 1 )
 sfxs = {
+"sfx_fire_attack_4": ExtResource( 17 ),
 "sfx_fire_place_1": ExtResource( 8 ),
 "sfx_fire_place_2": ExtResource( 9 ),
 "sfx_flick_take_hit_1": ExtResource( 15 ),

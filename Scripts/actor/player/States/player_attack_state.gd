@@ -14,6 +14,7 @@ func enter():
 	if debug_mode:
 		debug_info.text = "Attack"
 	attacking = true
+	SFXPlayer.play_sfx("sfx_fire_attack_4", SFXVolume.fire_attack_volume)
 	# Play attack animation
 	
 func exit():
