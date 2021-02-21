@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://Scripts/TitleScreen/title_screen.gd" type="Script" id=1]
 [ext_resource path="res://Fonts/Averia Libre/AveriaLibre-Regular.ttf" type="DynamicFontData" id=2]
@@ -8,6 +8,10 @@
 [ext_resource path="res://Art/flick_sprites/walking/south/0003.png" type="Texture" id=6]
 [ext_resource path="res://Scenes/UI/Fade.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Themes/MainTheme.tres" type="Theme" id=8]
+[ext_resource path="res://Art/enemies/eye_ball.png" type="Texture" id=9]
+[ext_resource path="res://Art/flick_sprites/attack/0009.png" type="Texture" id=10]
+[ext_resource path="res://Art/furniture/lamp_v2.png" type="Texture" id=11]
+[ext_resource path="res://Art/flick_sprites/walking/west/0003.png" type="Texture" id=12]
 
 [sub_resource type="DynamicFont" id=1]
 size = 120
@@ -18,6 +22,13 @@ size = 50
 font_data = ExtResource( 2 )
 
 [sub_resource type="DynamicFont" id=3]
+font_data = ExtResource( 2 )
+
+[sub_resource type="StyleBoxFlat" id=4]
+bg_color = Color( 0.913725, 0.913725, 0.913725, 1 )
+
+[sub_resource type="DynamicFont" id=5]
+size = 40
 font_data = ExtResource( 2 )
 
 [node name="TitleScreen" type="Control"]
@@ -164,6 +175,32 @@ custom_fonts/font = SubResource( 3 )
 text = "Your goal is to take out all the nightmares that are sneaking into the house."
 autowrap = true
 
+[node name="TextureRect" type="TextureRect" parent="Info/Attack"]
+margin_left = -11.7726
+margin_top = 71.4762
+margin_right = 118.227
+margin_bottom = 201.476
+texture = ExtResource( 10 )
+expand = true
+
+[node name="TextureRect2" type="TextureRect" parent="Info/Attack"]
+margin_left = 92.631
+margin_top = 111.676
+margin_right = 179.631
+margin_bottom = 193.676
+texture = ExtResource( 9 )
+expand = true
+
+[node name="KeySpace" type="Label" parent="Info/Attack"]
+margin_left = 27.5772
+margin_top = 199.605
+margin_right = 130.577
+margin_bottom = 248.605
+custom_styles/normal = SubResource( 4 )
+custom_fonts/font = SubResource( 5 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Space"
+
 [node name="Beat" type="Control" parent="Info"]
 margin_left = 716.546
 margin_top = 61.2018
@@ -287,10 +324,10 @@ texture = ExtResource( 3 )
 vframes = 2
 
 [node name="Candles" type="Control" parent="Info"]
-margin_left = 418.472
-margin_top = 183.54
-margin_right = 591.472
-margin_bottom = 358.54
+margin_left = 418.0
+margin_top = 184.0
+margin_right = 591.0
+margin_bottom = 476.0
 __meta__ = {
 "_edit_group_": true,
 "_edit_use_anchors_": false
@@ -302,6 +339,36 @@ margin_bottom = 80.0
 custom_fonts/font = SubResource( 3 )
 text = "Nightmares spawn when it is dark, so keep the candles lit and attack any that come."
 autowrap = true
+
+[node name="KeyE" type="Label" parent="Info/Candles"]
+margin_left = 64.1317
+margin_top = 227.9
+margin_right = 87.1317
+margin_bottom = 276.9
+custom_styles/normal = SubResource( 4 )
+custom_fonts/font = SubResource( 5 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "E"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="Info/Candles"]
+margin_left = 48.7903
+margin_top = 89.0
+margin_right = 178.79
+margin_bottom = 219.0
+texture = ExtResource( 12 )
+expand = true
+flip_h = true
+
+[node name="TextureRect2" type="TextureRect" parent="Info/Candles"]
+margin_left = -19.799
+margin_top = 81.3173
+margin_right = 84.201
+margin_bottom = 227.317
+texture = ExtResource( 11 )
+expand = true
 
 [node name="Win" type="Control" parent="Info"]
 margin_left = 718.143
