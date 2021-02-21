@@ -7,12 +7,18 @@ var data_holder
 
 export (float) var stun_time = 1.0
 
+# Agression Colors
+var not_aggresive = Vector3(1.0,1.0,1.0)
+var aggresive = Vector3(0.8,0.6,0.7)
+
 func enter():
 	debug_info.text = "Stun"
 	$Timer.start(stun_time)
+	# Change shader value
+	animation.material.set_shader_param("aggression_color", aggresive)
 	
 func exit():
-	pass
+	animation.material.set_shader_param("aggression_color", not_aggresive)
 	
 func handle_input(event: InputEvent):
 	pass
