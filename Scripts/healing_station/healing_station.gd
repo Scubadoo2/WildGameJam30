@@ -30,7 +30,7 @@ func _ready():
 func use_heal() -> void:
 	if fireplace_on == false:
 		emit_signal("healed", 1)
-		SFXPlayer.play_sfx("sfx_fire_place_1", SFXVolume.fireplace_volume)
+		SFXPlayer.play_sfx("sfx_heal_2", SFXVolume.fireplace_volume)
 		if uses > 0:
 			turn_on_effect()
 		decrement_uses(1)
