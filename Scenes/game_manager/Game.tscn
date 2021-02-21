@@ -16,7 +16,7 @@ ui_path = NodePath("CanvasLayer/UI")
 spawner_path = NodePath("SpawnManager")
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
-color = Color( 0.164706, 0.160784, 0.160784, 1 )
+color = Color( 0.188235, 0.188235, 0.188235, 1 )
 
 [node name="House" parent="." instance=ExtResource( 1 )]
 
