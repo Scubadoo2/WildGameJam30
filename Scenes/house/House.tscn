@@ -282,11 +282,11 @@ position = Vector2( 220.773, 487.82 )
 scale = Vector2( 0.3, 0.3 )
 
 [node name="Bookshelf3" parent="LivingRoom/Furniture" instance=ExtResource( 8 )]
-position = Vector2( 743.641, 487.82 )
+position = Vector2( 300.25, 488 )
 scale = Vector2( 0.3, 0.3 )
 
 [node name="StaticBody2D" parent="LivingRoom/Furniture" instance=ExtResource( 9 )]
-position = Vector2( 882.306, 510.002 )
+position = Vector2( 728, 1040 )
 scale = Vector2( 0.3, 0.3 )
 
 [node name="StaticBody2D2" parent="LivingRoom/Furniture" instance=ExtResource( 10 )]
@@ -296,128 +296,191 @@ scale = Vector2( 0.3, 0.3 )
 [node name="Floor" type="Sprite" parent="LivingRoom"]
 position = Vector2( 836.681, 493.33 )
 scale = Vector2( 0.25, 0.25 )
-z_index = -1
+z_index = -2
 texture = ExtResource( 14 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Floor2" type="Sprite" parent="LivingRoom"]
 position = Vector2( 472.018, 495.333 )
 scale = Vector2( 0.25, 0.25 )
-z_index = -1
+z_index = -2
 texture = ExtResource( 14 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Floor3" type="Sprite" parent="LivingRoom"]
 position = Vector2( 168, 496 )
 scale = Vector2( 0.25, 0.25 )
-z_index = -1
+z_index = -2
 texture = ExtResource( 14 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Floor4" type="Sprite" parent="LivingRoom"]
 position = Vector2( 835.346, 638.665 )
 scale = Vector2( 0.25, 0.25 )
-z_index = -1
+z_index = -2
 texture = ExtResource( 14 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Floor5" type="Sprite" parent="LivingRoom"]
 position = Vector2( 470.683, 637.33 )
 scale = Vector2( 0.25, 0.25 )
-z_index = -1
+z_index = -2
 texture = ExtResource( 14 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Floor6" type="Sprite" parent="LivingRoom"]
 position = Vector2( 168, 640 )
 scale = Vector2( 0.25, 0.25 )
-z_index = -1
+z_index = -2
 texture = ExtResource( 14 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Floor7" type="Sprite" parent="LivingRoom"]
 position = Vector2( 856, 784 )
 scale = Vector2( 0.25, 0.25 )
-z_index = -1
+z_index = -2
 texture = ExtResource( 14 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Floor8" type="Sprite" parent="LivingRoom"]
 position = Vector2( 488, 776 )
 scale = Vector2( 0.25, 0.25 )
-z_index = -1
+z_index = -2
 texture = ExtResource( 14 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Floor9" type="Sprite" parent="LivingRoom"]
 position = Vector2( 167.683, 785.75 )
 scale = Vector2( 0.25, 0.25 )
-z_index = -1
+z_index = -2
 texture = ExtResource( 14 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Floor19" type="Sprite" parent="LivingRoom"]
 position = Vector2( 160, 776 )
 scale = Vector2( 0.25, 0.25 )
-z_index = -1
+z_index = -2
 texture = ExtResource( 14 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Floor10" type="Sprite" parent="LivingRoom"]
 position = Vector2( 824, 920 )
 scale = Vector2( 0.25, 0.25 )
-z_index = -1
+z_index = -2
 texture = ExtResource( 14 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Floor20" type="Sprite" parent="LivingRoom"]
 position = Vector2( 904, 824 )
 scale = Vector2( 0.25, 0.25 )
 z_index = -2
 texture = ExtResource( 14 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Floor21" type="Sprite" parent="LivingRoom"]
 position = Vector2( 905.06, 964.389 )
 scale = Vector2( 0.25, 0.25 )
 z_index = -2
 texture = ExtResource( 14 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Floor11" type="Sprite" parent="LivingRoom"]
 position = Vector2( 456, 920 )
 scale = Vector2( 0.25, 0.25 )
-z_index = -1
+z_index = -2
 texture = ExtResource( 14 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Floor12" type="Sprite" parent="LivingRoom"]
 position = Vector2( 160, 920 )
 scale = Vector2( 0.25, 0.25 )
-z_index = -1
+z_index = -2
 texture = ExtResource( 14 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Floor13" type="Sprite" parent="LivingRoom"]
 position = Vector2( 832, 1064 )
 scale = Vector2( 0.25, 0.25 )
-z_index = -1
+z_index = -2
 texture = ExtResource( 14 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Floor18" type="Sprite" parent="LivingRoom"]
 position = Vector2( 831.479, 1165.19 )
 scale = Vector2( 0.25, 0.25 )
-z_index = -1
+z_index = -2
 texture = ExtResource( 14 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Floor14" type="Sprite" parent="LivingRoom"]
 position = Vector2( 464, 1064 )
 scale = Vector2( 0.25, 0.25 )
-z_index = -1
+z_index = -2
 texture = ExtResource( 14 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Floor17" type="Sprite" parent="LivingRoom"]
 position = Vector2( 462.007, 1141.33 )
 scale = Vector2( 0.25, 0.25 )
-z_index = -1
+z_index = -2
 texture = ExtResource( 14 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Floor15" type="Sprite" parent="LivingRoom"]
 position = Vector2( 168, 1064 )
 scale = Vector2( 0.25, 0.25 )
-z_index = -1
+z_index = -2
 texture = ExtResource( 14 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Floor16" type="Sprite" parent="LivingRoom"]
 position = Vector2( 168, 1144 )
 scale = Vector2( 0.25, 0.25 )
-z_index = -1
+z_index = -2
 texture = ExtResource( 14 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="BedroomOne" type="Node2D" parent="."]
 
