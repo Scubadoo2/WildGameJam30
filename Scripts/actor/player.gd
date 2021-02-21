@@ -6,6 +6,7 @@ var in_light: bool
 
 # 
 var logic
+var is_dead: bool = false
 
 # animation
 onready var animation_tree = $AnimationTree
@@ -26,6 +27,7 @@ var DEBUG = 0
 func _ready():
 	._ready()
 	in_light = false
+	is_dead = false
 	add_to_group("player")
 
 func _input(event):

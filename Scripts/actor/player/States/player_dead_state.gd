@@ -7,6 +7,9 @@ var debug_info: Label
 var debug_mode: bool
 
 func enter():
+	if actor.is_dead == false:
+		SFXPlayer.play_sfx("sfx_flick_death", SFXVolume.default)
+		actor.is_dead = true
 	if debug_mode:
 		debug_info.text = "Dead"
 	
