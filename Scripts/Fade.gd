@@ -17,6 +17,7 @@ func FadeOut(durration):
 	player.play("Fade out", -1, 1.0/durration)
 
 func DoneFading(played = 1):
+	print_debug("Fading finished")
 	if(played == "Fade out"):
 		emit_signal("FadedOut")
 
