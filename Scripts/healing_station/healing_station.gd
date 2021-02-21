@@ -80,7 +80,6 @@ func turn_on_effect():
 	fireplace_on = true
 
 func turn_off_effect():
-	print_debug("Turnoff")
 	$EffectZone/CollisionShape2D.disabled = true
 	$FireEffectLight.energy = 0
 	if uses <= 0:
